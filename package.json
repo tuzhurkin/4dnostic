@@ -1,0 +1,15 @@
+{
+  "name": "4dnostics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss": "sass ./css/style.scss ./css/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.56.1"
+  }
+}

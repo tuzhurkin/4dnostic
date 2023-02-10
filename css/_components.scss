@@ -1,0 +1,2007 @@
+.h1-title {
+    @include h1TitleFont();
+    // color: $blackTitle;
+}
+.h2-title {
+    @include h2TitleFont();
+    // color: $blackTitle;
+}
+.h3-title {
+    @include h3TitleFont();
+    // color: $blackTitle;
+        
+    @include sm {
+        @include averageBoldFont();
+    }
+}
+.h4-title {
+    @include h4TitleFont();
+    // color: $blackTitle;
+}
+.h5-title {
+    @include h5TitleFont();
+    // color: $blackTitle;
+}
+
+.description {
+    // @include descriptionFont();
+    // color: $mediumGrey;
+
+    border-left: 1px solid $orange80;
+    padding-left: 16px;
+
+    @include row-gap(16px);
+    transition: border-color 0.4s $easeOut-1;
+
+    @include md {
+        padding-left: 8px;
+    }
+    @include sm {
+        @include row-gap(8px);
+    }
+}
+
+// > caption = description with scroll and max-height
+.caption {
+    // direction: rtl; // > for left-sided scrollbar
+    // * {
+    //     direction: ltr;
+    // }
+
+    overflow: auto; // > for dynamic scrollbar when needed
+    display: flex;  // > for margin: auto to work
+
+    // @include smm {
+        height: 0;      // > to get the height of the minimum adjacent flex/grid column
+        min-height: 100%;
+    // }
+
+    @include sm {
+        height: 240px;
+    }
+    
+    .scrollbot-outer-parent {
+        & > .scrollbot-scrollbar-holder {
+            // width: 1px !important;
+
+            right: initial;
+            left: 0;
+        }
+    }
+    // &::-webkit-scrollbar {
+    //     display: none;
+    // }
+
+    // &::-webkit-scrollbar {
+    //     display: block;
+    //     width: 1px; // 3px;
+    // }
+    // &::-webkit-scrollbar-thumb {
+    //     width: 3px;
+    //     background-color: $orange;
+    //     border-radius: 8px;
+    // }
+    // &::-webkit-scrollbar-track {
+    //     width: 1px;
+    //     background-color: $grey100;
+    //     border-radius: 8px;
+    // }
+
+    &__inner {
+        // border-left: 1px solid $grey100;
+        padding-left: 16px; // 44px; // = 24px + 16px + 4px; // 24px = width of the shifted browser's scrollbar; 4px (3px) = width of scrollbar // 16px;
+        position: relative;
+
+        &:before {
+            content: "";
+            border-left: 1px solid $grey100;
+            width: 1px;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0.5px;
+        }
+
+        margin: auto 0;
+        @include row-gap(16px);
+
+        // @include md {
+        //     padding-left: 8px;
+        // }
+        @include sm {
+            @include row-gap(8px);
+        }
+    }
+    //
+    &--half {
+        @include smm {
+            min-height: 50%;
+        }
+    }
+}
+
+.list {
+    &__item {
+        @include averageFont();
+        // color: $grey;
+
+        position: relative;
+        margin-left: 16px;
+
+        &:not(:last-child) {
+            margin-bottom: 8px; // 16px;
+        }
+
+        &:before {
+            content: "";
+            
+            background-color: $orange;
+            border-radius: 50%;
+            width: 4px;
+            height: 4px;
+
+            position: absolute;
+            top: 12px;
+            left: -16px;
+        }
+    }
+}
+.orange {
+    display: inline;
+    color: $orange;
+}
+.grey {
+    display: inline;
+    color: $grey100;
+}
+.white {
+    display: inline;
+    color: $white;
+}
+.darkgrey {
+    display: inline;
+    color: $grey;
+}
+//
+.main {
+    // background-color: $white;
+    position: relative;
+
+    // set the very first block's top offset
+    & > *:first-child {
+        padding-top: 80px;
+        
+        @include md {
+            padding-top: 64px;
+        }
+        @include sm {
+            padding-top: 40px;
+        }
+    }
+
+    // set every inner block's offset
+    & > * {
+        padding-bottom: 80px;
+        padding-top: 80px;//--usually not needed
+
+        @include md {
+            padding-bottom: 64px;
+            padding-top: 64px;//--usually not needed
+        }
+        @include sm {
+            padding-bottom: 40px;
+            padding-top: 40px;//--usually not needed
+        }
+    }
+
+    // set the very last block's bottom offset
+    // & > *:last-child {
+    //     padding-bottom: 0;
+        
+    //     @include md {
+    //         padding-bottom: 0;
+    //     }
+    //     @include sm {
+    //         padding-bottom: 0;
+    //     }
+    // }
+
+    // for containers with no block-wrapper inside
+    & > .entire {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+.bg {
+    position: relative;
+
+    &:before {
+        content: "";
+        background-image: url('../img/bg/dark.jpg');
+        background-repeat: repeat;
+        background-size: 33.333%; // cover; // contain;
+
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        @include sm {
+            background-size: contain;
+        }
+    }
+
+    // tint over dark bg
+    &:after {
+        content: "";
+        // background-color: rgba(0, 0, 0, 0.45);
+        background-color: rgba(0, 0, 0, 0.6);
+
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &--light {
+        &:before {
+            background-image: none;
+            background-color: $white;
+        }
+        &:after {
+            background-color: transparent;
+            background-image: url('../img/bg/light.jpg');
+            background-repeat: repeat;
+            background-size: 20%; // cover; // contain;
+            // background-size: cover;
+            opacity: 0.55;
+
+            @include sm {
+                background-size: contain;
+            }
+        }
+    }
+        
+    // &--light {
+    //     &:before {
+    //         background-image: url('../img/bg/light.jpg');
+    //         background-size: contain;
+    //     }
+    //     &:after {
+    //         display: none;
+    //     }
+
+    //     &:not(.menu) {
+    //         &:before {
+    //             opacity: 0.55;
+    //         }
+    //     }
+    // }
+
+    // in order to make seamless bg with next container
+    &--reverse {
+        &:before {
+            height: calc(100% + 1px);
+            top: 1px;
+
+            transform: rotate(180deg);
+        }
+    }
+}
+// .bg {
+//     background-image: url('../img/bg/dark.jpg');
+//     background-size: cover;
+//     // background-attachment: fixed;
+//     // position: relative;
+
+//     &--light {
+//         background-image: url('../img/bg/light.jpg');
+//     }
+// }
+//
+.breadcrumb {
+    width: 100%;
+    overflow: hidden;
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        &:after {
+            content: "•";
+            @include smallFont();
+            color: $grey60;
+            text-transform: uppercase;
+            padding: 0 8px;
+        }
+
+        &:last-child:after {
+            content: "";
+            padding: 0;
+        }
+    }
+
+    &__name {
+        display: block;
+        @include smallFont();
+        color: $grey60;
+        text-transform: uppercase;
+
+        svg {
+            display: block;
+            width: 16px;
+            height: 16px;
+
+            path {
+                fill: $grey60;
+            }
+        }
+    }
+    &__cur {
+        font-style: italic;
+        color: $orange80;
+    }
+}
+.arrow-box {
+    display: flex;
+    align-items: center;
+    @include column-gap(16px);
+
+    &__arrow {
+        cursor: pointer;
+
+        &.swiper-button-disabled {
+            cursor: default;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        
+        &_prev {
+            .arrow {
+                &:before,
+                &:after,
+                .arrow__wrapper:before,
+                .arrow__wrapper:after {
+                    border-color: $grey100;
+                }
+                &__icon {
+                    svg {
+                        path {
+                            fill: $grey100;
+                        }
+                    }
+                }
+            }
+
+            &.swap-to-next {
+                .arrow {
+                    &:before,
+                    &:after,
+                    .arrow__wrapper:before,
+                    .arrow__wrapper:after {
+                        border-color: $orange;
+                    }
+                    &__icon {
+                        svg {
+                            path {
+                                fill: $orange;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &_next {
+            .arrow {
+                &:before,
+                &:after,
+                .arrow__wrapper:before,
+                .arrow__wrapper:after {
+                    border-color: $orange;
+                }
+                &__icon {
+                    svg {
+                        path {
+                            fill: $orange;
+                        }
+                    }
+                }
+            }
+
+            &.swap-to-prev {
+                .arrow {
+                    &:before,
+                    &:after,
+                    .arrow__wrapper:before,
+                    .arrow__wrapper:after {
+                        border-color: $grey100;
+                    }
+                    &__icon {
+                        svg {
+                            path {
+                                fill: $grey100;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //
+    &--dark {
+        .arrow-box__arrow {
+            &_prev {
+                .arrow {
+                    &:before,
+                    &:after,
+                    .arrow__wrapper:before,
+                    .arrow__wrapper:after {
+                        border-color: $grey;
+                    }
+                    &__icon {
+                        svg {
+                            path {
+                                fill: $grey;
+                            }
+                        }
+                    }
+                }
+            }
+            &_next {
+                &.swap-to-prev {
+                    .arrow {
+                        &:before,
+                        &:after,
+                        .arrow__wrapper:before,
+                        .arrow__wrapper:after {
+                            border-color: $grey;
+                        }
+                        &__icon {
+                            svg {
+                                path {
+                                    fill: $grey;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .arrow-box__fraction {
+            .slider-fraction {
+                &__current {
+                    color: $grey;
+                }
+            }
+        }
+    }
+}
+.arrow {
+    width: 48px;
+    height: 48px;
+    position: relative;
+
+    // borders: left ~ top
+    &:before {
+        content: "";
+        border-left: 1px solid $orange;
+        border-top: 1px solid $orange;
+
+        width: 8px;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        transition: all 0.4s $easeOut-1;
+        animation: arrowFrom 0s $easeOut-1 forwards;
+    }
+    // borders: right ~ bottom
+    &:after {
+        content: "";
+        border-right: 1px solid $orange;
+        border-bottom: 1px solid $orange;
+
+        width: 8px;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        transition: all 0.4s $easeOut-1;
+        animation: arrowFrom 0s $easeOut-1 forwards;
+    }
+
+    transition: all 0.4s $easeOut-1;
+    @include hover {
+        &:hover {
+            &:before {
+                animation: arrowTo 0.4s $easeOut-1 forwards;
+            }
+            &:after {
+                animation: arrowTo 0.4s $easeOut-1 forwards;
+            }
+
+            .arrow__wrapper {
+                &:before {
+                    animation: arrowTo 0s $easeOut-1 0.4s forwards;
+                }
+                &:after {
+                    animation: arrowTo 0s $easeOut-1 0.4s forwards;
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 8px;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // borders: left ~ bottom
+        &:before {
+            content: "";
+            border-bottom: 1px solid $orange;
+    
+            width: 8px;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+    
+            transition: all 0.4s $easeOut-1;
+            animation: arrowFrom 0.4s $easeOut-1 forwards;
+        }
+        // borders: right ~ top
+        &:after {
+            content: "";
+            border-top: 1px solid $orange;
+    
+            width: 8px;
+            height: 100%;
+    
+            position: absolute;
+            top: 0;
+            right: 0;
+            
+            transition: all 0.4s $easeOut-1;
+            animation: arrowFrom 0.4s $easeOut-1 forwards;
+        }
+    }
+    &__icon {
+        img,
+        svg {
+            display: block;
+            width: 24px;
+            height: 24px;
+
+            path {
+                fill: $white;
+                transition: fill 0.25s $easeOut-1;
+            }
+        }
+    }
+}
+.slider-fraction {
+    @include averageFont();
+    color: $orange;
+
+    &__current {
+        color: $white;
+    }
+}
+@keyframes arrowTo {
+    0% {
+        width: 8px;
+    }
+    100% {
+        width: calc(100% - 8px);
+    }
+}
+@keyframes arrowFrom {
+    0% {
+        width: calc(100% - 8px);
+    }
+    100% {
+        width: 8px;
+    }
+}
+.rating {
+    display: flex;
+    // align-items: center;
+    @include column-gap(8px);
+
+    &__star-box {
+        display: flex;
+        align-items: center;
+        @include column-gap(2px);
+    }
+    &__star {
+        img,
+        svg {
+            display: block;
+            width: 12px;
+            height: 12px;
+
+            path {
+                // fill: $white;
+                stroke-width: 0.25;
+                transition: fill 0.1s $easeOut-1;
+            }
+        }
+    }
+    &__sum {
+        @include smallFont();
+        color: $orange;
+    }
+    //
+    &--form {
+        .rating__star {
+            cursor: pointer;
+
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            &.active {
+                svg {
+                    path {
+                        fill: $orange;
+                    }
+                }
+            }
+        }
+        .rating__sum {
+            @include descriptionBoldFont();
+            color: $grey;
+
+            display: flex;
+            align-items: center;
+            @include column-gap(4px);
+        }
+    }
+}
+//
+.anchor {
+    display: block;
+    position: relative;
+    top: -32px;
+    visibility: hidden;
+}
+.button {
+    cursor: pointer;
+    outline: none;
+    border: 1px solid transparent;
+    background-color: transparent;
+    
+    display: inline-block;
+    min-width: 112px;
+    height: 48px;
+    position: relative;
+
+    // borders: left ~ top
+    &:before {
+        content: "";
+        border-left: 1px solid $orange;
+        border-top: 1px solid $orange;
+
+        width: 16px; // calc(100% - 16px);
+        height: calc(100% + 1px); // 100%;
+
+        position: absolute;
+        top: -1px; // 0;
+        left: -1px; // 0;
+
+        animation: buttonFrom 0s $easeOut-1 forwards;
+        transition: border-color 0.25s $easeOut-1;
+    }
+    // borders: right ~ bottom
+    &:after {
+        content: "";
+        border-right: 1px solid $orange;
+        border-bottom: 1px solid $orange;
+
+        width: 16px; // calc(100% - 16px);
+        height: calc(100% + 1px); // 100%;
+
+        position: absolute;
+        top: -1px; // 0;
+        right: -1px; // 0;
+        
+        animation: buttonFrom 0s $easeOut-1 forwards;
+        transition: border-color 0.25s $easeOut-1;
+    }
+
+    @include sm {
+        width: 100%;
+    }
+
+    transition: all 0.4s $easeOut-1;
+
+    @include hover {
+        &:hover {
+            background-color: $orange80;
+            transition: background-color 0.4s $easeOut-1 0.4s;
+
+            .button__name {
+                color: $white;
+                transition: color 0.25s $easeOut-1 0.4s;
+            }
+
+            .button__icon {
+                svg {
+                    path {
+                        fill: $white;
+                        transition: fill 0.25s $easeOut-1 0.4s;
+                    }
+                }
+            }
+
+            &:before,
+            &:after,
+            .button__wrapper:before,
+            .button__wrapper:after {
+                border-color: $orange80;
+            }
+
+            &:before {
+                // width: calc(100% - 16px);
+                // transition: all 0.4s $easeOut-1;
+                animation: buttonTo 0.4s $easeOut-1 forwards;
+            }
+            &:after {
+                // width: calc(100% - 16px);
+                // transition: all 0.4s $easeOut-1;
+                animation: buttonTo 0.4s $easeOut-1 forwards;
+            }
+
+            .button__wrapper {
+                &:before {
+                    // width: calc(100% - 16px);
+                    // transition: all 0s $easeOut-1 0.4s;
+                    animation: buttonTo 0s $easeOut-1 0.4s forwards;
+                }
+                &:after {
+                    // width: calc(100% - 16px);
+                    // transition: all 0s $easeOut-1 0.4s;
+                    animation: buttonTo 0s $easeOut-1 0.4s forwards;
+                }
+            }
+        }
+    }
+
+    &.active {
+        background-color: $orange80;
+        transition: background-color 0.4s $easeOut-1 0;
+        @include hover {
+            transition: background-color 0.4s $easeOut-1 0.4s;
+        }
+
+        .button__name {
+            color: $white;
+            transition: color 0.25s $easeOut-1 0;
+            @include hover {
+                transition: color 0.25s $easeOut-1 0.4s;
+            }
+        }
+
+        .button__icon {
+            svg {
+                path {
+                    fill: $white;
+                    transition: fill 0.25s $easeOut-1 0;
+                    @include hover {
+                        transition: fill 0.25s $easeOut-1 0.4s;
+                    }
+                }
+            }
+        }
+
+        &:before,
+        &:after,
+        .button__wrapper:before,
+        .button__wrapper:after {
+            border-color: $orange80;
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 8px 16px;
+    
+        display: inline-flex;   // !!! needed for the link <a>
+        justify-content: center;
+        align-items: center;
+        @include column-gap(12px);
+
+        // borders: left ~ bottom
+        &:before {
+            content: "";
+            border-bottom: 1px solid $orange;
+    
+            width: 16px; // calc(100% - 16px);
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: -0.5px; // 0;
+
+            animation: buttonFrom 0.4s $easeOut-1 forwards;
+            transition: border-color 0.25s $easeOut-1;
+        }
+        // borders: right ~ top
+        &:after {
+            content: "";
+            border-top: 1px solid $orange;
+    
+            width: 16px; // calc(100% - 16px);
+            height: 100%;
+    
+            position: absolute;
+            top: -1px; // 0;
+            right: 0;
+    
+            animation: buttonFrom 0.4s $easeOut-1 forwards;
+            transition: border-color 0.25s $easeOut-1;
+        }
+    }
+    &__icon {
+        img,
+        svg {
+            display: block;
+            width: 16px;
+            height: 16px;
+
+            path {
+                fill: $white;
+                transition: fill 0.5s $easeOut-1;
+            }
+        }
+    }
+    &__name {
+        @include descriptionBoldFont();
+        line-height: 110%;
+        color: $white;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        text-align: center;
+
+        transition: all 0.5s $easeOut-1;
+    }
+    //
+    &--glass {
+        background-color: rgba(255, 255, 255, 0.2);
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
+
+        .button__wrapper {
+            padding: 8px 32px;
+        }
+        
+        @include hover {
+            &:hover {
+                background-color: rgba($orange20, 0.3);
+                transition: background-color 0.4s $easeOut-1 0.4s;
+            }
+        }
+
+        &.active {
+            background-color: rgba($orange20, 0.3);
+            transition: background-color 0.4s $easeOut-1 0;
+            @include hover {
+                transition: background-color 0.4s $easeOut-1 0.4s;
+            }
+        }
+    }
+    &--glass-o {
+        background-color: rgba($orange20, 0.5);
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
+
+        .button__wrapper {
+            padding: 8px 40px;
+        }
+        .button__name {
+            color: $blackMain;
+        }
+    }
+    &--grey {
+        &:before,
+        &:after,
+        .button__wrapper:before,
+        .button__wrapper:after {
+            border-color: $grey100;
+        }
+
+        @include hover {
+            &:hover {
+                // background-color: $grey100;
+                background-color: rgba($orange20, 0.5);
+                -webkit-backdrop-filter: blur(15px);
+                backdrop-filter: blur(15px);
+
+                &:before,
+                &:after,
+                .button__wrapper:before,
+                .button__wrapper:after {
+                    border-color: $orange80; // $grey100;
+                }
+                .button__name {
+                    color: $orange80; // $blackMain;
+                }
+            }
+        }
+
+        &.active {
+            background-color: $grey80;
+
+            &:before,
+            &:after,
+            .button__wrapper:before,
+            .button__wrapper:after {
+                border-color: $grey80;
+            }
+            .button__name {
+                color: $blackMain;
+            }
+        }
+    }
+    &--white {
+        &:before,
+        &:after,
+        .button__wrapper:before,
+        .button__wrapper:after {
+            border-color: $white;
+        }
+        .button__name {
+            color: $white;
+        }
+
+        @include hover {
+            &:hover {
+                background-color: $white;
+
+                &:before,
+                &:after,
+                .button__wrapper:before,
+                .button__wrapper:after {
+                    border-color: $white;
+                }
+                .button__name {
+                    color: $blackMain;
+                }
+                .button__icon {
+                    svg {
+                        path {
+                            fill: $blackMain;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &--tab {
+        height: 40px;
+
+        &:before,
+        &:after,
+        .button__wrapper:before,
+        .button__wrapper:after {
+            border-color: $grey100;
+        }
+        .button__wrapper {
+            padding: 8px 16px;
+        }
+        .button__name {
+            @include smallFont();
+        }
+
+        @include hover {
+            &:hover {
+                background-color: $white;
+
+                &:before,
+                &:after,
+                .button__wrapper:before,
+                .button__wrapper:after {
+                    border-color: $white;
+                }
+                .button__name {
+                    color: $blackMain;
+                }
+            }
+        }
+
+        &.active {
+            background-color: $white;
+
+            &:before,
+            &:after,
+            .button__wrapper:before,
+            .button__wrapper:after {
+                border-color: $white;
+            }
+            .button__name {
+                color: $blackMain;
+            }
+        }
+    }
+    //
+    &--alt {
+        .button__icon {
+            svg {
+                path {
+                    fill: $grey;
+                }
+            }
+        }
+        .button__name {
+            color: $grey;
+        }
+    }
+    //
+    &--play {
+        min-width: 0;
+        height: 56px;
+        background-color: rgba(255, 224, 204, 0.5);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+
+        &:before,
+        &:after,
+        .button__wrapper:before,
+        .button__wrapper:after {
+            border-color: $white;
+        }
+        .button__wrapper {
+            padding: 8px 28px;
+        }
+        .button__icon {
+            img,
+            svg {
+                width: 24px;
+                height: 24px;
+
+                path {
+                    fill: $white;
+                    transition: fill 0.4s $easeOut-1;
+                }
+            }
+        }
+
+        @include hover {
+            &:hover {
+                background-color: $white;
+
+                &:before,
+                &:after,
+                .button__wrapper:before,
+                .button__wrapper:after {
+                    border-color: $white;
+                }
+                .button__icon {
+                    svg {
+                        path {
+                            fill: $orange80;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //
+    &--dropdown {
+        min-width: 0;
+        height: 48px;
+
+        @include sm {
+            height: 40px;
+        }
+
+        &.button {
+            &:before,
+            &:after {
+                width: 8px;
+                animation: cutButtonFrom 0s $easeOut-1 forwards;
+            }
+        }
+
+        .button__wrapper {
+            padding: 8px 16px;
+            
+            &:before,
+            &:after {
+                width: 8px;
+                animation: cutButtonFrom 0.4s $easeOut-1 forwards;
+            }
+        }
+
+        .button__icon {
+            img,
+            svg {
+                width: 24px;
+                height: 24px;
+
+                path {
+                    fill: $grey;
+
+                    transform-origin: center;
+                    transition: fill 0.4s $easeOut-1, transform 0.6s $easeOut-1;
+                }
+            }
+        }
+
+        @include hover {
+            &:hover {
+                &.button {
+                    &:before,
+                    &:after {
+                        animation: cutButtonTo 0.4s $easeOut-1 forwards;
+                    }
+    
+                    .button__wrapper {
+                        &:before,
+                        &:after {
+                            animation: cutButtonTo 0s $easeOut-1 0.4s forwards;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes buttonTo {
+    0% {
+        width: 16px;
+    }
+    100% {
+        width: calc(100% - 16px);
+    }
+}
+@keyframes buttonFrom {
+    0% {
+        width: calc(100% - 16px);
+    }
+    100% {
+        width: 16px;
+    }
+}
+//
+@keyframes cutButtonTo {
+    0% {
+        width: 8px;
+    }
+    100% {
+        width: calc(100% - 8px);
+    }
+}
+@keyframes cutButtonFrom {
+    0% {
+        width: calc(100% - 8px);
+    }
+    100% {
+        width: 8px;
+    }
+}
+
+// .button {
+//     cursor: pointer;
+//     outline: none;
+//     border: 1px solid transparent;
+//     background-color: transparent;
+//     // background-color: $blackTitle;
+    
+//     height: 48px;
+//     padding: 8px 16px;
+//     position: relative;
+    
+//     display: inline-flex;   // !!! needed for the link <a>
+//     justify-content: center;
+//     align-items: center;
+//     @include column-gap(12px);
+
+//     &:before {
+//         content: "";
+
+//         width: 16px; // calc(100% - 16px);
+//         height: 100%;
+
+//         border: 1px solid $orange;
+//         border-right: none;
+
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+
+//         transition: all 0.4s $easeOut-1;
+//     }
+
+//     &:after {
+//         content: "";
+
+//         width: 16px; // calc(100% - 16px);
+//         height: 100%;
+
+//         border: 1px solid $orange;
+//         border-left: none;
+
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+
+//         transition: all 0.4s $easeOut-1;
+//     }
+
+//     @include sm {
+//         width: 100%;
+//     }
+
+//     transition: all 0.4s $easeOut-1;
+//     @include hover {
+//         &:hover {
+//             &:before {
+//                 width: calc(100% - 16px);
+//             }
+//             &:after {
+//                 width: calc(100% - 16px);
+//             }
+//         }
+//     }
+    
+//     &__icon {
+//         img,
+//         svg {
+//             display: block;
+//             width: 16px;
+//             height: 16px;
+//         }
+//     }
+//     &__name {
+//         @include descriptionBoldFont();
+//         color: $white;
+//         letter-spacing: 0.04em;
+//         text-transform: uppercase;
+//         text-align: center;
+//     }
+// }
+//
+.socials-list {
+    display: flex;
+    align-items: center;
+    @include column-gap(24px);
+
+    &__item {
+        img,
+        svg {
+            display: block;
+            width: 24px;
+            height: 24px;
+            
+            transform-origin: center;
+            transition: transform 0.4s $easeOut-1;
+
+            path {
+                fill: $orange20;
+                transition: fill 0.25s $easeOut-1;
+            }
+        }
+
+        @include hover {
+            &:hover {
+                img,
+                svg {
+                    transform: scale(1.15);
+
+                    path {
+                        fill: $orange80;
+                    }
+                }
+            }
+        }
+    }
+}
+//
+.select {
+    background-color: transparent;
+
+    position: relative;
+    min-width: 240px;
+    height: 48px;
+    
+    &.select-active {
+        .select__select-box {
+            box-shadow: 0px 4px 20px rgba(112, 117, 132, 0.2);
+        }
+        .select__options-wrapper {
+            border-color: $grey40;
+        }
+        .select__selected {
+            border: 1px solid $grey;
+
+            &:after {
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+    }
+
+    &__select-box {
+        width: 100%;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        
+        transition: all 0.4s $easeOut-1;
+    }
+    
+    &__options-container {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        z-index: 2;
+
+        transition: all 0.4s $easeOut-1;
+        order: 1;
+    }
+    &__options-wrapper {
+        border: 1px solid transparent;
+        border-top: none;
+        background-color: $white;
+        padding: 8px;
+
+        display: flex;
+        flex-direction: column;
+
+        max-height: 184px; // 208px
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            display: block;
+            width: 2px;
+        }
+        &::-webkit-scrollbar-thumb {
+            width: 2px;
+            background-color: $orange;
+            border-radius: 20px;
+        }
+        &::-webkit-scrollbar-track {
+            width: 2px;
+            background-color: $grey20;
+            border-radius: 20px;
+        }
+    }
+    &__option {
+        cursor: pointer;
+        width: 100%;
+        padding: 8px;
+
+        transition: all 0.25s $easeOut-1;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $grey20;
+        }
+
+        &.disabled {
+            cursor: default;
+
+            .select__name {
+                color: $orange20;
+            }
+        }
+
+        &:not(.disabled) {
+            @include hover {
+                &:hover {
+                    .select__name {
+                        color: $grey100;
+                    }
+                }
+            }
+        }
+    }
+    &__name {
+        @include descriptionBoldFont();
+        color: $orange;
+
+        transition: all 0.25s $easeOut-1;
+    }
+
+    &__selected {
+        cursor: pointer;
+        border: 1px solid $grey40;
+        @include descriptionFont();
+        color: $blackMain;
+
+        height: 48px;
+        padding: 16px;
+
+        display: flex;
+        align-items: center;
+
+        z-index: 1;
+        position: relative;
+        order: 0;
+
+        transition: border 0.15s $easeOut-1;
+        
+        // arrow
+        &:after {
+            content: url('../img/svg/icon-tel-select.svg');
+
+            width: 16px;
+            height: 16px;
+
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            
+            transform: translateY(-50%);
+            transition: all 0.25s $easeOut-1;
+        }
+
+        // .select__name {
+        //     color: $orange40;
+        // }
+    }
+}
+.dropdown {
+    border-bottom: 1px solid $grey20;
+    width: 100%;
+
+    &.dropdown-active {
+        .dropdown__number {
+            color: $grey60;
+        }
+        .dropdown__title {
+            color: $grey100;
+        }
+        .dropdown__button {
+            .button {
+                &:before,
+                &:after {
+                    border-color: $grey60;
+                }
+
+                &__wrapper {
+                    &:before,
+                    &:after {
+                        border-color: $grey60;
+                    }
+                }
+                
+                &__icon {
+                    svg {
+                        path {
+                            fill: $orange;
+                            
+                            &:first-of-type {
+                                transform: rotate(270deg);
+                            }
+                            &:last-of-type {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+
+                @include hover {
+                    &:hover {
+                        background-color: $grey60;
+                    }
+                }
+            }
+        }
+    }
+    
+    &__header {
+        cursor: pointer;
+        padding: 40px 0;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 8fr) minmax(0, 1fr);
+        column-gap: 32px;
+
+        @include md {
+            padding: 24px 0;
+            column-gap: 24px;
+        }
+        @include sm {
+            padding: 16px 0;
+
+            display: flex;
+            @include column-gap(8px);
+            gap: 0;
+        }
+    }
+    &__number {
+        @include h5TitleAltFont();
+        font-weight: 400;
+        color: $orange;
+
+        transition: all 0.4s $easeOut-1;
+
+        @include md {
+            @include mediumAltFont();
+        }
+        @include sm {
+            @include descriptionFont();
+        }
+    }
+    &__title {
+        @include h4TitleFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        transition: all 0.4s $easeOut-1;
+
+        @include md {
+            @include h5TitleFont();
+        }
+        @include sm {
+            font-size: 14px;
+        }
+    }
+    &__button {
+        justify-self: end;
+
+        @include sm {
+            margin-left: auto;
+        }
+    }
+
+    &__content {
+        height: 0;
+        overflow: hidden;
+
+        transition: all 0.5s $easeOut-1;
+    }
+    &__wrapper {
+        padding-bottom: 40px;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 8fr) minmax(0, 1fr);
+        column-gap: 32px;
+
+        @include md {
+            column-gap: 24px;
+        }
+        @include sm {
+            display: block;
+            padding-bottom: 32px;
+        }
+
+        & > * {
+            grid-column: 2 / -2;
+        }
+    }
+    &__description {
+        @include averageFont();
+        color: $grey;
+
+        .description {
+            border-color: $orange40;
+
+            @include sm {
+                border-left: none;
+                padding-left: 0; 
+            }
+        }
+
+        @include sm {
+            @include descriptionFont();
+        }
+    }
+}
+.c-dropdown {
+    width: 100%;
+
+    &.c-dropdown-active {
+        .c-dropdown__header {
+            background-color: $grey20;
+        }
+        .c-dropdown__title {
+            color: $grey100;
+        }
+        .c-dropdown__icon {
+            transform: rotate(180deg);
+        }
+    }
+    
+    &__header {
+        cursor: pointer;
+        background-color: $greyVip;
+        padding: 24px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include column-gap(32px);
+
+        transition: all 0.4s $easeOut-1;
+
+        @include sm {
+            padding: 16px;
+            @include column-gap(16px);
+        }
+    }
+    &__title {
+        @include mediumBoldAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        transition: all 0.4s $easeOut-1;
+
+        @include sm {
+            @include descriptionBoldFont();
+        }
+    }
+    &__icon {
+        transition: transform 0.4s $easeOut-1;
+
+        img,
+        svg {
+            display: block;
+            width: 24px;
+            height: 24px;
+
+            @include sm {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+    &__content {
+        height: 0;
+        overflow: hidden;
+
+        transition: all 0.5s $easeOut-1;
+    }
+    &__wrapper {
+        padding-top: 16px;
+
+        @include sm {
+            padding-top: 8px;
+        }
+    }
+    &__list {
+        @include row-gap(8px);
+    }
+}
+//
+// image [using object-fit]
+.image {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: auto;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+        
+        transition: all 0.6s $easeInOut;
+    }
+
+    &--cover {
+        img {
+            object-fit: cover;
+        }
+    }
+    &--h100 {
+        height: 100%;
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    // for the darken effect on hover
+    &__overlay {
+        background-color: $overlayTransparent;
+    
+        width: 100%;
+        height: 100%;
+    
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        transition: all 0.6s $easeInOut;
+    }
+    
+    // for the reveal effect on scroll + content load
+    &__revealer {
+        background-color: $white;
+
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        transition: transform 1.5s $easeOut-1; // ease
+    }
+
+    &._reveal {
+        &.reveal-active {
+            .image__revealer {
+                transform: translate(100%, 0%);
+            }
+        }
+    }
+}
+// aspect ratio image [using padding-top:%]
+.ar-image {
+    // default [horyzontal] aspect ratio is 3:2 ~ 2/3 = 66.667%
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    padding-top: 66.667%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        
+        transition: all 0.6s $easeInOut;
+    }
+
+    // [square] aspect ratio is 1:1 ~ 1/1 = 100%
+    &--square {
+        padding-top: 100%;
+    }
+    // [vertical] aspect ratio is 2:3 ~ 3/2 = 133.333%
+    &--vert {
+        padding-top: 133.333%;
+    }
+    // [HD] aspect ratio is 16:9 ~ 9/16 = 56.25%
+    &--hd {
+        padding-top: 56.25%;
+    }
+    // 100% of the available height
+    &--h100 {
+        height: 100%;
+    }
+
+    // for the darken effect on hover
+    &__overlay {
+        background-color: $overlayTransparent;
+    
+        width: 100%;
+        height: 100%;
+    
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        transition: all 0.6s $easeInOut;
+    }
+    
+    // for the reveal effect on scroll + content load
+    &__revealer {
+        background-color: $white;
+
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        transition: transform 1.5s $easeOut-1; // ease
+    }
+
+    &._reveal {
+        &.reveal-active {
+            .ar-image__revealer {
+                transform: translate(100%, 0%);
+            }
+        }
+    }
+}
+//
+.video {
+    position: relative;
+    padding-top: 56.25%;
+
+    @include hover {
+        &:hover {
+            .video__icon-hover {
+                transform: scale(0.85);
+            }
+        }
+    }
+
+    &__video {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    &__caption {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.4);
+        
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto 1fr;
+        justify-items: center;
+        row-gap: 24px;
+        
+        opacity: 1;
+        transition: opacity 1s $easeOut;
+        &.hide-video-caption {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+    &__poster {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        &:after {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.2);
+            
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    }
+    &__title {
+        @include h2TitleFont();
+        color: $white;
+        text-align: center;
+
+        width: 50%;
+        margin-top: 120px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+
+        position: relative;
+
+        // @include md {
+        @include lg {
+            font-family: 'Rubik', sans-serif;
+            font-size: 40px;
+            line-height: 100%;
+            font-weight: 500;
+        
+            width: 90%;
+            margin-top: 40px;
+        }
+        @include sm {
+            display: none;
+        }
+    }
+    &__icon {
+        grid-row: 2 / -2;
+        margin-bottom: auto;
+        position: relative;
+
+        img, 
+        svg {
+            display: block;
+            width: 72px;
+            height: 72px;
+        }
+    }
+    &__icon-hover {
+        transform-origin: center;
+        transition: transform 0.5s $easeOut;
+    }
+}
+//
+.storage {
+    &__block {
+        display: none;//--switch
+    }
+    &__item {
+        & > * {
+            height: 100%;
+        }
+    }
+}
+//
+// reveals
+[data-reveal="txt"] {
+    opacity: 0;
+    transform: translateY(50px) scaleY(1.05); // scaleY(1.1);
+    // transition: opacity 1s ease, transform 1s ease;//-show-body
+
+    &.reveal-active {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+[data-reveal="elem"] {
+    opacity: 0;
+    // transition: opacity 1s ease;//-show-body
+
+    &.reveal-active {
+        opacity: 1;
+    }
+}
+[data-reveal="img"] {
+    opacity: 0;
+    transform: translateY(100px);
+    // transition: opacity 1s ease, transform 1s ease;//-show-body
+    
+    &.reveal-active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+// [data-reveal="title"] {
+//     opacity: 0;
+//     transform: translateY(50px) scaleY(1.25); // scaleY(1.1);
+//     transition: opacity 1s ease, transform 1s ease;//-show-body
+
+//     &.reveal-active {
+//         opacity: 1;
+//         transform: translateY(0) scaleY(1);
+//     }
+// }

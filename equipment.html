@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preload" href="./fonts/Cormorant/Cormorant-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/Cormorant/Cormorant-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/Cormorant/Cormorant-Italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/Cormorant/Cormorant-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/OpenSansHebrew/OpenSansHebrew-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/OpenSansHebrew/OpenSansHebrew-Italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/OpenSansHebrew/OpenSansHebrew-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="icon" href="./img/favicon/16x16.png" type="image/x-icon" sizes="16x16">
+    <link rel="icon" href="./img/favicon/32x32.png" type="image/x-icon" sizes="32x32">
+    <link rel="icon" href="./img/favicon/512x512.png" type="image/x-icon" sizes="512x512">
+    
+    <script defer src="/js/libs/lottie/lottie.min.js"></script>
+
+    <style>
+        .preloader-wrapper {
+            background-color: #181A1B;
+
+            width: 100%;
+            height: 100vh;
+            z-index: 100;
+
+            position: fixed;
+            top: 0; 
+            left: 0;
+            overflow: hidden;
+
+            transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        .preloader {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+        }
+        @media (max-width: 767.5px) {
+            .preloader {
+                transform: scale(2);
+            }
+        }
+        #preloader {
+            width: auto;
+            height: auto;
+        }
+        .bg-color-fade {
+            transform: translateY(-100%);
+            pointer-events: none;
+        }
+        .body-hidden {
+            overflow: hidden;     
+        }
+    </style>
+    
+    <script defer src="/js/preloader.js"></script>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <title>Equipment</title>
+</head>
+<body class="body-hidden">
+    <div class="preloader-wrapper">
+        <div class="preloader">
+            <div id="preloader"></div>
+        </div>
+    </div>
+    
+    <div class="body-wrapper">
+        <header class="header lock-padding">
+            <nav class="navbar" data-reveal="elem">
+                <div class="navbar__wrapper block-wrapper">
+                    <div class="navbar__burger">
+                        <div class="burger">
+                            <img src="/img/svg/burger.svg" data-inline-svg alt="">
+                        </div>
+                    </div>
+                    <ul class="navbar__navlist">
+                        <li class="navbar__navitem">
+                            <a href="/index.html">Homepage</a>
+                        </li>
+                        <li class="navbar__navitem">
+                            <a href="/check-up-packs.html">Check-Up packs</a>
+                        </li>
+                        <li class="navbar__navitem">
+                            <a href="/services.html">Services</a>
+                        </li>
+                        <li class="navbar__navitem">
+                            <a href="/about.html">About us</a>
+                        </li>
+                        <li class="navbar__navitem">
+                            <a href="/contacts.html">Contacts</a>
+                        </li>
+                    </ul>
+                    <div class="navbar__tel-select">
+                        <div class="tel-select">
+                            <div class="tel-select__select-box">
+                                <div class="tel-select__options-container">
+                                    <div class="tel-select__options-wrapper">
+                                        
+                                        <div class="tel-select__option">
+                                            <div class="tel-select__item">
+                                                <div class="tel">
+                                                    <span class="tel__icon">
+                                                        <img src="/img/svg/icon-tel.svg" alt="">
+                                                    </span>
+                                                    <span class="tel__num">
+                                                        <a href="tel:485562332333">48 556 23 32 333</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tel-select__option">
+                                            <div class="tel-select__item">
+                                                <div class="tel">
+                                                    <span class="tel__icon">
+                                                        <img src="/img/svg/icon-tel.svg" alt="">
+                                                    </span>
+                                                    <span class="tel__num">
+                                                        <a href="tel:485562332111">48 556 23 32 111</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="tel-select__option">
+                                            <div class="tel-select__item">
+                                                <div class="tel">
+                                                    <span class="tel__icon">
+                                                        <img src="/img/svg/icon-tel.svg" alt="">
+                                                    </span>
+                                                    <span class="tel__num">
+                                                        <a href="tel:485562332222">48 556 23 32 222</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tel-select__selected">
+                                    <div class="tel">
+                                        <span class="tel__icon">
+                                            <img src="/img/svg/icon-tel.svg" alt="">
+                                        </span>
+                                        <span class="tel__num">
+                                            <a href="tel:485562332000">48 556 23 32 000</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="navbar__button-box">
+                        <div class="navbar__button">
+                            <a href="#" class="button button--white" target="_blank">
+                                <div class="button__wrapper">
+                                    <span class="button__icon">
+                                        <img src="/img/svg/icon-button-login.svg" data-inline-svg alt="">
+                                    </span>
+                                    <span class="button__name">Log in</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="navbar__button navbar__button_contact">
+                            <button class="button button--glass" data-popup-button="contact">
+                                <div class="button__wrapper">
+                                    <span class="button__name">Contact us</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar__menu menu bg bg--light">
+                    <div class="menu__wrapper block-wrapper">
+                        <div class="menu__content">
+                            <ul class="menu__list">
+                                <li class="menu__list-item">
+                                    <span>01.</span>
+                                    <div>
+                                        <a href="/doctors.html" data-menu-bg-button="1">
+                                            <span>
+                                                <img src="/img/svg/icon-arrow-menu-item.svg" data-inline-svg alt="">
+                                            </span>
+                                            <span>Doctors</span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="menu__list-item">
+                                    <span>02.</span>
+                                    <div>
+                                        <a href="/review.html" data-menu-bg-button="2">
+                                            <span>
+                                                <img src="/img/svg/icon-arrow-menu-item.svg" data-inline-svg alt="">
+                                            </span>
+                                            <span>Reviews</span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="menu__list-item">
+                                    <span>03.</span>
+                                    <div>
+                                        <a href="/equipment.html" data-menu-bg-button="3">
+                                            <span>
+                                                <img src="/img/svg/icon-arrow-menu-item.svg" data-inline-svg alt="">
+                                            </span>
+                                            <span>Equipment</span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="menu__list-item">
+                                    <span>04.</span>
+                                    <div>
+                                        <a href="/blog.html" data-menu-bg-button="4">
+                                            <span>
+                                                <img src="/img/svg/icon-arrow-menu-item.svg" data-inline-svg alt="">
+                                            </span>
+                                            <span>Blog</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="menu__block">
+                                <div class="menu__lang-select">
+                                    <div class="lang-select">
+                                        <div class="lang-select__select-box">
+                                            <div class="lang-select__options-container">
+                                                <div class="lang-select__options-wrapper">
+                                                    
+                                                    <a class="lang-select__option" href="#">
+                                                        <div class="lang-select__item">
+                                                            <div class="lang-item">
+                                                                <span class="lang-item__name">PL</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                            <div class="lang-select__selected">
+                                                <div class="lang-item">
+                                                    <span class="lang-item__name">EN</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu__contact-item">
+                                    <div class="contact-item contact-item--menu">
+                                        <div class="contact-item__title-box">
+                                            <div class="contact-item__title">A single line for all patients in Ukraine</div>
+                                            <div class="contact-item__title">Mon-Sat: 09:00-20:00</div>
+                                        </div>
+                                        <div class="contact-item__value">
+                                            <a href="tel:+380442814208">+380 44 281 4208</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu__contact-item">
+                                    <div class="contact-item contact-item--menu">
+                                        <div class="contact-item__title-box">
+                                            <div class="contact-item__title">Our E-mail</div>
+                                        </div>
+                                        <div class="contact-item__value">
+                                            <a href="mailto:service@4dnostics.com">service@4dnostics.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu__contact-item">
+                                    <div class="contact-item contact-item--menu">
+                                        <div class="contact-item__title-box">
+                                            <div class="contact-item__title">Social networks and messengers</div>
+                                        </div>
+                                        <div class="contact-item__socials-list">
+                                            <ul class="socials-list">
+                                                <li class="socials-list__item">
+                                                    <a href="https://www.instagram.com" target="_blank" rel="nofollow">
+                                                        <img src="/img/svg/social-contact-instagram.svg" data-inline-svg alt="">
+                                                    </a>
+                                                </li>
+                                                <li class="socials-list__item">
+                                                    <a href="https://desktop.telegram.org" target="_blank" rel="nofollow">
+                                                        <img src="/img/svg/social-contact-telegram.svg" data-inline-svg alt="">
+                                                    </a>
+                                                </li>
+                                                <li class="socials-list__item">
+                                                    <a href="https://facebook.com" target="_blank" rel="nofollow">
+                                                        <img src="/img/svg/social-contact-facebook.svg" data-inline-svg alt="">
+                                                    </a>
+                                                </li>
+                                                <li class="socials-list__item">
+                                                    <a href="https://www.youtube.com" target="_blank" rel="nofollow">
+                                                        <img src="/img/svg/social-contact-youtube.svg" data-inline-svg alt="">
+                                                    </a>
+                                                </li>
+                                                <li class="socials-list__item">
+                                                    <a href="https://viber.com" target="_blank" rel="nofollow">
+                                                        <img src="/img/svg/social-contact-viber.svg" data-inline-svg alt="">
+                                                    </a>
+                                                </li>
+                                                <li class="socials-list__item">
+                                                    <a href="https://www.whatsapp.com" target="_blank" rel="nofollow">
+                                                        <img src="/img/svg/social-contact-whatsapp.svg" data-inline-svg alt="">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu__contact-item">
+                                    <div class="contact-item contact-item--menu">
+                                        <div class="contact-item__title-box">
+                                            <div class="contact-item__title">Our location</div>
+                                        </div>
+                                        <div class="contact-item__value">BC PARUS, Mechnikova street, 2. On the 4th floor.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu__mob-content">
+                            <ul class="menu__list">
+                                <li class="menu__list-item">
+                                    <span>01.</span>
+                                    <a href="/index.html">
+                                        <span>Homepage</span>
+                                    </a>
+                                </li>
+                                <li class="menu__list-item">
+                                    <span>02.</span>
+                                    <a href="/check-up-packs.html">
+                                        <span>Check-up packs</span>
+                                    </a>
+                                </li>
+                                <li class="menu__list-item">
+                                    <span>03.</span>
+                                    <a href="/services.html">
+                                        <span>Services</span>
+                                    </a>
+                                </li>
+                                <li class="menu__list-item">
+                                    <span>04.</span>
+                                    <a href="/about.html">
+                                        <span>About us</span>
+                                    </a>
+                                </li>
+                                <li class="menu__list-item">
+                                    <span>05.</span>
+                                    <a href="/contacts.html">
+                                        <span>Contacts</span>
+                                    </a>
+                                </li>
+                                <li class="menu__list-item">
+                                    <span>06.</span>
+                                    <a href="/doctors.html">
+                                        <span>Doctors</span>
+                                    </a>
+                                </li>
+                                <li class="menu__list-item">
+                                    <span>07.</span>
+                                    <a href="/review.html">
+                                        <span>Reviews</span>
+                                    </a>
+                                </li>
+                                <li class="menu__list-item">
+                                    <span>08.</span>
+                                    <a href="/equipment.html">
+                                        <span>Equipment</span>
+                                    </a>
+                                </li>
+                                <li class="menu__list-item">
+                                    <span>09.</span>
+                                    <a href="/blog.html">
+                                        <span>Blog</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="menu__button">
+                                <a href="#" class="button button--alt">
+                                    <div class="button__wrapper">
+                                        <span class="button__icon">
+                                            <img src="/img/svg/icon-button-login.svg" data-inline-svg alt="">
+                                        </span>
+                                        <span class="button__name">Log in</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="menu__block">
+                                <div class="menu__contact-item">
+                                    <div class="contact-item contact-item--menu">
+                                        <div class="contact-item__title-box">
+                                            <div class="contact-item__title">A single line for all patients in Ukraine</div>
+                                            <div class="contact-item__title">Mon-Sat: 09:00-20:00</div>
+                                        </div>
+                                        <div class="contact-item__value">
+                                            <a href="tel:+380442814208">+380 44 281 4208</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu__contact-item">
+                                    <div class="contact-item contact-item--menu">
+                                        <div class="contact-item__title-box">
+                                            <div class="contact-item__title">Our E-mail</div>
+                                        </div>
+                                        <div class="contact-item__value">
+                                            <a href="mailto:service@4dnostics.com">service@4dnostics.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="menu__contact-item">
+                                    <div class="contact-item contact-item--menu">
+                                        <div class="contact-item__title-box">
+                                            <div class="contact-item__title">Social networks and messengers</div>
+                                        </div>
+                                        <div class="contact-item__socials-list">
+                                            <ul class="socials-list">
+                                                <li class="socials-list__item">
+                                                    <a href="https://www.instagram.com" target="_blank" rel="nofollow">
+                                                        <img src="/img/svg/social-contact-instagram.svg" data-inline-svg alt="">
+                                                    </a>
+                                                </li>
+                                                <li class="socials-list__item">
+                                                    <a href="https://desktop.telegram.org" target="_blank" rel="nofollow">
+                                                        <img src="/img/svg/social-contact-telegram.svg" data-inline-svg alt="">
+                                                    </a>
+                                                </li>
+                                                <li class="socials-list__item">
+                                                    <a href="https://facebook.com" target="_blank" rel="nofollow">
+                                                        <img src="/img/svg/social-contact-facebook.svg" data-inline-svg alt="">
+                                                    </a>
+                                                </li>
+                                                <li class="socials-list__item">
+                                                    <a href="https://www.youtube.com" target="_blank" rel="nofollow">
+                                                        <img src="/img/svg/social-contact-youtube.svg" data-inline-svg alt="">
+                                                    </a>
+                                                </li>
+                                                <li class="socials-list__item">
+                                                    <a href="https://viber.com" target="_blank" rel="nofollow">
+                                                        <img src="/img/svg/social-contact-viber.svg" data-inline-svg alt="">
+                                                    </a>
+                                                </li>
+                                                <li class="socials-list__item">
+                                                    <a href="https://www.whatsapp.com" target="_blank" rel="nofollow">
+                                                        <img src="/img/svg/social-contact-whatsapp.svg" data-inline-svg alt="">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu__bg">
+                        <div class="menu__image-box">
+                            <div class="menu__image" data-menu-bg-target="1">
+                                <div class="image image--h100">
+                                    <img src="/img/images/menu-1.jpg" loading="lazy" decoding="async" alt="">
+                                </div>
+                            </div>
+                            <div class="menu__image" data-menu-bg-target="2">
+                                <div class="image image--h100">
+                                    <img src="/img/images/menu-2.jpg" loading="lazy" decoding="async" alt="">
+                                </div>
+                            </div>
+                            <div class="menu__image" data-menu-bg-target="3">
+                                <div class="image image--h100">
+                                    <img src="/img/images/menu-3.jpg" loading="lazy" decoding="async" alt="">
+                                </div>
+                            </div>
+                            <div class="menu__image" data-menu-bg-target="4">
+                                <div class="image image--h100">
+                                    <img src="/img/images/menu-4.jpg" loading="lazy" decoding="async" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section class="sub-head">
+            <div class="sub-head__bg" data-reveal="elem">
+                <div class="image image--h100">
+                    <img src="/img/images/bg-11.jpg" loading="lazy" decoding="async" alt="">
+                </div>
+            </div>
+            <div class="sub-head__wrapper block-wrapper">
+                <div class="sub-head__breadcrumbs" data-reveal="txt">
+                    <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                        <li class="breadcrumb__item" itemscope itemtype="http://schema.org/ListItem">
+                            <a class="breadcrumb__link" itemprop="item" href="/index.html">
+                                <span class="breadcrumb__name" itemprop="name">Homepage</span>
+                            </a>
+                            <meta itemprop="position" content="1"/>
+                        </li>
+                        <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <span class="breadcrumb__cur breadcrumb__name" itemprop="name">Equipment</span>
+                            <meta itemprop="position" content="2"/>
+                        </li>
+                    </ul>
+                </div>
+                <h1 class="sub-head__title" data-reveal="txt">Equipment</h1>
+                <div class="sub-head__feat-box" data-reveal="img">
+                    <div class="sub-head__feat-item">
+                        <div class="sub-head__feat-name">Innovation</div>
+                        <div class="sub-head__feat-icon">
+                            <img src="/img/svg/feat-head-icon-1.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="sub-head__feat-item">
+                        <div class="sub-head__feat-name">Health</div>
+                        <div class="sub-head__feat-icon">
+                            <img src="/img/svg/feat-head-icon-2.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="sub-head__feat-item">
+                        <div class="sub-head__feat-name">Check-up</div>
+                        <div class="sub-head__feat-icon">
+                            <img src="/img/svg/feat-head-icon-3.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <main class="main">
+            <section class="article-container bg bg--light">
+                <div class="article-container__wrapper block-wrapper">
+                    <div class="article-container__article" data-reveal="img">
+                        <article class="article">
+                            <section>
+                                <img src="/img/images/bg-3.jpg" loading="lazy" decoding="async" alt="">
+                                <h5>We openly show all the reviews that our patients leave us.</h5>
+                                <div>
+                                    <p>As a general practitioner, I have a broad outlook. I carry out primary diagnostics of various diseases, including heart diseases, diseases of the digestive system, respiratory organs and kidney diseases. If necessary, I involve narrow specialists in the examination of a patient and ensure continuity between specialists. As a general practitioner, I have a broad outlook. I carry out primary diagnostics of various diseases, including heart diseases, diseases of the digestive system, respiratory organs and kidney diseases. If necessary, I involve narrow specialists in the examination of a patient and ensure continuity between specialists.</p>
+                                    <p>As a general practitioner, I have a broad outlook. I carry out primary diagnostics of various diseases, including heart diseases, diseases of the digestive system, respiratory organs and kidney diseases. If necessary, of the digestive system, respiratory organs and kidney diseases. If necessary, </p>
+                                </div>
+                                <img src="/img/images/bg-11.jpg" loading="lazy" decoding="async" alt="">
+                                <h5>We openly show all the reviews that our patients leave us.</h5>
+                                <div>
+                                    <p>As a general practitioner, I have a broad outlook. I carry out primary diagnostics of various diseases, including heart diseases, diseases of the digestive system, respiratory organs and kidney diseases. If necessary, I involve narrow specialists in the examination of a patient and ensure continuity between specialists.As a general practitioner, I have a broad outlook. I carry out primary diagnostics of various diseases, including heart diseases, diseases of the digestive system, respiratory organs and kidney diseases. If necessary, I involve narrow specialists in the examination of a patient and ensure continuity between specialists.As a general practitioner, I have a broad outlook. I carry out primary diagnostics of various diseases, including heart diseases, diseases of the digestive system, respiratory organs and kidney diseases. If necessary, I involve narrow specialists in the examination of a patient and ensure continuity between specialists.</p>
+                                </div>
+                            </section>
+                            <section>
+                                <img src="/img/images/bg-7.jpg" loading="lazy" decoding="async" alt="">
+                                <h5>We openly show all the reviews that our patients leave us.</h5>
+                                <div>
+                                    <p>As a general practitioner, I have a broad outlook. I carry out primary diagnostics of various diseases, including heart diseases, diseases of the digestive system, respiratory organs and kidney diseases. If necessary, I involve narrow specialists in the examination of a patient and ensure continuity between specialists.</p>
+                                </div>
+                                <img src="/img/images/bg-6.jpg" loading="lazy" decoding="async" alt="">
+                                <h5>We openly show all the reviews that our patients leave us.</h5>
+                                <div>
+                                    <p>As a general practitioner, I have a broad outlook. I carry out primary diagnostics of various diseases, including heart diseases, diseases of the digestive system, respiratory organs and kidney diseases. If necessary, I involve narrow specialists in the examination of a patient and ensure continuity between specialists.</p>
+                                </div>
+                            </section>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slider-container bg bg--light">
+                <div class="slider-container__wrapper block-wrapper">
+                    <div class="slider-container__slider-box" data-reveal="img">
+                        <div class="slider-container__slider">
+                            <div class="image-slider swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="image-slide">
+                                            <div class="image-slide__image">
+                                                <div class="ar-image">
+                                                    <img src="/img/images/bg-1.jpg" loading="lazy" decoding="async" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image-slide">
+                                            <div class="image-slide__image">
+                                                <div class="ar-image">
+                                                    <img src="/img/images/bg-2.jpg" loading="lazy" decoding="async" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image-slide">
+                                            <div class="image-slide__image">
+                                                <div class="ar-image">
+                                                    <img src="/img/images/bg-3.jpg" loading="lazy" decoding="async" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image-slide">
+                                            <div class="image-slide__image">
+                                                <div class="ar-image">
+                                                    <img src="/img/images/bg-4.jpg" loading="lazy" decoding="async" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image-slide">
+                                            <div class="image-slide__image">
+                                                <div class="ar-image">
+                                                    <img src="/img/images/bg-5.jpg" loading="lazy" decoding="async" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image-slide">
+                                            <div class="image-slide__image">
+                                                <div class="ar-image">
+                                                    <img src="/img/images/bg-6.jpg" loading="lazy" decoding="async" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image-slide">
+                                            <div class="image-slide__image">
+                                                <div class="ar-image">
+                                                    <img src="/img/images/bg-7.jpg" loading="lazy" decoding="async" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image-slide">
+                                            <div class="image-slide__image">
+                                                <div class="ar-image">
+                                                    <img src="/img/images/bg-8.jpg" loading="lazy" decoding="async" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-container__arrow-box">
+                            <div class="arrow-box arrow-box--dark">
+                                <div class="arrow-box__arrow arrow-box__arrow_prev image-slider-arrow-prev">
+                                    <div class="arrow">
+                                        <div class="arrow__wrapper">
+                                            <span class="arrow__icon">
+                                                <img src="/img/svg/icon-arrow-slider-prev.svg" data-inline-svg alt="">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="arrow-box__fraction">
+                                    <div class="slider-fraction image-slider-fraction">
+                                        <span class="slider-fraction__current image-slider-fraction__current">0</span>
+                                        <span>/</span>
+                                        <span class="slider-fraction__total image-slider-fraction__total">0</span>
+                                    </div>
+                                </div>
+                                <div class="arrow-box__arrow arrow-box__arrow_next image-slider-arrow-next">
+                                    <div class="arrow">
+                                        <div class="arrow__wrapper">
+                                            <span class="arrow__icon">
+                                                <img src="/img/svg/icon-arrow-slider-next.svg" data-inline-svg alt="">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cut-container bg bg--light">
+                <div class="cut-container__wrapper block-wrapper">
+                    <h2 class="cut-container__title">
+                        <span>Your <span class="orange"><i>one-stoped</i></span></span>
+                    </h2>
+                    <h2 class="cut-container__title">
+                        <span>Advanced</span>
+                    </h2>
+                    <h2 class="cut-container__title">
+                        <span>Health</span>
+                    </h2>
+                    <h2 class="cut-container__title">
+                        <span>Check-up</span>
+                    </h2>
+                </div>
+            </section>
+
+            <section class="seo-container">
+                <div class="seo-container__wrapper block-wrapper">
+                    <h2 class="seo-container__title" data-reveal="txt"><i>SEO Text</i></h2>
+                    <div class="seo-container__block caption" data-scroll-box="seo" data-reveal="img">
+                        <div class="seo-container__description caption__inner">
+                            <p>Often our patients have clarifying questions. It's okay - we love questions, we want to hear them. Call us. Often our patients have clarifying questions. It's okay - we love questions, we want to hear them. Call us. Often our patients have clarifying questions. It's okay - we love questions, we want to hear them. Call us:</p>
+                            <p>Often our patients have clarifying questions. It's okay - we love questions, we want to hear them. Call us. Often our patients have clarifying questions. It's okay - we love questions, we want to hear them. Call us. Often our patients have clarifying questions. It's okay - we love questions, we want to hear them. Call us:</p>
+                            <p>Often our patients have clarifying questions. It's okay - we love questions, we want to hear them. Call us. Often our patients have clarifying questions. It's okay - we love questions, we want to hear them. Call us. Often our patients have clarifying questions. It's okay - we love questions, we want to hear them. Call us:</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__wrapper block-wrapper" data-reveal="elem">
+                <div class="footer__content">
+                    <div class="footer__block">
+                        <div class="footer__logo">
+                            <a href="/index.html">
+                                <img src="/img/svg/logo-sm.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__block">
+                        <div class="footer__description">
+                            <div class="description">
+                                <p>Any use or copying of materials or a selection of materials from the site is allowed only with the permission of the copyright holder and only with reference to the source</p>
+                            </div>
+                        </div>
+                        <div class="footer__icon-box">
+                            <div class="footer__icon">
+                                <img src="/img/svg/icon-visa.svg" alt="">
+                            </div>
+                            <div class="footer__icon">
+                                <img src="/img/svg/icon-master-card.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__block">
+                        <ul class="footer__sublist">
+                            <li class="footer__subitem">
+                                <a href="/privacy-policy.html">Cookie Policy</a>
+                            </li>
+                            <li class="footer__subitem">
+                                <a href="/privacy-policy.html">Public offer</a>
+                            </li>
+                            <li class="footer__subitem">
+                                <a href="/privacy-policy.html">Legal details of the company</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__block">
+                        <ul class="footer__navlist">
+                            <li class="footer__navitem">
+                                <a href="/index.html">Homepage</a>
+                            </li>
+                            <li class="footer__navitem">
+                                <a href="/contacts.html">Contacts</a>
+                            </li>
+                            <li class="footer__navitem">
+                                <a href="/check-up-packs.html">Check-up packages</a>
+                            </li>
+                            <li class="footer__navitem">
+                                <a href="/doctors.html">Doctors</a>
+                            </li>
+                            <li class="footer__navitem">
+                                <a href="/review.html">Reviews</a>
+                            </li>
+                            <li class="footer__navitem">
+                                <a href="/about.html">About us</a>
+                            </li>
+                            <li class="footer__navitem">
+                                <a href="/blog.html">Blog</a>
+                            </li>
+                            <li class="footer__navitem">
+                                <a href="/services.html">Services</a>
+                            </li>
+                            <li class="footer__navitem">
+                                <a href="/equipment.html">Equipment</a>
+                            </li>
+                            <li class="footer__navitem">
+                                <a href="#">My account</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__block">
+                        <h3 class="footer__subtitle">Location</h3>
+                        <h4 class="footer__subheading">Our location</h4>
+                        <ul class="footer__address-list">
+                            <li class="footer__address-item">BC PARUS, Mechnikova street, 2. On the 4th floor.</li>
+                            <li class="footer__address-item">BC PARUS, Mechnikova street, 2. On the 4th floor.</li>
+                            <li class="footer__address-item">BC PARUS, Mechnikova street, 2. On the 4th floor.</li>
+                        </ul>
+                    </div>
+                    <div class="footer__block">
+                        <h3 class="footer__subtitle">Contact us</h3>
+                        <div class="footer__contact-list">
+                            <h4 class="footer__subheading">Phone number</h4>
+                            <div class="footer__contact-item">
+                                <a href="tel:+380442814208">+380 44 281 4208</a>
+                            </div>
+                        </div>
+                        <div class="footer__contact-list">
+                            <h4 class="footer__subheading">Email</h4>
+                            <div class="footer__contact-item">
+                                <a href="mailto:service@4Dnost.com">service@4Dnost.com</a>
+                            </div>
+                        </div>
+                        <div class="footer__socials-list">
+                            <h4 class="footer__subheading">Social networks</h4>
+                            <ul class="socials-list">
+                                <li class="socials-list__item">
+                                    <a href="https://www.instagram.com" target="_blank" rel="nofollow">
+                                        <img src="/img/svg/social-instagram.svg" data-inline-svg alt="">
+                                    </a>
+                                </li>
+                                <li class="socials-list__item">
+                                    <a href="https://desktop.telegram.org" target="_blank" rel="nofollow">
+                                        <img src="/img/svg/social-telegram.svg" data-inline-svg alt="">
+                                    </a>
+                                </li>
+                                <li class="socials-list__item">
+                                    <a href="https://facebook.com" target="_blank" rel="nofollow">
+                                        <img src="/img/svg/social-facebook.svg" data-inline-svg alt="">
+                                    </a>
+                                </li>
+                                <li class="socials-list__item">
+                                    <a href="https://www.youtube.com" target="_blank" rel="nofollow">
+                                        <img src="/img/svg/social-youtube.svg" data-inline-svg alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__copyright copyright">
+                    <div class="copyright__wrapper">
+                        <div class="copyright__description">©4DNOSTIC</div>
+                        <div class="copyright__link">
+                            <a href="/privacy-policy.html">Privacy policy</a>
+                        </div>
+                        <div class="copyright__increate">
+                            <span>by:</span>
+                            <a href="https://in-create.com/" target="_blank" rel="nofollow">
+                                <img src="/img/svg/increate.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        
+        <div class="popup popup--contact" data-popup-target="contact">
+            <div class="popup__wrapper block-wrapper">
+                <div class="popup__content">
+                    <div class="popup__cross-box">
+                        <div class="popup__cross" data-popup-close>
+                            <img src="./img/svg/icon-popup-cross.svg" alt="">
+                        </div>
+                    </div>
+                    <h2 class="popup__title">Contact us</h2>
+                    <div class="popup__main">
+                        <div class="popup__contact contact-popup">
+                            <div class="contact-popup__form">
+                                <form action="#" class="form form--contact-popup" novalidate>
+                                    <div class="form__input">
+                                        <div class="form-input" data-input="name">
+                                            <label>Name</label>
+                                            <input class="_required" type="text">
+                                            <div class="failure">
+                                                <span class="failure__text">*Required field</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__input">
+                                        <div class="form-input" data-input="name">
+                                            <label>Surname</label>
+                                            <input class="_required" type="text">
+                                            <div class="failure">
+                                                <span class="failure__text">*Required field</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__input">
+                                        <div class="form-input" data-input="tel">
+                                            <label>Phone number</label>
+                                            <input class="_tel _required" type="tel">
+                                            <div class="failure">
+                                                <span class="failure__text">*Required field</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__input">
+                                        <div class="form-input" data-input="email">
+                                            <label>E-mail</label>
+                                            <input class="_email _required" type="email">
+                                            <div class="failure">
+                                                <span class="failure__text">*Required field</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__checkbox">
+                                        <label class="checkbox">
+                                            <span class="checkbox__name">
+                                                By submitting data, I agree to the processing of personal data, to send newsletters and calls  
+                                            </span>
+                                            <input class="checkbox__box _checkbox _required" type="checkbox" checked>
+                                            <span class="checkbox__mark"></span>
+                                        </label>
+                                    </div>
+                                    <div class="form__button">
+                                        <button class="button button--alt" type="submit">
+                                            <div class="button__wrapper">
+                                                <span class="button__name">Send</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="contact-popup__info">
+                                <div class="contact-popup__image">
+                                    <div class="image image--h100">
+                                        <img src="img/images/bg-4.jpg" loading="lazy" decoding="async" alt="">
+                                    </div>
+                                </div>
+                                <div class="contact-popup__description">
+                                    <p>We are in touch</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- scripts -->
+    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+    <script>
+        let messageEmpty = "*Required field",
+            messageIncorrect = "*Incorrect data"
+    </script>
+    <script defer src="/js/libs/inline_svg.js"></script>
+    <script defer src="/js/libs/swiper-bundle.min.js"></script>
+    <script defer src="/js/libs/gsap/gsap.min.js"></script>
+    <script defer src="/js/libs/gsap/ScrollTrigger.min.js"></script>
+    <script defer src="/js/libs/scrollbot/scrollbot.js"></script>
+    <script defer src="/js/libs/inputmask.min.js"></script>
+    <script defer src="/js/libs/color-calendar/bundle.js"></script>
+    <script defer src="/js/index.js"></script>
+</body>
+</html>

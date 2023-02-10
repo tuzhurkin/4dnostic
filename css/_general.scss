@@ -1,0 +1,171 @@
+// <================================================= GENERALS =================================================> //
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    // transition: all 0.25s ease-out;
+    color: inherit;
+    text-decoration: none;
+    outline: none !important;
+  
+    &:active, &:hover, &:focus, &:visited {
+        outline: none;
+        text-decoration: none;
+    }
+  
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+[tabindex] {
+    outline: none;
+}
+
+h1, h2, h3, h4 {
+    span {
+        display: block;
+
+        &.inline {
+            display: inline;
+        }
+        //
+        @include sm {
+            display: inline;
+        }
+        //
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+sup,
+sub {
+    line-height: 100%;
+}
+
+textarea, 
+input[type] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+img, 
+svg {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+body {
+    font-family: 'Open Sans Hebrew', sans-serif;
+    font-size: 16px;
+    line-height: 156%;
+    font-weight: 500;
+    color: $black;
+
+    position: relative;
+}
+
+// add transitions (class to hide transitions before page load)
+body.show-body {
+    .menu {
+        // transition: transform 1s $easeOut;
+        transition: transform 0.5s $easeOut-1; // cubic-bezier(.39,.575,.565,1); //$easeOut;
+        
+        &.menu-active {
+            transition: transform 0.6s $easeIn-1;
+        }
+    }
+    .popup {
+        transition: all 1s $easeOut;
+
+        &__wrapper {
+            transition: all 1s $easeOut;
+        }
+    }
+
+    .p-card {
+        &__content,
+        &__hover {
+            transition: all 0.85s $easeInOut, box-shadow 0.4s $easeOut-1;
+        }
+    }
+    .c-card {
+        &__content,
+        &__hover {
+            transition: all 0.85s $easeInOut;
+        }
+    }
+
+    [data-reveal="txt"] {
+        transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+    [data-reveal="elem"] {
+        transition: opacity 1.5s ease;
+    }
+    [data-reveal="img"] {
+        transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+}
+
+.body-wrapper {
+    position: relative;
+}
+
+.body-hidden {
+    overflow: hidden;
+}
+
+.block-wrapper {
+    @include maxWidth();
+    @include paddingSide();
+}
+
+.mob-hide {
+    @include sm {
+        display: none;
+    }
+}
+
+.hide-block {
+    display: none !important;
+    
+    // animation: hideBlock 0.6s $easeIn-1 !important;//
+}
+
+.show-block {
+    display: block !important;
+
+    animation: showBlock 0.6s $easeOut-1; // 0.6s
+}
+
+@keyframes showBlock {
+    0% {
+        opacity: 0.25;
+        // transform: translateX(120px);//
+    }
+    100% {
+        opacity: 1;
+        // transform: translateX(0);//
+    }
+}
+@keyframes hideBlock {
+    0% {
+        opacity: 1;
+        // transform: translateX(0);//
+    }
+    100% {
+        opacity: 0;
+        // transform: translateX(-120px);//
+    }
+}

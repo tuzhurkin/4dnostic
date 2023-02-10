@@ -1,0 +1,58 @@
+// <================================================ VARIABLES ================================================> //
+//
+// default colors
+$black: #000000;
+$white: #FFFFFF;
+
+// light / dark / main / regular / medium / sub / alt / extra / ultra / super / title / text / bg
+$blackMain: #222222;
+$grey: #252525;
+$grey100: #848484;
+$grey80: #9d9d9d;
+$grey60: #b5b5b5;
+$grey40: #cecece;
+$grey20: #e5e5e5;
+$orange: #ff6600;
+$orange80: #ff8533;
+$orange60: #ffa366;
+$orange40: #ffc299;
+$orange20: #ffe0cc;
+$brown80: #eee9de;
+$olive80: #f2edbe;
+$oliveDark: #bfb97d;
+$light: #fef5ef;
+$greyVip: #f4f4f4;
+
+
+// special colors
+$redError: #EB5757;
+
+// overlay colors
+$overlay: rgba(0, 0, 0, 0.45);
+$overlayHover: rgba(0, 0, 0, 0.1);
+$overlayTransparent: rgba(0, 0, 0, 0);
+
+// containers' max-width / padding
+$maxWidth: 1440px; // 1600px;
+$paddingSide_xxxl: 64px; // 80px;
+$paddingSide: 64px;
+$paddingSide_xl: 32px;
+$paddingSide_lg: 32px;
+$paddingSide_md: 24px; // 44px;
+$paddingSide_sm: 12px; // 16px
+
+// header's heights
+$headerHeight: 88px;
+$mobHeaderHeight: 72px; // 68px;
+
+// easings
+$easeOut: cubic-bezier(0.23, 1, 0.32, 1);
+$expOut: cubic-bezier(0.05, 0.85, 0.5, 1);
+$easeInOut: cubic-bezier(0.45, 0.34, 0.5, 1);
+$bounceOut: cubic-bezier(0.11, 0.42, 0.3, 1.57);
+
+$easeOut-1: cubic-bezier(0.215, 0.61, 0.355, 1);
+$easeIn-1: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+$easeOut-2: cubic-bezier(0.1, 0.67, 0.29, 0.98);
+$easeIn-2: cubic-bezier(0.71, 0.02, 0.9, 0.33);

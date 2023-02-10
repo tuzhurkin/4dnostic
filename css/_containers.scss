@@ -1,0 +1,6853 @@
+// [index.html]
+// -> container you have to scroll through
+// .scroll-container {
+//     width: 100%;
+//     min-height: 100vh;
+//     position: relative;
+
+//     // @include md {
+//     //     min-height: 0;
+//     // }
+
+//     @include mdm {
+//         &.bg {
+//             background-attachment: fixed;
+//         }
+//     }
+//     @include md {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//     }
+
+//     &__sticky {
+//         position: sticky;
+//         top: 0;
+        
+//         width: 100%;
+//         height: 100vh;
+
+//         @include md {
+//             position: relative;
+//             height: auto;
+//         }
+
+//         & > * {
+//             width: 100%;
+//             height: 100%;
+//             position: relative;
+//         }
+//     }
+//     &__space {
+//         height: 400vh;
+//         position: relative;
+//         z-index: -1;
+
+//         @include md {
+//             display: none;
+//         }
+//     }
+//     &__slider-box {
+//         position: relative;
+//     }
+//     &__slider {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//     }
+//     &__progressbar {
+//         position: absolute;
+//         left: 0;
+//         top: 0;
+
+//         width: 5px;
+//         height: 100%; // 100%; // 442px;
+
+//         .slider-progressbar {
+//             background-color: $grey60;
+            
+//             width: 4px;
+//             height: 100%; // 100%; // 442px;
+            
+//             position: relative;
+//             z-index: 2;
+//         }
+//         .swiper-pagination-progressbar-fill {
+//             background-color: $orange;
+//         }
+
+//         @include sm {
+//             display: none;
+//         }
+//     }
+//     //
+//     &--alt {
+//         .scroll-container__space {
+//             height: 300vh;
+
+//             @include md {
+//                 height: 0;
+//             }
+//         }
+//     }
+// }
+// .scroll-slider {
+//     height: 100vh;
+
+//     @include md {
+//         height: auto;
+//     }
+
+//     .swiper-wrapper {
+//         // display: block;
+//         transform: translate3d(0, 0, 0) !important;
+        
+//         @include md {
+//             display: flex;
+//             flex-direction: column;
+//             @include row-gap(32px);
+//         }
+//         @include sm {
+//             @include row-gap(24px);
+//         }
+//     }
+
+//     .swiper-slide {
+//         @include mdm {
+//             height: 25vh !important;
+//             // add scale-animated transition to the slides
+//             transition: transform 1s $easeOut-1;
+            
+//             // works in looped slider
+//             &:not(.swiper-slide-active) {
+//                 transform: scale(0.6);
+//             }
+//         }
+//         @include md {
+//             min-height: 15vh;
+//             height: auto;
+
+//             display: flex;
+//             align-items: center;
+//         }
+//     }
+// }
+// .alt-scroll-slider {
+//     height: 100vh;
+
+//     @include md {
+//         height: auto;
+//     }
+
+//     .swiper-wrapper {
+//         // display: block;
+//         transform: translate3d(0, 0, 0) !important;
+        
+//         @include md {
+//             display: flex;
+//             flex-direction: column;
+//             @include row-gap(32px);
+//         }
+//         @include sm {
+//             @include row-gap(24px);
+//         }
+//     }
+
+//     .swiper-slide {
+//         @include mdm {
+//             height: 33.333vh !important;
+//             // add scale-animated transition to the slides
+//             transition: transform 1s $easeOut-1;
+            
+//             // works in looped slider
+//             &:not(.swiper-slide-active) {
+//                 transform: scale(0.6);
+//             }
+//         }
+//         @include md {
+//             min-height: 15vh;
+//             height: auto;
+
+//             display: flex;
+//             align-items: center;
+//         }
+//     }
+// }
+// .scroll-slide {
+//     width: 90%;
+//     margin: 0 auto;
+
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     @include column-gap(16px);
+
+//     transition: all 1s $easeOut-1;
+
+//     @include sm {
+//         width: 100%;
+//         display: grid;
+//         grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+//         column-gap: 8px;
+//     }
+
+//     &__number {
+//         @include h2TitleFont();
+//         font-size: 120px;
+//         font-style: italic;
+//         color: $orange80;
+//         text-align: right;
+
+//         flex-basis: calc(25% - 16px);
+
+//         @include xl {
+//             font-size: 80px;
+//         }
+//         @include md {
+//             font-size: 80px;
+//         }
+//         @include sm {
+//             @include h3TitleFont();
+//         }
+//     }
+//     &__title {
+//         @include h4TitleAltFont();
+//         // @include h3TitleAltFont();
+//         color: $grey;
+//         text-transform: uppercase;
+
+//         flex-basis: calc(75% - 16px);
+
+//         @include xl {
+//             @include h5TitleAltFont();
+//         }
+//         @include md {
+//             font-size: 20px;
+//         }
+//         @include sm {
+//             @include descriptionFont();
+//         }
+//     }
+// }
+// .alt-scroll-slide {
+//     width: 80%;
+//     margin: 0 auto;
+
+//     display: flex;
+//     justify-content: center;
+//     // align-items: center;
+//     @include column-gap(32px);
+
+//     transition: all 1s $easeOut-1;
+
+//     @include sm {
+//         width: 100%;
+//         display: grid;
+//         grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+//         column-gap: 8px;
+//     }
+
+//     &__icon {
+//         flex-basis: calc(25% - 16px);
+        
+//         display: flex;
+//         justify-content: flex-end;
+
+//         img,
+//         svg {
+//             display: block;
+//             width: 32px;
+//             height: 32px;
+//         }
+//     }
+//     &__title {
+//         @include h4TitleAltFont();
+//         // @include h3TitleAltFont();
+//         color: $grey;
+//         text-transform: uppercase;
+
+//         flex-basis: calc(75% - 16px);
+
+//         @include xl {
+//             @include h5TitleAltFont();
+//         }
+//         @include md {
+//             font-size: 20px;
+//         }
+//         @include sm {
+//             @include descriptionFont();
+//         }
+//     }
+// }
+
+//
+.scrub-container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    padding: 0 !important;
+
+    @include mdm {
+        &.bg {
+            &:before,
+            &:after {
+                background-attachment: fixed;
+            }
+        }
+    }
+    @include sm {
+        min-height: 0;
+    }
+
+    &__wrapper {
+        width: 100%;
+        // height: 100%;
+        height: 100vh;
+
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        overflow: hidden;
+
+        // height: calc(100vh - 80px * 2);
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+        @include md {
+            // height: calc(100vh - 64px * 2);
+            padding-top: 64px;
+            padding-bottom: 64px;
+        }
+        @include sm {
+            // height: calc(100vh - 40px * 2);
+            height: auto;
+
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    }
+    &__slider-box {
+        height: 100%;
+        position: relative;
+
+        @include md {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &__decoy {
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        opacity: 0;
+
+        @include md {
+            display: none;
+        }
+    }
+    //
+    &__flow {
+        background-color: rgba($color: #5f9ea0, $alpha: 0.25);
+        width: 100%;
+        height: 5000px; // 75vh; //
+
+        z-index: 1;
+        position: relative;
+        overflow: auto;
+
+        opacity: 0;
+        pointer-events: none;
+
+        @include md {
+            display: none;
+        }
+    }
+    //
+    &__slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__progressbar {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        width: 5px;
+        height: 100%; // 100%; // 442px;
+
+        .slider-progressbar {
+            background-color: $grey60;
+            
+            width: 4px;
+            height: 100%; // 100%; // 442px;
+            
+            position: relative;
+            z-index: 2;
+        }
+        .swiper-pagination-progressbar-fill {
+            background-color: $orange;
+        }
+
+        @include sm {
+            display: none;
+        }
+    }
+    &__fraction {
+        @include h5TitleAltFont();
+        font-weight: 400;
+        color: $orange;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+
+        position: absolute;
+        left: 16px;
+        top: 0;
+
+        @include md {
+            display: none;
+        }
+    }
+}
+.decoy-slider {
+    height: 100%;
+
+    @include md {
+        height: auto;
+    }
+
+    .swiper-wrapper {
+        // display: block;
+        // transform: translate3d(0, 0, 0) !important;
+        
+        @include md {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(32px);
+        }
+        @include sm {
+            @include row-gap(24px);
+        }
+    }
+
+    .swiper-slide {
+        // flex-basis: 25%;
+        & > * {
+            height: 25vh;
+        }
+        
+        .scrub-slide {
+            background-color: $grey20;
+        }
+
+        // add scale-animated transition to the slides
+        // transition: transform 1s $easeOut-1;
+        
+        // works in looped slider
+        &:not(.swiper-slide-active) {
+            .scrub-slide {
+                @include mdm {
+                    transform: scale(0.6);
+                }
+            }
+        }
+    }
+}
+.scrub-slider {
+    height: 100vh;
+    overflow: visible;
+
+    @include md {
+        height: auto;
+    }
+
+    .swiper-wrapper {
+        // display: block;
+        transform: translate3d(0, 0, 0) !important;
+        
+        @include md {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(32px);
+        }
+        @include sm {
+            @include row-gap(24px);
+        }
+    }
+
+    .swiper-slide {
+        // flex-basis: 25%;
+        flex-basis: calc(25% - 80px * 2 / 4);
+        
+        @include md {
+            flex-basis: auto;
+            width: 100% !important;
+        }
+        
+        // @include md {
+        //     flex-basis: calc(25% - 64px * 2 / 4);
+        // }
+        // @include sm {
+        //     flex-basis: calc(25% - 40px * 2 / 4);
+        // }
+
+        & > * {
+            // height: 25vh;
+            height: calc(25vh - 80px * 2 / 4);
+
+            @include md {
+                height: auto;
+            }
+
+            // @include md {
+            //     height: calc(25vh - 64px * 2 / 4);
+            // }
+            // @include sm {
+            //     height: calc(25vh - 40px * 2 / 4);
+            // }
+        }
+        
+        // add scale-animated transition to the slides
+        // transition: transform 1s $easeOut-1;
+        
+        // works in looped slider
+        &:not(.swiper-slide-active) {
+            .scrub-slide {
+                @include mdm {
+                    transform: scale(0.6);
+                }
+            }
+        }
+    }
+
+    // .swiper-slide {
+    //     @include mdm {
+    //         height: 25vh !important;
+    //         // add scale-animated transition to the slides
+    //         transition: transform 1s $easeOut-1;
+            
+    //         // works in looped slider
+    //         &:not(.swiper-slide-active) {
+    //             transform: scale(0.6);
+    //         }
+    //     }
+    //     @include md {
+    //         min-height: 15vh;
+    //         height: auto;
+
+    //         display: flex;
+    //         align-items: center;
+    //     }
+    // }
+}
+.scrub-slide {
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include column-gap(16px);
+
+    transition: all 1s $easeOut-1;
+
+    @include sm {
+        width: 100%;
+        align-items: flex-start;
+        @include column-gap(8px);
+
+
+        // display: grid;
+        // grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+        // column-gap: 8px;
+    }
+
+    &__number {
+        @include h2TitleFont();
+        font-size: 120px;
+        font-style: italic;
+        color: $orange80;
+        text-align: right;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        flex-basis: calc(25% - 16px);
+
+        @include xl {
+            font-size: 80px;
+        }
+        @include md {
+            font-size: 80px;
+        }
+        @include sm {
+            flex-basis: auto;
+
+            @include h3TitleFont();
+            line-height: 100%;
+        }
+    }
+    &__title {
+        @include h4TitleAltFont();
+        // @include h3TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        flex-basis: calc(75% - 16px);
+
+        @include xl {
+            @include h5TitleAltFont();
+        }
+        @include md {
+            font-size: 20px;
+        }
+        @include sm {
+            flex-basis: auto;
+
+            @include descriptionFont();
+        }
+    }
+}
+//
+.alt-decoy-slider {
+    height: 100%;
+
+    @include md {
+        height: auto;
+    }
+
+    .swiper-wrapper {
+        // display: block;
+        // transform: translate3d(0, 0, 0) !important;
+        
+        @include md {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(32px);
+        }
+        @include sm {
+            @include row-gap(24px);
+        }
+    }
+
+    .swiper-slide {
+        // flex-basis: 25%;
+        & > * {
+            height: 25vh;
+        }
+        
+        .alt-scrub-slide {
+            background-color: $grey20;
+        }
+
+        // add scale-animated transition to the slides
+        // transition: transform 1s $easeOut-1;
+        
+        // works in looped slider
+        &:not(.swiper-slide-active) {
+            .alt-scrub-slide {
+                @include mdm {
+                    transform: scale(0.6);
+                }
+            }
+        }
+    }
+}
+.alt-scrub-slider {
+    height: 100vh;
+    overflow: visible;
+
+    @include md {
+        height: auto;
+    }
+
+    .swiper-wrapper {
+        // display: block;
+        transform: translate3d(0, 0, 0) !important;
+        
+        @include md {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(32px);
+        }
+        @include sm {
+            @include row-gap(24px);
+        }
+    }
+
+    .swiper-slide {
+        // flex-basis: 33.333%;
+        flex-basis: calc(33.333% - 80px * 2 / 3);
+        
+        @include md {
+            flex-basis: auto;
+            width: 100% !important;
+        }
+        
+        // @include md {
+        //     flex-basis: calc(33.333% - 64px * 2 / 3);
+        // }
+        // @include sm {
+        //     flex-basis: calc(33.333% - 40px * 2 / 3);
+        // }
+
+        & > * {
+            // height: 33.333vh;
+            height: calc(33.333vh - 80px * 2 / 3);
+
+            @include md {
+                height: auto;
+            }
+
+            // @include md {
+            //     height: calc(33.333vh - 64px * 2 / 3);
+            // }
+            // @include sm {
+            //     height: calc(33.333vh - 40px * 2 / 3);
+            // }
+        }
+        
+        // add scale-animated transition to the slides
+        // transition: transform 1s $easeOut-1;
+        
+        // works in looped slider
+        &:not(.swiper-slide-active) {
+            .alt-scrub-slide {
+                @include mdm {
+                    transform: scale(0.6);
+                }
+            }
+        }
+    }
+
+    // .swiper-slide {
+    //     @include mdm {
+    //         height: 25vh !important;
+    //         // add scale-animated transition to the slides
+    //         transition: transform 1s $easeOut-1;
+            
+    //         // works in looped slider
+    //         &:not(.swiper-slide-active) {
+    //             transform: scale(0.6);
+    //         }
+    //     }
+    //     @include md {
+    //         min-height: 15vh;
+    //         height: auto;
+
+    //         display: flex;
+    //         align-items: center;
+    //     }
+    // }
+}
+.alt-scrub-slide {
+    width: 80%;
+    margin: 0 auto 0 112px;
+
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    @include column-gap(32px);
+
+    transition: all 1s $easeOut-1;
+
+    @include lg {
+        margin: 0 auto;
+    }
+    @include sm {
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 40px) minmax(0, 3fr);
+        column-gap: 8px;
+        @include remove-gap;
+    }
+
+    &__icon {
+        // flex-basis: calc(25% - 16px);
+        
+        flex-shrink: 0;
+        width: 80px;
+        height: 80px;
+
+        display: flex;
+        // justify-content: flex-end;
+        justify-content: center;
+        align-items: center;
+
+        @include sm {
+            width: 40px;
+            height: 40px;
+        }
+
+        img,
+        svg {
+            display: block;
+            width: 50px;
+            height: 25px;
+
+            @include sm {
+                width: 32px;
+                height: 16px;
+            }
+        }
+    }
+    &__title {
+        @include h4TitleAltFont();
+        // @include h3TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        // flex-basis: calc(75% - 16px);
+
+        @include xl {
+            @include h5TitleAltFont();
+        }
+        @include md {
+            font-size: 20px;
+        }
+        @include sm {
+            @include descriptionFont();
+        }
+    }
+}
+//
+
+// -> container with rotating package cards
+.p-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+        row-gap: 64px;
+
+        @include md {
+            column-gap: 24px;
+            row-gap: 40px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        @include h2TitleFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h5TitleFont();
+            margin-bottom: 16px;
+        }
+    }
+    &__description {
+        @include h5TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        .description {
+            border-left: 1px solid $orange40;
+        }
+
+        @include md {
+            @include mediumBoldAltFont();
+        }
+        @include sm {
+            @include descriptionBoldFont();
+            margin-bottom: 32px;
+        }
+    }
+    &__set {
+        grid-column: 1 / -1;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+
+        @include md {
+            gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(24px);
+            gap: 0;
+        }
+    }
+    &__item {
+        & > * {
+            height: 100%;
+        }
+    }
+    //
+    &__caption {
+        grid-column: -2 / -1;
+
+        @include averageFont();
+        color: $grey;
+
+        .description {
+            border-color: $orange60;
+        }
+        
+        margin-top: -40px;
+        @include md {
+            margin-top: -16px;
+        }
+        @include sm {
+            @include descriptionFont();
+            margin-top: 24px;
+        }
+    }
+}
+.p-card {
+    width: 100%;
+    // height: 400px;
+
+    position: relative;
+    transform-style: preserve-3d;
+
+    &__content,
+    &__hover {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        visibility: visible;
+        // -webkit-transform: translate3d(0, 0, 0);
+        // transform: translate3d(0, 0, 0);
+
+        // transform-style: preserve-3d;
+        // transform: perspective(2000px) rotateY(0);
+        transform: rotateY(0);
+        // transition: all 0.85s $easeInOut, box-shadow 0.4s $easeOut-1;;//--show-body
+    }
+    //
+    &__content {
+        background-color: $white;
+        border: 1px solid $grey20;
+
+        width: 100%;
+        height: 100%;
+        padding: 32px;
+
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+
+        @include md {
+            padding: 16px;
+        }
+    }
+    //
+    &__info {
+        padding-bottom: 24px;
+
+        @include sm {
+            padding-bottom: 16px;
+        }
+    }
+    &__title {
+        @include h5TitleFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        margin-bottom: 12px;
+
+        @include md {
+            @include mediumBoldFont();
+        }
+        @include sm {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+    }
+    &__description {
+        @include averageFont();
+        color: $blackMain;
+
+        @include row-gap(12px);
+        margin-bottom: 24px;
+
+        @include md {
+            @include descriptionFont();
+        }
+        @include sm {
+            @include smallFont();
+            line-height: 160%;
+            @include row-gap(8px);
+        }
+    }
+    &__button-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include column-gap(16px);
+
+        @include md {
+            @include column-gap(8px);
+        }
+    }
+    &__price-box {
+        display: flex;
+        align-items: center;
+        @include column-gap(8px);
+    }
+    &__price {
+        @include h4TitleAltFont();
+        color: $orange;
+
+        @include lg {
+            @include h5TitleAltFont();
+        }
+
+        &_old {
+            @include averageFont();
+            color: $grey100;
+            text-decoration: line-through;
+        }
+    }
+    //
+    &__btn-box {
+        margin-top: auto;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include column-gap(16px);
+
+        @include mdm {
+            & > *:first-child {
+                flex-basis: 50%;
+            }
+            & > *:last-child {
+                flex-basis: 33.333%;
+            }
+        }
+
+        .button {
+            width: 100%;
+        }
+
+        @include md {
+            flex-direction: column;
+            align-items: stretch;
+            @include row-gap(16px);
+        }
+    }
+    &__btn-icon {
+        img,
+        svg {
+            display: block;
+            width: 24px;
+            height: 24px;
+        }
+    }
+    //
+    &__box {
+        border-top: 1px solid $brown80;
+        padding-top: 24px;
+
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 32px;
+
+        margin-top: auto;
+
+        @include md {
+            padding-top: 16px;
+            
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 24px;
+            row-gap: 16px;
+        }
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+    }
+    &__item-num {
+        @include h5TitleAltFont();
+        color: $blackMain;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+
+        margin-bottom: 8px;
+
+        @include md {
+            @include mediumBoldAltFont();
+        }
+    }
+    &__item-name {
+        @include descriptionFont();
+        color: $grey;
+
+        margin-bottom: 8px;
+    }
+    &__item-icon {
+        margin-top: auto;
+
+        img,
+        svg {
+            display: block;
+            width: 16px;
+            height: 16px;
+
+            path {
+                fill: $orange20;
+            }
+        }
+    }
+    //
+    &__hover {
+        background-color: $light;
+
+        width: 100%;
+        height: 100%;
+        padding: 32px;
+
+        display: flex;
+        flex-direction: column;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        //
+        z-index: -1;
+        // transform: perspective(2000px) rotateY(180deg);
+        transform: rotateY(180deg);
+
+        @include sm {
+            padding: 16px;
+        }
+
+        .p-card__description {
+            // scrollable description if overflows card's height
+            overflow: auto;
+            max-height: 300px;
+            padding-right: 16px;
+
+            @include lg {
+                max-height: 428px;
+            }
+
+            &::-webkit-scrollbar {
+                display: block;
+                width: 3px; // 1px;
+            }
+            &::-webkit-scrollbar-thumb {
+                // width: 3px;
+                background-color: $orange;
+                border-radius: 8px;
+            }
+            &::-webkit-scrollbar-track {
+                // width: 1px;
+                background-color: $grey100;
+                border-radius: 8px;
+    
+                border: 1px solid transparent;
+                background-clip: content-box;
+            }
+        }
+        .p-card__button {
+            margin-top: auto;
+        }
+    }
+    //
+    // &__title,
+    // &__button {
+    //     transform: perspective(2000px) translateZ(1px);
+    // }
+    //
+    // @include hover {
+        &:hover {
+            .p-card__content,
+            .p-card__hover {
+                box-shadow: 0px 4px 40px rgba(112, 117, 132, 0.3);
+            }
+            .p-card__content {
+                // transform: perspective(2000px) rotateY(180deg);
+                transform: rotateY(180deg);
+            }
+            .p-card__hover {
+                // z-index: 0;
+                // transform: perspective(2000px) rotateY(360deg);
+                transform: rotateY(360deg);
+            }
+        }
+    // }
+    //
+    // &.active {
+    //     .p-card__content,
+    //     .p-card__hover {
+    //         box-shadow: 0px 4px 40px rgba(112, 117, 132, 0.3);
+    //     }
+    //     .p-card__content {
+    //         // transform: perspective(2000px) rotateY(180deg);
+    //         transform: rotateY(180deg);
+    //     }
+    //     .p-card__hover {
+    //         z-index: 0;
+    //         transform: perspective(2000px) rotateY(360deg);
+    //     }
+    // }
+
+    &--constructor {
+        .p-card__content {
+            background-color: $greyVip;
+        }
+    }
+}
+
+// -> container with bg image
+.b-container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    display: flex; // > in order to remove strict height of 100vh
+
+    @include sm {
+        min-height: 0;
+        height: auto;
+    }
+
+    &__bg {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:after {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.6);
+
+            width: 100%;
+            height: 100%;
+    
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    }
+    &__wrapper {
+        @include smm {
+            margin-top: auto; // > in order to center wrapper's content inside display:flex container
+            margin-bottom: auto;
+        }
+
+        height: 100%;
+        position: relative;
+
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 1fr) minmax(0, 6fr);
+        row-gap: 48px;
+
+        @include md {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+
+            @include smm {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    &__title {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        align-self: end;
+
+        @include h2TitleFont();
+        color: $white;
+        text-transform: uppercase;
+
+        @include lg {
+            @include mdm {
+                font-size: 64px;
+            }
+        }
+        @include md {
+            align-self: auto;
+            margin-bottom: 40px;
+
+            @include smm {
+                text-align: center;
+            }
+        }
+        @include sm {
+            @include h4TitleFont();
+            line-height: 120%;
+            margin-bottom: 24px;
+        }
+    }
+    &__description {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+        align-self: center;
+
+        @include h5TitleAltFont();
+        color: $white;
+        text-transform: uppercase;
+
+        .description {
+            border-color: $orange40;
+        }
+
+        @include md {
+            margin-bottom: 64px;
+
+            @include smm {
+                width: 75%;
+                text-align: center;
+
+                .description {
+                    border-top: 1px solid $orange40;
+                    border-left: none;
+                    padding-top: 16px;
+                    padding-left: 0;
+                }
+            }
+        }
+        @include sm {
+            @include descriptionFont();
+            margin-bottom: 132px;
+        }
+    }
+    &__button {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        align-self: start;
+
+        @include md {
+            width: 100%;
+
+            @include smm {
+                text-align: center;
+            }
+        }
+    }
+    //
+    &--review {
+        .b-container__description {
+            @include mediumAltFont();
+
+            @include sm {
+                @include descriptionFont();
+            }
+        }
+    }
+}
+
+// -> container with doctors' specs tabs / sliders
+.doctors-container {
+    overflow: hidden;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 1fr) minmax(0, 6fr);
+        row-gap: 32px;
+
+        @include md {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &__title {
+        grid-column: 1 / 2;
+
+        @include h2TitleFont();
+        color: $white;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 24px;
+        }
+    }
+    // &__block {
+    //     grid-column: 3 / 4;
+    //     @include row-gap(48px);
+
+    //     @include md {
+    //         grid-column: 2 / 3;
+    //     }
+    //     @include sm {
+    //         @include row-gap(40px);
+    //         margin-bottom: 16px;
+    //     }
+    // }
+    &__description {
+        grid-column: 3 / 4;
+
+        @include h5TitleAltFont();
+        color: $white;
+        text-transform: uppercase;
+
+        .description {
+            border-color: $orange40;
+        }
+
+        @include md {
+            grid-column: 2 / 3;
+
+            @include mediumBoldAltFont();
+            margin-bottom: 40px;
+        }
+        @include sm {
+            @include descriptionFont();
+        }
+    }
+    &__tabs-box {
+        grid-column: 3 / 4;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        @include md {
+            grid-column: 1 / -1;
+
+            margin-bottom: 24px;
+        }
+        @include sm {
+            margin-bottom: 16px;
+        }
+        
+        & > * {
+            margin-bottom: 16px;
+            margin-right: 16px;
+
+            @include sm {
+                margin-bottom: 8px;
+                margin-right: 8px;
+
+                flex: auto;
+            }
+        }
+    }
+    &__tab {
+        @include sm {
+            .button {
+                &__name {
+                    position: relative;
+
+                    &:after {
+                        content: attr(data-btn-name);
+                        display: block;
+                        overflow: hidden;
+                        visibility: hidden;
+                        pointer-events: none;
+                        color: transparent;
+                        height: 0;
+                        font-weight: 700;
+                    }
+                }
+
+                &.active {
+                    .button__name {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+    &__storage {
+        grid-column: 1 / -1;
+    }
+    &__slider-box {
+        display: none;//--switch
+    }
+    &__slider {
+        margin-bottom: 18px;
+
+        @include md {
+            margin-bottom: 40px;
+        }
+    }
+    &__arrow-box {
+        display: flex;
+        justify-content: flex-end;
+
+        @include md {
+            justify-content: center;
+        }
+        @include sm {
+            display: none;
+        }
+    }
+    &__expand-btn {
+        @include smm {
+            display: none;
+        }
+    }
+}
+.doctor-slider {
+    overflow: visible;
+
+    .swiper-wrapper {
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(16px);
+
+            transform: translate3d(0, 0, 0) !important; // so that on 'resize' from small to big enabled slider doesn't get transformed to the left
+        }
+    }
+
+    .swiper-slide {
+        height: auto;
+
+        & > * {
+            height: 100%;
+        }
+
+        @include sm {
+            width: 100% !important;
+            
+            &:nth-child(n + 6) {
+                display: none;
+            }
+        }
+    }
+}
+.d-card {
+    position: relative;
+
+    // bg
+    &:before {
+        content: "";
+        background-color: $white;
+
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    &:after {
+        content: "";
+        background-image: url('../img/bg/light.jpg');
+        background-size: 20%; // cover; // contain;
+        opacity: 0.55;
+
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+
+    @include md {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 5fr);
+    }
+    @include sm {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+
+        @include md {
+            @include smm {
+                .image {
+                    padding-top: 105%;
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        .image {
+            @include sm {
+                max-height: 280px;
+            }
+            @include xs {
+                max-height: 250px;
+            }
+            @include xxs {
+                max-height: 220px;
+            }
+        }
+    }
+    &__content {
+        padding: 16px;
+
+        display: flex;
+        flex-direction: column;
+
+        @include md {
+            @include smm {
+                padding: 16px 24px;
+            }
+        }
+    }
+    &__title {
+        @include mediumBoldFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        margin-bottom: 8px;
+    }
+    &__subtitle {
+        @include smallFont();
+        color: $orange80;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        margin-bottom: 8px;
+    }
+    &__description {
+        @include smallFont();
+        line-height: 160%;
+        color: $grey;
+
+        margin-bottom: 16px;
+    }
+    &__feat {
+        display: flex;
+        @include column-gap(16px);
+
+        margin-bottom: 32px;
+
+        @include sm {
+            @include column-gap(8px);
+            margin-bottom: 24px;
+        }
+    }
+    &__feat-num {
+        @include smallFont();
+        color: $orange;
+        font-weight: 700;
+    }
+    &__feat-name {
+        @include smallFont();
+        color: $blackMain;
+
+        @include sm {
+            font-weight: 700;
+        }
+    }
+    &__button {
+        margin-top: auto;
+    }
+}
+
+// -> container with hoverable service cards
+.s-container {
+    width: 100%;
+    height: 90vh;
+    min-height: 90vh;
+
+    @include md {
+        height: auto;
+        min-height: 0;
+    }
+
+    &__wrapper {
+        height: 100%;
+
+        @include sm {
+            @include maxWidth();
+            @include paddingSide();
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    }
+    &__set {
+        height: 100%;
+        display: flex;
+
+        @include md {
+            flex-direction: column;
+        }
+        @include sm {
+            @include row-gap(16px);
+        }
+    }
+    &__item {
+        // min-width: 300px;
+        width: 30%;
+        height: 100%;
+        flex: 1 1 auto;
+
+        transition: all 0.8s ease-out; // ease-out; // $easeOut-1;
+
+        @include md {
+            width: 100%;
+        }
+
+        // @include hover {
+        @include lgm {
+            &:hover {
+                width: 50%; // 50%
+
+                .s-item {
+                    &__image {
+                        &:after {
+                            background-color: rgba(0, 0, 0, 0.1);
+                        }
+                    }
+                    &__content {
+                        padding: 56px 64px;
+                    }
+                    &__title {
+                        // font-size: 80px;
+
+                        // transform: scale(1.5);
+                        transform: scale(1.75);
+
+                        @include xl {
+                            transform: scale(1.5);
+                        }
+                    }
+                    &__button {
+                        .button.button--glass {
+                            background-color: rgba(255, 255, 255, 0.2);
+                            -webkit-backdrop-filter: blur(15px);
+                            backdrop-filter: blur(15px);
+
+                            @include hover {
+                                &:hover {
+                                    background-color: rgba($orange60, 0.3);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        & > * {
+            height: 100%;
+        }
+    }
+}
+.s-item {
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+
+    &__image {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:after {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.5);
+
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            transition: all 0.8s ease-out; // ease-out; // $easeOut-1;
+        }
+    }
+    &__content {
+        height: 100%;
+        padding: 56px 32px;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include row-gap(32px);
+
+        transition: all 0.8s ease-out; // ease-out; // $easeOut-1;
+
+        @include md {
+            padding: 108px $paddingSide_md;
+
+            @include smm {
+                display: grid;
+                grid-template-columns: minmax(0, 5fr) minmax(0, 3fr);
+                column-gap: 24px;
+                @include remove-gap;
+            }
+        }
+        @include sm {
+            padding: 40px 16px;
+            @include row-gap(180px);
+        }
+    }
+    &__title {
+        @include h3TitleFont();
+        line-height: 110%;
+        color: $white;
+        text-transform: uppercase;
+
+        // font-size: 40px;
+        will-change: transform;
+        transform-origin: 0 0; // 0 50%;
+        transition: all 0.8s ease-out; // 0.75s // ease-out; // $easeOut-1;
+        
+        @include md {
+            font-size: 48px;
+            align-self: center;
+        }
+        @include sm {
+            @include h4TitleFont();
+            text-align: center;
+        }
+    }
+    &__button {
+        @include hover {
+            .button.button--glass {
+                background-color: transparent;
+                -webkit-backdrop-filter: blur(0px);
+                backdrop-filter: blur(0px);
+            }
+        }
+
+        @include md {
+            @include smm {
+                justify-self: end;
+                align-self: center;
+            }
+        }
+    }
+}
+
+// -> container with cards rotating on hover
+.c-container {
+    &__wrapper {
+        position: relative;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+        row-gap: 64px;
+
+        @include md {
+            column-gap: 24px;
+            row-gap: 40px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        @include h2TitleFont();
+        line-height: 110%;
+        color: $white;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 24px;
+        }
+    }
+    &__description {
+        @include h5TitleAltFont();
+        color: $white;
+        text-transform: uppercase;
+
+        .description {
+            border-color: $orange40;
+        }
+
+        @include md {
+            @include mediumBoldAltFont();
+        }
+        @include sm {
+            @include descriptionFont();
+            margin-bottom: 32px;
+        }
+    }
+    &__set {
+        grid-column: 1 / -1;
+
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 32px;
+
+        @include md {
+            display: block;
+            @include row-gap(16px);
+        }
+    }
+}
+.c-card {
+    width: 100%;
+    height: 300px;
+
+    position: relative;
+    transform-style: preserve-3d;
+
+    &__content,
+    &__hover {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        visibility: visible;
+        -webkit-transform: translate3d(0, 0, 0);
+        // transform: translate3d(0, 0, 0);
+
+        // transform-style: preserve-3d;
+        // transform: perspective(2000px) rotateY(0);
+        transform: rotateY(0);
+        // transition: all 0.85s $easeInOut;//--show-body
+    }
+    //
+    &__content {
+        background-color: $grey;
+
+        width: 100%;
+        height: 100%;
+        padding: 16px;
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__title {
+        @include h4TitleFont();
+        color: $white;
+        text-transform: uppercase;
+        text-align: center;
+
+        @include lg {
+            @include mdm {
+                @include h5TitleFont();
+            }
+        }
+        @include sm {
+            @include h5TitleFont();
+        }
+    }
+    //
+    &__hover {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        z-index: -1;
+        // transform: perspective(2000px) rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+    &__bg {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:after {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.8);
+            
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    &__caption {
+        width: 100%;
+        height: 100%;
+        padding: 48px 16px;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        @include row-gap(16px);
+    }
+    &__button { 
+        .button {
+            @include hover {
+                &:hover {
+                    background-color: rgba($grey100, 0.5);
+
+                    &:before,
+                    &:after,
+                    .button__wrapper:before,
+                    .button__wrapper:after {
+                        border-color: $grey100;
+                    }
+                    .button__name {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    //
+    &__content,
+    &__hover {
+        border-radius: 10px;
+    }
+    &__bg,
+    &__caption {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    //
+    // &__title,
+    // &__button {
+    //     transform: perspective(2000px) translateZ(1px);
+    // }
+    //
+    // @include hover {
+        &:hover {
+            .c-card__content {
+                // transform: perspective(2000px) rotateY(180deg);
+                transform: rotateY(180deg);
+            }
+            .c-card__hover {
+                // z-index: 0;
+                // transform: perspective(2000px) rotateY(360deg);
+                transform: rotateY(360deg);
+            }
+        }
+    // }
+    //
+    // &.active {
+    //     .c-card__content {
+    //         // transform: perspective(2000px) rotateY(180deg);
+    //         transform: rotateY(180deg);
+    //     }
+    //     .c-card__hover {
+    //         z-index: 0;
+    //         transform: perspective(2000px) rotateY(360deg);
+    //     }
+    // }
+}
+
+// -> cut-in container with huge title
+.cut-container {
+    overflow: hidden;
+    
+    &__wrapper {
+        // display: flex;
+        // flex-direction: column;
+
+        @include sm {
+            @include row-gap(16px);
+        }
+    }
+    &__title {
+        @include h1TitleFont();
+        font-size: 140px;
+        line-height: 100%;
+        color: $grey;
+        text-transform: uppercase;
+
+        @include xl {
+            @include h1TitleFont();
+            line-height: 100%;
+        }
+        @include md {
+            font-size: 64px;
+        }
+        @include sm {
+            @include h4TitleFont();
+            line-height: 100%;
+        }
+
+        display: flex;
+        justify-content: center;
+        will-change: transform;
+    }
+}
+
+// .cut-container {
+//     &__wrapper {
+//         display: grid;
+//         grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 2fr) minmax(0, 7fr);
+
+//         @include md {
+//             grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 6fr);
+//         }
+//         @include sm {
+//             grid-template-columns: repeat(4, minmax(0, 1fr));
+//             row-gap: 16px;
+//         }
+//     }
+//     &__title {
+//         // justify-self: center;
+
+//         @include h1TitleFont();
+//         font-size: 140px;
+//         line-height: 100%;
+//         color: $grey;
+//         text-transform: uppercase;
+
+//         @include xl {
+//             @include h1TitleFont();
+//             line-height: 100%;
+//         }
+//         @include md {
+//             font-size: 64px;
+//         }
+//         @include sm {
+//             justify-self: center;
+
+//             @include h4TitleFont();
+//             line-height: 100%;
+//         }
+
+//         &:nth-child(1) {
+//             grid-column: 1 / -1;
+
+//             @include xl {
+//                 @include lgm {
+//                     justify-self: center;
+//                 }
+//             }
+//         }
+//         &:nth-child(2) {
+//             grid-column: 3 / -1;
+
+//             @include sm {
+//                 grid-column: 2 / -1;
+//             }
+//         }
+//         &:nth-child(3) {
+//             grid-column: 2 / -1;
+            
+//             @include sm {
+//                 grid-column: 1 / -1;
+//             }
+//         }
+//         &:nth-child(4) {
+//             grid-column: 4 / -1;
+
+//             @include md {
+//                 grid-column: 3 / -1;
+//             }
+//             @include sm {
+//                 grid-column: 2 / -1;
+//             }
+//         }
+//     }
+// }
+
+// -> container with video
+.v-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto 1fr;
+        column-gap: 32px;
+        grid-auto-flow: dense;
+
+        @include md {
+            column-gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+
+        @include h2TitleFont();
+        color: $white;
+        text-transform: uppercase;
+
+        margin-bottom: 48px;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+            margin-bottom: 40px;
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 24px;
+        }
+    }
+    &__block {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+
+        display: flex;
+        flex-direction: column;
+    }
+    &__video {
+        margin-bottom: 16px;
+
+        @include sm {
+            @include marginOutSide();
+            margin-bottom: 24px;
+
+            order: 2;
+
+            .video {
+                padding-top: 116%;
+            }
+        }
+    }
+    &__description {
+        @include averageFont();
+        color: $grey20;
+        
+        .description {
+            border-color: $orange40;
+        }
+
+        @include md {
+            @include descriptionFont();
+        }
+        @include sm {
+            margin-bottom: 32px;
+            
+            order: 1;
+        }
+    }
+    &__button {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+}
+
+// -> container with reviews slider
+.reviews-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+        row-gap: 64px;
+
+        @include md {
+            column-gap: 24px;
+            row-gap: 40px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        @include h2TitleFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 24px;
+        }
+    }
+    &__description {
+        @include h5TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        .description {
+            border-color: $orange40;
+        }
+
+        @include md {
+            @include mediumBoldAltFont();
+        }
+        @include sm {
+            @include descriptionFont();
+            margin-bottom: 32px;
+        }
+    }
+    &__slider-box {
+        grid-column: 1 / -1;
+    }
+    &__slider {
+        margin-bottom: 32px;
+
+        @include md {
+            margin-bottom: 40px;
+        }
+    }
+    &__arrow-box {
+        display: flex;
+        justify-content: flex-end;
+
+        @include md {
+            justify-content: center;
+        }
+    }
+
+}
+.review-slider {
+    .swiper-wrapper {
+        // -> set fixed height for the swiper with grid
+        @include smm {
+            flex-flow: column wrap; // row wrap;
+
+            max-height: 636px; // = 2 * 250px [card's max-height] + 32px [gap] + 104px [middle col's shift]
+            height: 636px;
+        }
+        @include md {
+            flex-flow: column wrap; // row wrap;
+
+            max-height: 798px; // = 3 * 250px [card's max-height] + 3 * 16px [gap]
+            height: 798px;
+        }
+        @include sm {
+            flex-flow: column wrap; // row wrap;
+
+            max-height: 516px; // = 2 * 250px [card's max-height] + 1 * 16px [gap]
+            height: 516px;
+        }
+    }
+    .swiper-slide {
+        // -> set fixed height for the swiper with grid
+        @include mdm {
+            height: 250px;
+
+            // &:nth-child(6n+3) {
+            &:nth-child(6n+3):not(:nth-last-child(1)):not(:nth-last-child(2)) {
+                margin-top: 104px;
+            }
+        }
+        @include md {
+            height: 250px;
+        }
+        @include sm {
+            height: 250px;
+        }
+        
+        & > * {
+            height: 100%;
+        }
+    }
+}
+.review-card {
+    background-color: $white;
+    border-radius: 10px;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    @include md {
+        padding: 16px;
+    }
+
+    &__title-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include column-gap(24px);
+
+        margin-bottom: 8px;
+
+        @include md {
+            @include column-gap(16px);
+        }
+    }
+    &__title {
+        @include averageBoldFont();
+        color: $blackMain;
+        text-transform: uppercase;
+    }
+    &__date {
+        flex-shrink: 0;
+
+        @include smallFont();
+        color: $orange80;
+        letter-spacing: 0.04em;
+    }
+    &__rating {
+        margin-bottom: 12px;
+    }
+    &__description {
+        @include descriptionFont();
+        color: $grey;
+
+        .description {
+            border-color: $orange40;
+            @include remove-gap;
+            
+            // cut 2 lines with dots
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            p {
+                display: inline;
+            }
+            //
+        }
+        
+        // cut 2 lines with dots
+        // display: -webkit-box;
+        // -webkit-line-clamp: 4;
+        // -webkit-box-orient: vertical;
+
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        //
+
+        margin-bottom: 24px;
+
+        @include sm {
+            margin-bottom: 16px;
+        }
+    }
+    &__button-box {
+        display: flex;
+        justify-content: flex-end;
+        
+        margin-top: auto;
+    }
+    &__button {
+        cursor: pointer;
+
+        @include descriptionFont();
+        color: $blackMain;
+        text-transform: uppercase;
+        text-decoration: underline;
+
+        transition: all 0.4s $easeOut-1;
+
+        @include hover {
+            &:hover {
+                color: $orange80;
+            }
+        }
+    }
+}
+
+// -> container with contacts, map tabs and form
+.contact-container {
+    // &__wrapper {
+    //     display: grid;
+    //     grid-template-columns: repeat(2, minmax(0, 1fr));
+    //     column-gap: 32px;
+    //     row-gap: 80px;
+
+    //     @include md {
+    //         column-gap: 24px;
+    //         row-gap: 40px;
+    //     }
+    //     @include sm {
+    //         display: flex;
+    //         flex-direction: column;
+    //         gap: 0;
+    //     }
+    // }
+    //
+    overflow: hidden;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+
+        & > *:not(:last-child) {
+            margin-bottom: 80px;
+
+            @include md {
+                margin-bottom: 40px;
+            }
+            @include sm {
+                margin-bottom: 32px;
+            }
+        }
+
+        // @include smm {
+        //     & > *:not(:last-child) {
+        //         margin-bottom: 40px;
+        //     }
+        // }
+        // @include mdm {
+        //     & > *:not(:last-child) {
+        //         margin-bottom: 80px;
+        //     }
+        // }
+    }
+    &__unit {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+
+        @include md {
+            column-gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    //
+    &__title {
+        @include h2TitleFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 24px;
+        }
+    }
+    // &__block {
+    //     @include sm {
+    //         margin-bottom: 32px;
+    //     }
+    // }
+    &__description {
+        @include h5TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        .description {
+            border-color: $orange60;
+        }
+
+        margin-bottom: 64px;
+
+        @include md {
+            @include mediumBoldAltFont();
+            margin-bottom: 32px;
+        }
+        @include sm {
+            @include descriptionFont();
+        }
+    }
+    &__box {
+        margin-bottom: 64px;
+
+        @include md {
+            margin-bottom: 40px;
+        }
+        @include sm {
+            margin-bottom: 24px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__item {
+        @include smm {
+            &:not(:last-child) {
+                border-bottom: 1px solid $grey40;
+            }
+            &:first-child {
+                .contact-item {
+                    padding-top: 0;
+                }
+            }
+            &:last-child {
+                .contact-item {
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        @include sm {
+            &:not(:last-child) {
+                margin-bottom: 32px;
+            }
+        }
+    }
+    &__button {
+        .button {
+            &__wrapper {
+                padding: 8px 56px;
+            }
+        }
+    }
+    //
+    &__tabs-box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        
+        & > * {
+            margin-bottom: 16px;
+            margin-right: 16px;
+
+            @include sm {
+                margin-bottom: 8px;
+                margin-right: 8px;
+
+                flex: auto;
+            }
+        }
+    }
+    &__storage {
+        grid-column: 1 / -1;
+
+        // margin-bottom: 80px;
+
+        // @include md {
+        //     @include smm {
+        //         margin-bottom: 40px;
+        //     }
+        // }
+    }
+    //
+    &__map {
+        @include sm {
+            .ar-image {
+                padding-top: 124%;
+            }
+        }
+    }
+    //
+    &__slider-box {
+        margin-bottom: 80px;
+
+        @include md {
+            margin-bottom: 64px;
+        }
+        @include sm {
+            margin-bottom: 40px;
+        }
+    }
+    &__slider {
+        margin-bottom: 24px;
+    }
+    &__arrow-box {
+        display: flex;
+        justify-content: flex-end;
+
+        @include sm {
+            justify-content: center;
+        }
+    }
+    //
+    &__direction {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+
+        margin-bottom: 80px;
+
+        .contact-container__description {
+            margin-bottom: 0;
+
+            padding: 56px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include md {
+                padding: 32px 0;
+            }
+            @include sm {
+                padding: 0;
+            }
+        }
+
+        @include md {
+            column-gap: 24px;
+            margin-bottom: 64px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+
+            margin-bottom: 40px;
+        }
+    }
+    &__direction-image {
+        @include sm {
+            margin-bottom: 32px;
+        }
+    }
+    //
+    &__form-block {
+        grid-column: 1 / -1;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+        grid-auto-flow: dense;
+
+        @include md {
+            column-gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__form-title {
+        grid-column: 1 / 2;
+
+        @include h3TitleAltFont();
+        color: $grey;
+        letter-spacing: normal;
+        text-transform: uppercase;
+
+        margin-bottom: 48px;
+
+        @include xl {
+            @include h4TitleAltFont();
+        }
+        @include md {
+            @include mediumBoldAltFont();
+            margin-bottom: 24px;
+        }
+        @include sm {
+            margin-bottom: 32px;
+        }
+    }
+    &__form {
+        grid-column: 1 / 2;
+
+        width: 66.667%;
+        align-self: end;
+
+        @include md {
+            width: 90%;
+        }
+        @include sm {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+    }
+    &__form-info {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+
+        display: flex;
+        flex-direction: column;
+    }
+    &__form-image {
+        height: 100%;
+        margin-bottom: 16px;
+
+        @include sm {
+            @include marginOutSide();
+
+            .image {
+                padding-top: 100%;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+    &__form-description {
+        @include averageFont();
+        color: $grey;
+
+        margin-top: auto;
+
+        @include sm {
+            @include smallFont();
+        }
+    }
+    //
+    &__image-box {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        row-gap: 24px;
+
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+
+            margin-bottom: 16px;
+        }
+
+        .contact-container__image {
+            .ar-image {
+                padding-top: 120%;
+            }
+        }
+        &:nth-of-type(2n+1) {
+            .contact-container__image {
+                grid-column: 2 / span 3;
+            }
+        }
+        &:nth-of-type(2n) {
+            .contact-container__image {
+                grid-column: 1 / span 3;
+            }
+        }
+    }
+    //
+    &--cut {
+        padding-bottom: 0;
+    }
+    //
+    &--country {
+        .contact-container__title {
+            @include sm {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+.contact-item {
+    padding: 40px 0;
+
+    @include md {
+        padding: 24px 0;
+    }
+    @include sm {
+        padding: 0;
+    }
+
+    &__title-box {
+        display: grid;
+        grid-template-columns: minmax(0, 4fr) minmax(0, 2fr);
+        column-gap: 32px;
+
+        margin-bottom: 16px;
+
+        @include lg {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(8px);
+            gap: 0;
+        }
+        @include sm {
+            @include row-gap(12px);
+        }
+    }
+    &__title {
+        border-left: 1px solid $grey;
+        padding-left: 16px;
+
+        @include averageFont();
+        color: $grey;
+
+        @include sm {
+            padding-left: 8px;
+            @include smallFont();
+        }
+    }
+    &__value {
+        @include h3TitleAltFont();
+        color: $grey;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+
+        transition: all 0.4s $easeOut-1;
+
+        @include lg {
+            @include h4TitleAltFont();
+        }
+        @include md {
+            @include h5TitleAltFont();
+        }
+        @include sm {
+            font-size: 20px;
+            letter-spacing: 0.02em;
+        }
+
+        @include hover {
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+    &__socials-list {
+        .socials-list {
+            @include column-gap(32px);
+
+            @include sm {
+                @include column-gap(16px);
+            }
+            @include sm {
+                @include column-gap(24px);
+            }
+
+            &__item {
+                img,
+                svg {
+                    width: 48px;
+                    height: 48px;
+
+                    @include md {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    path {
+                        fill: $grey;
+                    }
+                }
+
+                @include hover {
+                    &:hover {
+                        img,
+                        svg {
+                            path {
+                                fill: $orange;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //
+    &--alt {
+        .contact-item__title {
+            border-color: $orange80;
+            color: $orange80;
+        }
+        .contact-item__value {
+            text-transform: uppercase;
+        }
+    }
+    //
+    &--menu {
+        padding: 24px 0;
+
+        @include sm {
+            padding: 0;
+        }
+
+        .contact-item__title-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include column-gap(16px);
+            gap: 0;
+
+            margin-bottom: 8px;
+
+            @include lg {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                @include row-gap(12px);
+                gap: 0;
+
+                margin-bottom: 16px;
+            }
+        }
+        .contact-item__title {
+            border-color: $grey60;
+            padding-left: 8px;
+            color: $grey100;
+        }
+        .contact-item__value {
+            @include h5TitleAltFont();
+            font-size: 20px;
+
+            @include lg {
+                @include smm {
+                    font-size: 28px;
+                }
+            }
+        }
+        .contact-item__socials-list {
+            .socials-list {
+                @include column-gap(16px);
+    
+                &__item {
+                    img,
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.location-slider {
+    overflow: visible;
+    
+    .swiper-slide {
+        height: auto;
+
+        & > * {
+            height: 100%;
+        }
+    }
+}
+
+// -> container with SEO text
+.seo-container {
+    background-color: $white;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+        column-gap: 32px;
+
+        @include md {
+            grid-template-columns: minmax(0, 3fr) minmax(0, 5fr);
+            column-gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        @include h2TitleFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        align-self: center;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 16px;
+            
+            align-self: start;
+        }
+    }
+    &__block {
+        // align-self: center;
+
+        border-left: 1px solid $grey20;
+        padding: 24px 0 24px 32px;
+        position: relative;
+        
+        overflow: auto;
+        max-height: 216px;
+        padding-right: 16px;
+
+        &:before {
+            content: "";
+            border-top: 1px solid $grey20;
+            width: 24px;
+            height: 1px;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            @include sm {
+                display: none;
+            }
+        }
+        &:after {
+            content: "";
+            border-bottom: 1px solid $grey20;
+            width: 24px;
+            height: 1px;
+            
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            @include sm {
+                display: none;
+            }
+        }
+
+        @include smm {
+            &.caption {
+                height: auto;
+                min-height: 0;
+
+                .scrollbot-outer-parent {
+                    & > .scrollbot-scrollbar-holder {
+                        left: initial;
+                        right: 0;
+                    }
+                }
+
+                .caption__inner {
+                    // border-left: none;
+                    &:before {
+                        display: none;
+                    }
+                    
+                    padding-left: 0;
+                    padding-right: 16px;
+                }
+            }
+        }
+
+        @include md {
+            padding: 16px 0 16px 32px;
+        }
+        @include sm {
+            border-left: none;
+            padding-left: 0;
+        }
+    }
+    &__description {
+        @include row-gap(16px);
+
+        @include mediumBoldAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        // overflow: auto;
+        // max-height: 216px;
+        // padding-right: 16px;
+
+        // &::-webkit-scrollbar {
+        //     display: block;
+        //     width: 2px;
+        // }
+        // &::-webkit-scrollbar-thumb {
+        //     width: 2px;
+        //     background-color: $orange;
+        //     border-radius: 20px;
+        // }
+        // &::-webkit-scrollbar-track {
+        //     width: 2px;
+        //     background-color: $grey20;
+        //     border-radius: 20px;
+        // }
+
+        @include md {
+            @include descriptionBoldFont();
+        }
+        @include sm {
+            @include descriptionFont();
+        }
+    }
+}
+
+// -> container with text and description [+ button]
+.t-d-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+
+        @include md {
+            column-gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        @include h4TitleAltFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        @include md {
+            @include h5TitleAltFont();
+        }
+        @include sm {
+            @include descriptionBoldFont();
+            margin-bottom: 16px;
+        }
+    }
+    &__description {
+        @include averageFont();
+        color: $grey;
+
+        margin-bottom: 40px;
+
+        @include sm {
+            @include descriptionFont();
+            margin-bottom: 32px;
+        }
+    }
+    //
+    &__image {
+        @include sm {
+            margin-bottom: 16px;
+            order: 1;
+        }
+    }
+    &__block {
+        @include sm {
+            order: 2;
+        }
+    }
+    //
+    &__caption {
+        @include mediumAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        margin-bottom: 40px;
+
+        @include md {
+            @include averageFont();
+        }
+        @include sm {
+            @include descriptionFont();
+            margin-bottom: 32px;
+        }
+    }
+    &__button-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include column-gap(32px);
+
+        @include md {
+            @include column-gap(24px);
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            @include remove-gap();
+        }
+    }
+    &__button {
+        flex: 2;
+
+        @include sm {
+            width: 100%;
+
+            order: 2;
+        }
+    }
+    &__price {
+        flex: 1;
+        @include row-gap(8px);
+
+        @include sm {
+            width: 100%;
+            margin-bottom: 16px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include column-gap(16px);
+            
+            order: 1;
+        }
+    }
+    &__price-name {
+        @include descriptionFont();
+        color: $grey100;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+
+        @include sm {
+            @include averageFont();
+        }
+    }
+    &__price-value {
+        flex-shrink: 0;
+
+        @include h3TitleFont();
+        line-height: 75%;
+        color: $orange;
+
+        @include sm {
+            @include h5TitleFont();
+        }
+    }
+}
+
+// -> container with 4-column set with items 
+.set-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+
+        @include md {
+            column-gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &__title {
+        @include h2TitleFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        margin-bottom: 64px;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+            margin-bottom: 40px;
+        }
+        @include sm {
+            @include h4TitleFont();
+        }
+    }
+    //
+    &__description {
+        @include h5TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        .description {
+            border-color: $orange40;
+        }
+
+        @include md {
+            @include mediumBoldAltFont();
+        }
+        @include sm {
+            @include descriptionBoldFont();
+            margin-bottom: 40px;
+        }
+    }
+    &__subtitle {
+        @include h5TitleAltFont();
+        font-weight: 400;
+        color: $grey;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+
+        @include md {
+            grid-column: 1 / -1;
+
+            @include mediumAltFont();
+        }
+        @include sm {
+            @include averageFont();
+        }
+    }
+    //
+    &__set {
+        grid-column: 1 / -1;
+
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 32px;
+
+        @include md {
+            gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(40px);
+            gap: 0;
+        }
+    }
+    &__item {
+        & > * {
+            height: 100%;
+        }
+    }
+    &--2-col {
+        .set-container__set {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+    &--3-col {
+        .set-container__set {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+    //
+    &--checkup {
+        .set-container__set {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .set-container__item {
+            &:first-child {
+                @include smm {
+                    grid-column: 1 / -1;
+
+                    .checkup-item {
+                        &__block {
+                            display: grid;
+                            grid-template-columns: repeat(2, minmax(0, 1fr));
+                            grid-auto-flow: dense;
+                            column-gap: 32px;
+                        }
+                        &__title {
+                            grid-column: 1 / 2;
+                            grid-row: 1 / 2;
+                        }
+                        &__description {
+                            grid-column: 1 / 2;
+                            grid-row: 2 / 3;
+                        }
+                        &__vip-box {
+                            grid-column: 2 / 3;
+                            grid-row: 1 / 3;
+
+                            margin-top: 0;
+                            height: 100%;
+                        }
+                        &__vip {
+                            // if only child
+                            &:first-child:last-child {
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.feat-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__num {
+        @include h3TitleAltFont();
+        font-size: 64px;
+        line-height: 110%;
+        color: $grey;
+        text-align: center;
+
+        margin-bottom: 32px;
+
+        @include md {
+            font-size: 56px;
+        }
+        @include sm {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+    }
+    &__name {
+        @include descriptionBoldFont();
+        color: $grey100;
+        text-transform: uppercase;
+        text-align: center;
+
+        margin-bottom: 16px;
+    }
+    &__icon {
+        margin-top: auto;
+
+        img,
+        svg {
+            display: block;
+            width: 32px;
+            height: 16px;
+        }
+    }
+    //
+    &--service {
+        justify-content: flex-start;
+
+        .feat-item__name {
+            margin-bottom: 0;
+        }
+        .feat-item__icon {
+            margin-top: 0;
+            margin-bottom: 32px;
+
+            @include sm {
+                margin-bottom: 16px;
+            }
+
+            img,
+            svg {
+                width: 56px;
+                height: 28px;
+
+                @include sm {
+                    width: 48px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+}
+
+// -> container with recommendations
+.r-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr)); // minmax(0, 1fr) minmax(0, 3fr) minmax(0, 2fr) minmax(0, 6fr);
+        // grid-template-rows: repeat(3, auto);
+        column-gap: 32px;
+
+        @include md {
+            column-gap: 24px;
+        }
+        @include sm {
+            gap: 0;
+        }
+    }
+    &__title-box {
+        grid-column: 1 / -2;
+        grid-row: 1 / 3;
+
+        display: flex;
+        align-items: center;
+
+        position: relative;
+        z-index: 1;
+
+        @include sm {
+            grid-column: 1 / -1;
+            grid-row: 1 / 3;
+        }
+    }
+    &__title {
+        @include h2TitleFont();
+        color: $white;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+        }
+    }
+    &__image-box {
+        grid-column: -2 / -1;
+        grid-row: 1 / 3;
+
+        .ar-image {
+            padding-top: 82%;
+        }
+
+        @include sm {
+            grid-column: 1 / -1;
+            grid-row: 4 / 5;
+
+            @include marginOutSide();
+            margin-bottom: 16px;
+
+            .ar-image {
+                padding-top: 92%;
+            }
+        }
+    }
+    &__underlay {
+        grid-column: 1 / 2;
+        grid-row: 2 / 4;
+
+        width: 50%;
+        margin-left: 17%;
+        margin-bottom: 32px;
+        position: relative;
+
+        @include sm {
+            grid-column: 2 / 3;
+            grid-row: 2 / 4;
+
+            width: 100%;
+            margin: 0;
+            margin-bottom: 24px;
+        }
+
+        // .ar-image {
+        //     padding-top: 132%;
+        // }
+        .image {
+            position: relative;
+
+            &:after {
+                content: "";
+                background-color: rgba(0, 0, 0, 0.7);
+    
+                width: 100%;
+                height: 100%;
+    
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+    &__set {
+        grid-column: 1 / -1;
+        @include row-gap(40px);
+
+        @include sm {
+            @include row-gap(24px);
+        }
+    }
+}
+.r-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 5fr) minmax(0, 6fr);
+    column-gap: 32px;
+
+    @include md {
+        column-gap: 24px;
+    }
+    @include sm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include row-gap(16px);
+        gap: 0;
+    }
+
+    & > * {
+        align-self: center;
+    }
+    
+    &__icon {
+        opacity: 0;
+        transition: opacity 0.25s $easeOut-1;
+
+        @include md {
+            opacity: 1;
+        }
+
+        img, 
+        svg {
+            display: block;
+            width: 40px;
+            height: 80px;
+
+            @include sm {
+                width: 16px;
+                height: 32px;
+
+                transform: rotate(-90deg);
+            }
+        }
+    }
+    &__title {
+        @include h4TitleAltFont();
+        color: $grey100;
+        text-transform: uppercase;
+        
+        transition: all 0.4s $easeOut-1;
+
+        @include md {
+            @include h5TitleAltFont();
+            color: $white;
+        }
+        @include sm {
+            @include descriptionBoldFont();
+            text-align: center;
+        }
+    }
+    &__description {
+        @include averageFont();
+        color: $grey80;
+        
+        transition: all 0.4s $easeOut-1;
+
+        .description {
+            border-color: $grey60;
+        }
+
+        @include md {
+            color: $light;
+        }
+        @include sm {
+            @include descriptionFont();
+        }
+    }
+
+    // @include hover {
+        &:hover {
+            .r-item {
+                &__icon {
+                    opacity: 1;
+                }
+                &__title {
+                    color: $white;
+                }
+                &__description {
+                    color: $white;
+
+                    .description {
+                        border-color: $orange40;
+                    }
+                }
+            }
+        }
+    // }
+}
+
+// -> container with image slider
+.slider-container {
+    overflow: hidden;
+
+    &.bg.bg--light {
+        .image-slide {
+            &__image {
+                &:before,
+                &:after {
+                    background-image: url('../img/bg/light.jpg');
+                    background-size: 20%; // cover; // contain;
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+        row-gap: 64px;
+
+        @include md {
+            column-gap: 24px;
+            row-gap: 40px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        @include h2TitleFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 16px;
+        }
+    }
+    &__description {
+        @include h5TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        @include md {
+            @include mediumBoldAltFont();
+        }
+        @include sm {
+            @include descriptionBoldFont();
+            margin-bottom: 40px;
+        }
+    }
+    &__slider-box {
+        grid-column: 1 / -1;
+    }
+    &__slider {
+        margin-bottom: 24px;
+    }
+    &__arrow-box {
+        display: flex;
+        justify-content: flex-end;
+
+        @include md {
+            justify-content: center;
+        }
+    }
+}
+.image-slider {
+    overflow: visible;
+
+    .swiper-slide {
+        // add scale-animated transition to the slides
+        // transition: transform 1s $easeOut-1;
+        
+        @include smm {
+            transform-origin: center center;
+            // transition: transform 1s $easeOut-1;
+            transition: all 1s $easeOut-1;
+
+            // works in looped slider
+            &:not(.swiper-slide-active):not(.swiper-slide-duplicate-active) {
+                // transition: transform 1s $easeOut-1;
+                transition: all 1s $easeOut-1;
+
+                .image-slide {
+                    &:before {
+                        // transition: transform 1s $easeOut-1;
+                        transition: all 1s $easeOut-1;
+                        transform: scaleX(1);
+                    }
+                    &:after {
+                        // transition: transform 1s $easeOut-1;
+                        transition: all 1s $easeOut-1;
+                        transform: scaleX(1);
+                    }
+
+                    &__image {
+                        &:before {
+                            // transition: transform 1s $easeOut-1;
+                            transition: all 1s $easeOut-1;
+                            transform: scaleX(1);
+                        }
+                        &:after {
+                            // transition: transform 1s $easeOut-1;
+                            transition: all 1s $easeOut-1;
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+            &:not(.swiper-slide-active):not(.swiper-slide-duplicate-active):not(.swiper-slide-prev):not(.swiper-slide-next) {
+                transform: scale(0.65);
+                // transition: transform 1s $easeOut-1;
+                transition: all 1s $easeOut-1;
+            }
+            &.swiper-slide-prev,
+            &.swiper-slide-next {
+                transform: scale(0.85);
+                // transition: transform 1s $easeOut-1;
+                transition: all 1s $easeOut-1;
+            }
+            //
+            &.swiper-slide-duplicate.swiper-slide-active,
+            &.swiper-slide-duplicate.swiper-slide-next,
+            &.swiper-slide-duplicate.swiper-slide-prev {
+                // transition: transform 1s $easeOut-1;
+                transition: all 1s $easeOut-1;
+            }
+            //
+            &.swiper-slide-prev {
+                transform-origin: right center;
+                z-index: 2;
+            }
+            &.swiper-slide-next {
+                transform-origin: left center;
+                z-index: 2;
+            }
+            &.swiper-slide-active {
+                transform-origin: center center;
+                z-index: 3;
+            }
+        }
+    }
+}
+.image-slide {
+    // transform: scaleX(0.475) scaleY(0.85);
+    // transition: transform 1s $easeOut-1;
+
+    position: relative;
+    
+    &:before {
+        content: "";
+        background-color: $white;
+
+        width: 20%;
+        height: 100%;
+        z-index: 1;
+
+        position: absolute;
+        top: 0;
+        left: -2%;
+        
+        // transform: scaleX(0.475) scaleY(0.85);
+        transform-origin: left center;
+        transform: scaleX(0);
+        // transition: transform 1s $easeOut-1;
+        transition: all 1s $easeOut-1;
+    }
+    &:after {
+        content: "";
+        background-color: $white;
+
+        width: 20%;
+        height: 100%;
+        z-index: 0;
+
+        position: absolute;
+        bottom: 0;
+        right: -2%;
+        
+        // transform: scaleX(0.475) scaleY(0.85);
+        transform-origin: right center;
+        transform: scaleX(0);
+        // transition: transform 1s $easeOut-1;
+        transition: all 1s $easeOut-1;
+    }
+
+    &__image {
+        position: relative;
+
+        &:before {
+            content: "";
+            background-color: $white;
+            // background-image: url('../img/bg/light.jpg');
+            opacity: 0.55;
+
+            width: 20%;
+            height: 100%;
+            z-index: 1;
+
+            position: absolute;
+            top: 0;
+            left: -2%;
+            
+            // transform: scaleX(0.475) scaleY(0.85);
+            transform-origin: left center;
+            transform: scaleX(0);
+            // transition: transform 1s $easeOut-1;
+            transition: all 1s $easeOut-1;
+        }
+        &:after {
+            content: "";
+            background-color: $white;
+            // background-image: url('../img/bg/light.jpg');
+            opacity: 0.55;
+
+            width: 20%;
+            height: 100%;
+            z-index: 1;
+
+            position: absolute;
+            bottom: 0;
+            right: -2%;
+            
+            // transform: scaleX(0.475) scaleY(0.85);
+            transform-origin: right center;
+            transform: scaleX(0);
+            // transition: transform 1s $easeOut-1;
+            transition: all 1s $easeOut-1;
+        }
+    }
+}
+
+// -> t-d-container + image under title
+.t-i-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+
+        @include md {
+            column-gap: 24px;
+        }
+        @include sm {
+            gap: 0;
+        }
+    }
+    &__title-box {
+        grid-column: 1 / -2;
+        grid-row: 1 / 3;
+
+        // display: flex;
+        // align-items: center;
+
+        position: relative;
+        z-index: 1;
+
+        @include sm {
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+
+            margin-bottom: 24px;
+        }
+    }
+    &__title {
+        @include h2TitleFont();
+        color: $white;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+
+            br {
+                display: none;
+            }
+        }
+    }
+    &__description-box {
+        grid-column: -2 / -1;
+        grid-row: 1 / 3;
+
+        // display: flex;
+        // align-items: center;
+
+        @include sm {
+            grid-column: 1 / -1;
+            grid-row: 2 / 3;
+            
+            position: relative;
+            z-index: 1;
+        }
+    }
+    &__description {
+        @include h5TitleAltFont();
+        color: $white;
+        text-transform: uppercase;
+
+        .description {
+            border-color: $orange40;
+        }
+
+        @include md {
+            @include mediumBoldAltFont();
+        }
+        @include sm {
+            @include descriptionFont();
+        }
+    }
+    &__underlay {
+        grid-column: 1 / 2;
+        grid-row: 2 / 4;
+
+        width: 50%;
+        margin-left: 17%;
+        position: relative;
+
+        @include sm {
+            grid-column: 2 / 3;
+            grid-row: 2 / 4;
+
+            width: 100%;
+            margin: 0;
+        }
+
+        .image {
+            position: relative;
+
+            &:after {
+                content: "";
+                background-color: rgba(0, 0, 0, 0.7);
+    
+                width: 100%;
+                height: 100%;
+    
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+}
+
+// -> container with instructions on the black and white bg
+.b-w-container {
+    &__block {
+        @include smm {
+            &:nth-child(2n) {
+                .b-w-container__caption {
+                    &:not(:last-child) {
+                        border-bottom: 1px solid $grey100;
+                    }
+                }
+            }
+            &:nth-child(2n+1) {
+                .b-w-container__caption {
+                    &:not(:last-child) {
+                        border-bottom: 1px solid $grey60;
+                    }
+                }
+            }
+        }
+
+        &:nth-child(2n) {
+            .b-w-container__caption {
+                .b-w-container__description {
+                    color: $grey20;
+                }
+            }
+        }
+    }
+    &__block-wrapper {
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+
+        @include md {
+            padding-top: 64px;
+            padding-bottom: 64px;
+            column-gap: 24px;
+
+            & > * {
+                align-self: center;
+            }
+        }
+        @include sm {
+            padding-top: 40px;
+            padding-bottom: 40px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        @include h2TitleFont();
+        color: $orange;
+        text-transform: uppercase;
+        font-feature-settings: 'pnum' on, 'lnum' on; // set equal height for numbers and letters in the string
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    }
+    &__caption-box {
+        @include md {
+            @include row-gap(8px);
+        }
+        @include sm {
+            @include row-gap(40px);
+        }
+    }
+    &__caption {
+        padding-top: 40px;
+        padding-bottom: 24px;
+
+        display: flex;
+        align-items: center;
+        @include column-gap(24px);
+        
+        @include smm {
+            &:first-child {
+                padding-top: 0;
+            }
+            &:last-child {
+                padding-bottom: 0;
+            }
+            // only child
+            &:first-child:last-child {
+                padding-top: 0;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+        }
+        
+        @include md {
+            padding-top: 24px;
+            padding-bottom: 16px;
+        }
+        @include sm {
+            padding-top: 8px;
+            padding-bottom: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            @include row-gap(16px);
+        }
+    }
+    &__icon {
+        img,
+        svg {
+            display: block;
+            width: 56px;
+            height: 28px;
+
+            @include sm {
+                width: 32px;
+                height: 16px;
+            }
+        }
+    }
+    &__description {
+        @include h5TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        @include md {
+            @include mediumBoldAltFont();
+        }
+        @include sm {
+            @include descriptionBoldFont();
+            text-align: center;
+        }
+    }
+}
+
+// -> container with dropdowns
+.dropdown-container {
+    &__set {
+        display: grid;
+        grid-template-columns: minmax(0, 10fr) minmax(0, 2fr);
+
+        @include lg {
+            display: block;
+        }
+    }
+    &__item {
+        grid-column: 1 / 2;
+    }
+}
+
+// -> container with men/women check-up cards
+.checkup-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+
+        @include md {
+            column-gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        @include h2TitleFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 24px;
+        }
+    }
+    &__info {
+        margin-bottom: 64px;
+
+        @include sm {
+            margin-bottom: 40px;
+        }
+    }
+    &__description {
+        @include h5TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        margin-bottom: 40px;
+
+        .description {
+            border-color: $orange40;
+        }
+
+        @include md {
+            @include mediumBoldAltFont();
+        }
+        @include sm {
+            @include descriptionBoldFont();
+            margin-bottom: 32px;
+        }
+    }
+    &__button-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include column-gap(16px);
+
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            @include remove-gap;
+        }
+    }
+    &__button {
+        @include sm {
+            width: 100%;
+
+            order: 2;
+        }
+    }
+    &__price-box {
+        display: flex;
+        align-items: center;
+        @include column-gap(16px);
+
+        @include sm {
+            width: 100%;
+            // justify-content: flex-end;
+            justify-content: space-between;
+            @include column-gap(8px);
+            
+            margin-bottom: 16px;
+            order: 1;
+        }
+    }
+    &__price-name {
+        @include averageFont();
+        color: $grey100;
+        text-transform: uppercase;
+
+        @include smm {
+            display: none;
+        }
+    }
+    &__price {
+        @include h4TitleAltFont();
+        color: $orange;
+
+        @include md {
+            @include h5TitleAltFont();
+        }
+
+        &_old {
+            @include mediumAltFont();
+            color: $grey100;
+            text-decoration: line-through;
+            
+            @include sm {
+                @include averageFont();
+
+                margin-left: auto !important;
+            }
+        }
+    }
+    &__tabs-box {
+        display: flex;
+        align-items: center;
+        // @include column-gap(16px);
+
+        margin-bottom: 16px;
+
+        @include sm {
+            // @include column-gap(24px);
+            margin-bottom: 8px;
+        }
+    }
+    &__tab {
+        margin-right: 16px;
+        margin-bottom: 16px;
+
+        @include sm {
+            margin-right: 8px;
+            margin-bottom: 8px;
+
+            flex: auto;
+        }
+    }
+    //
+    &__storage {
+        grid-column: 1 / -1;
+    }
+    &__block {
+        display: none;//--switch
+    }
+    &__set {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+
+        @include md {
+            gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(16px);
+            gap: 0;
+        }
+    }
+    &__item {
+        & > * {
+            height: 100%;
+        }
+    }
+}
+.checkup-item {
+    border: 1px solid $grey20;
+    background-color: $white;
+
+    display: flex;
+    flex-direction: column;
+
+    &__block {
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+
+        @include md {
+            padding: 16px;
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $grey20;
+        }
+        // if only child
+        &:first-child:last-child {
+            height: 100%;
+        }
+        //
+        &:last-child {
+            margin-top: auto;
+        }
+    }
+    &__title {
+        @include h4TitleFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        margin-bottom: 16px;
+
+        @include md {
+            @include mediumBoldFont();
+        }
+        @include sm {
+            font-size: 16px;
+        }
+    }
+    &__description {
+        @include averageFont();
+        color: $grey;
+
+        @include row-gap(16px);
+        margin-bottom: 16px;
+        
+        .description {
+            border-color: $orange40;
+            padding-left: 8px;
+        }
+
+        @include md {
+            @include descriptionFont();
+        }
+        @include sm {
+            @include row-gap(12px);
+        }
+    }
+    &__subtitle {
+        @include h5TitleFont();
+        text-transform: uppercase;
+        margin-top: 16px;
+        margin-bottom: 12px;
+
+        @include md {
+            font-size: 16px;
+        }
+        @include sm {
+            font-size: 14px;
+            margin-top: 0;
+        }
+    }
+    &__vip-box {
+        @include row-gap(8px);
+        margin-top: auto;
+
+        @include sm {
+            margin: 0 -16px;
+            @include row-gap(16px);
+        }
+    }
+    &__vip {
+        background-color: $greyVip;
+        padding: 16px;
+
+        display: flex;
+        justify-content: space-between;
+        // align-items: flex-end;
+        @include column-gap(16px);
+
+        @include md {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(16px);
+        }
+
+        .checkup-item__description {
+            @include averageFont();
+            color: $grey100;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include md {
+                @include descriptionFont();
+            }
+        }
+
+    }
+    &__button {
+        display: flex;
+        align-items: flex-end;
+
+        @include md {
+            @include smm {
+                justify-content: flex-end;
+            }
+        }
+
+        .button {
+            &__wrapper {
+                padding: 8px 24px;
+                @include column-gap(8px);
+            }
+        }
+    }
+    //
+    // &--alt {
+    //     .checkup-item__description {
+    //         @include mediumAltFont();
+            
+    //         @include lg {
+    //             @include averageFont();
+    //         }
+    //         @include md {
+    //             @include descriptionFont();
+    //         }
+    //     }
+    // }
+}
+.service-item {
+    border: 1px solid $grey20;
+    background-color: $white;
+
+    &__title-box {
+        border-bottom: 1px solid $grey20;
+        padding: 32px;
+
+        @include md {
+            padding: 16px;
+        }
+    }
+    &__title {
+        @include h4TitleFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        @include lg {
+            @include h5TitleFont();
+        }
+        @include md {
+            @include mediumBoldFont();
+        }
+        @include sm {
+            font-size: 16px;
+        }
+    }
+    &__body {
+        padding: 24px 32px 32px;
+
+        @include md {
+            padding: 16px;
+        }
+    }
+    &__description {
+        @include descriptionFont();
+        color: $grey;
+
+        margin-bottom: 16px;
+    }
+    &__set {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+        row-gap: 16px;
+
+        margin-top: auto;
+
+        @include lg {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(16px);
+            gap: 0;
+        }
+    }
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include hover {
+            &:hover {
+                .service-item__item-name {
+                    color: $orange;
+                }
+                .service-item__item-icon {
+                    img,
+                    svg {
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+    }
+    &__item-name {
+        @include descriptionFont();
+        color: $grey;
+
+        margin-right: 16px;
+        transition: all 0.4s $easeOut-1;
+
+        .description {
+            border-color: $orange40;
+            padding-left: 4px;
+        }
+
+        @include md {
+            @include descriptionFont();
+        }
+    }
+    &__item-price {
+        @include averageBoldFont();
+        color: $blackMain;
+
+        margin-left: auto;
+        margin-right: 16px;
+    }
+    &__item-icon {
+        // align-self: center;
+        
+        img,
+        svg {
+            display: block;
+            width: 16px;
+            height: 16px;
+
+            transform-origin: center center;
+            transition: transform 0.4s $easeOut-1;
+        }
+    }
+}
+
+// -> container with text + description + image [5x1x6] (can contain slider)
+.tdi-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 1fr) minmax(0, 6fr);
+        row-gap: 80px;
+
+        @include md {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        grid-column: 1 / 2;
+        
+        @include h2TitleFont();
+        color: $white;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 16px;
+
+            order: 1;
+        }
+    }
+    &__caption {
+        grid-column: 3 / 4;
+
+        @include mediumAltFont();
+        color: $grey40;
+        text-transform: uppercase;
+
+        .caption {
+            &__inner {
+                padding-left: 32px;
+
+                @include md {
+                    padding-left: 16px;
+                }
+                @include sm {
+                    padding-left: 8px;
+                }
+            }
+        }
+
+        @include md {
+            grid-column: 2 / 3;
+            @include averageFont();
+        }
+        @include sm {
+            @include descriptionFont();
+            margin-bottom: 80px;
+            
+            order: 2;
+        }
+    }
+    &__block {
+        grid-column: 1 / 2;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include sm {
+            order: 4;
+        }
+    }
+    &__subtitle {
+        @include h2TitleFont();
+        color: $white;
+        text-transform: uppercase;
+
+        margin-bottom: 48px;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+            margin-bottom: 32px;
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 16px;
+        }
+    }
+    &__description {
+        @include averageFont();
+        color: $grey40;
+
+        .caption {
+            &__inner {
+                padding-left: 32px;
+
+                @include md {
+                    padding-left: 16px;
+                }
+                @include sm {
+                    padding-left: 8px;
+                }
+            }
+        }
+
+        @include sm {
+            @include descriptionFont();
+        }
+    }
+    &__image {
+        grid-column: 3 / 4;
+
+        .ar-image {
+            padding-top: 112%;
+
+            @include sm {
+                padding-top: 128%;
+            }
+        }
+        
+        @include md {
+            grid-column: 2 / 3;
+        }
+        @include sm {
+            margin-bottom: 16px;
+            order: 3;
+        }
+    }
+    //
+    // slider
+    &--slider {
+        .tdi-container__slider-block {
+            grid-column: 1 / -1;
+            
+            display: grid;
+            grid-template-columns: minmax(0, 5fr) minmax(0, 1fr) minmax(0, 6fr);
+            grid-template-rows: auto 1fr;
+            column-gap: 32px;
+            row-gap: 48px;
+    
+            @include md {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                column-gap: 24px;
+                row-gap: 32px;
+            }
+            @include sm {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+
+                order: 3;
+            }
+        }
+        .tdi-container__slider-box {
+            &_quote {
+                grid-column: 1 / 3;
+                grid-row: 1 / 2;
+
+                @include md {
+                    grid-column: 1 / 2;
+                }
+                @include sm {
+                    margin-bottom: 16px;
+
+                    order: 1;
+                }
+            }
+            &_text {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+
+                @include md {
+                    grid-column: 1 / 2;
+                }
+                @include sm {
+                    align-self: auto;
+                    margin-right: 0;
+
+                    order: 3;
+                }
+            }
+            &_image {
+                grid-column: 3 / 4;
+                grid-row: 1 / 3;
+
+                .tdi-container__slider {
+                    height: 100%;
+
+                    & > * {
+                        height: 100%;
+                    }
+                }
+
+                @include md {
+                    grid-column: 2 / 3;
+                }
+                @include sm {
+                    margin-bottom: 24px;
+                    
+                    order: 2;
+                }
+            }
+        }
+        .tdi-container__arrow-box {
+            margin-top: 32px;
+
+            @include sm {
+                margin-top: 24px;
+                
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
+.about-quote-slider,
+.about-text-slider,
+.about-image-slider {
+    .swiper-slide {
+        height: auto;
+
+        & > * {
+            height: 100%;
+        }
+    }
+}
+.about-quote-slide {
+    &__quote {
+        @include h3TitleFont();
+        font-size: 56px;
+        line-height: 110%;
+        color: $grey40;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 40px;
+        }
+        @include md {
+            font-size: 36px;
+        }
+        @include sm {
+            @include h4TitleFont();
+        }
+    }
+}
+.about-text-slide {
+    &__content {
+        border-left: 1px solid $orange40;
+        padding-left: 16px;
+
+        @include sm {
+            padding-left: 8px;
+        }
+    }
+    &__title {
+        @include h5TitleAltFont();
+        color: $grey20;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+
+        @include sm {
+            @include averageFont();
+        }
+    }
+    &__subtitle {
+        @include descriptionFont();
+        color: $orange60;
+        text-transform: uppercase;
+
+        margin-bottom: 28px;
+
+        @include sm {
+            margin-bottom: 16px;
+        }
+    }
+    &__description {
+        @include averageFont();
+        color: $light;
+
+        @include sm {
+            @include descriptionFont();
+        }
+    }
+}
+.about-image-slide {
+    .ar-image {
+        padding-top: 112%;
+    }
+}
+
+// -> container with text + image [5x1x6]
+.ti-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: minmax(0, 6fr) minmax(0, 1fr) minmax(0, 5fr);
+
+        @include md {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        grid-column: 1 / 2;
+
+        @include h2TitleFont();
+        font-size: 56px;
+        color: $grey40;
+        text-transform: uppercase;
+
+        align-self: center;
+
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 16px;
+        }
+    }
+    &__image {
+        grid-column: 3 / 4;
+
+        .ar-image {
+            padding-top: 116%;
+
+            @include sm {
+                padding-top: 128%;
+            }
+        }
+
+        @include md {
+            grid-column: 2 / 3;
+        }
+    }
+}
+
+// -> container with storage + tabs
+.storage-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+
+        @include md {
+            column-gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        grid-column: 1 / 2;
+
+        @include h2TitleFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 24px;
+        }
+    }
+    &__block {
+        margin-bottom: 32px;
+    }
+    &__description {
+        @include h5TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        margin-bottom: 24px;
+
+        @include md {
+            @include mediumBoldAltFont();
+        }
+        @include sm {
+            @include descriptionBoldFont();
+            margin-bottom: 16px;
+        }
+    }
+    &__caption {
+        @include averageFont();
+        color: $grey100;
+
+        padding-left: 16px;
+
+        @include sm {
+            @include descriptionFont();
+            padding-left: 8px;
+        }
+    }
+    //
+    &__unit {
+        @include sm {
+            margin-bottom: 40px;
+        }
+    }
+    //
+    &__tabs-box {
+        grid-column: 1 / 2;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        @include lg {
+            grid-column: 1 / -1;
+        }
+    }
+    &__tab {
+        margin-right: 16px;
+        margin-bottom: 16px;
+
+        @include sm {
+            margin-right: 8px;
+            margin-bottom: 8px;
+
+            flex: auto;
+        }
+
+        .button {
+            &__name {
+                @include smallFont();
+            }
+        }
+        
+        @include sm {
+            .button {
+                &__name {
+                    position: relative;
+
+                    &:after {
+                        content: attr(data-btn-name);
+                        display: block;
+                        overflow: hidden;
+                        visibility: hidden;
+                        pointer-events: none;
+                        color: transparent;
+                        height: 0;
+                        font-weight: 700;
+                    }
+                }
+
+                &.active {
+                    .button__name {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+    &__storage {
+        grid-column: 1 / -1;
+    }
+    &__block {
+        display: none;//--switch
+    }
+    &__item {
+        margin-bottom: 32px;
+
+        @include sm {
+            margin-bottom: 16px;
+        }
+
+        &:nth-child(n + 6) {
+            display: none;
+        }
+    }
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 56px;
+
+        .button {
+            min-width: 192px;
+        }
+    }
+}
+.doctor-card {
+    position: relative;
+
+    // bg
+    &:before {
+        content: "";
+        background-color: $white;
+
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    &:after {
+        content: "";
+        background-image: url('../img/bg/light.jpg');
+        background-size: 20%; // cover; // contain;
+        opacity: 0.55;
+
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+
+    @include md {
+        grid-template-columns: minmax(0, 3.5fr) minmax(0, 4.5fr);
+    }
+    @include sm {
+        display: flex;
+        flex-direction: column;
+    }
+
+    transition: all 0.4s $easeOut-1;
+
+    @include hover {
+        &:hover {
+            box-shadow: 0px 4px 40px rgba(112, 117, 132, 0.3);
+
+            .doctor-card__feat-name {
+                color: $grey;
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+
+        .image {
+            @include sm {
+                max-height: 280px;
+            }
+            @include xs {
+                max-height: 250px;
+            }
+            @include xxs {
+                max-height: 220px;
+            }
+        }
+    }
+    &__content {
+        padding: 32px;
+
+        display: flex;
+        @include column-gap(32px);
+
+        @include md {
+            padding: 24px;
+
+            display: flex;
+            flex-direction: column;
+            @include row-gap(24px);
+        }
+        @include sm {
+            padding: 16px;
+            @include row-gap(16px);
+        }
+    }
+    &__block {
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        @include h3TitleFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        margin-bottom: 16px;
+
+        @include md {
+            @include h5TitleFont();
+        }
+        @include sm {
+            @include mediumBoldFont();
+            margin-bottom: 8px;
+        }
+    }
+    &__subtitle {
+        @include averageBoldFont();
+        color: $orange80;
+        text-transform: uppercase;
+
+        margin-bottom: 32px;
+
+        @include md {
+            @include descriptionBoldFont();
+            margin-bottom: 24px;
+        }
+        @include sm {
+            @include smallFont();
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+    }
+    &__feat {
+        display: flex;
+        align-items: center;
+        @include column-gap(8px);
+
+        margin-bottom: 64px;
+
+        @include md {
+            margin-bottom: 40px;
+        }
+        @include sm {
+            margin-bottom: 24px;
+        }
+    }
+    &__feat-num {
+        @include h5TitleAltFont();
+        color: $orange;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+
+        @include md {
+            @include mediumBoldAltFont();
+        }
+        @include sm {
+            @include smallFont();
+            font-weight: 700;
+        }
+    }
+    &__feat-name {
+        @include averageBoldFont();
+        color: $grey;
+
+        transition: color 0.4s $easeOut-1;
+        
+        @include md {
+            @include descriptionBoldFont();
+        }
+        @include sm {
+            @include smallFont();
+            font-weight: 700;
+        }
+    }
+    &__description {
+        @include averageFont();
+        color: $grey;
+        
+        @include md {
+            @include descriptionFont();
+        }
+        @include sm {
+            @include smallFont();
+        }
+    }
+    //
+    &__button-box {
+        flex-shrink: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        @include row-gap(32px);
+
+        @include md {
+            @include smm {
+                flex-direction: row;
+                @include column-gap(32px);
+            }
+        }
+        @include sm {
+            @include row-gap(24px);
+        }
+    }
+    &__button {
+        flex-shrink: 0;
+
+        @include sm {
+            width: 100%;
+        }
+
+        .button.button--dropdown {
+            height: 40px;
+
+            .button__wrapper {
+                padding: 8px 24px;
+            }
+
+            &:before,
+            &:after,
+            .button__wrapper:before,
+            .button__wrapper:after {
+                border-color: $grey60;
+            }
+    
+            @include hover {
+                &:hover {
+                    background-color: $orange80;
+    
+                    &:before,
+                    &:after,
+                    .button__wrapper:before,
+                    .button__wrapper:after {
+                        border-color: $orange80;
+                    }
+                }
+            }
+        }
+    }
+}
+.blog-item {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    column-gap: 32px;
+
+    @include md {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 5fr);
+        column-gap: 24px;
+    }
+    @include sm {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+
+        .image {
+            @include sm {
+                max-height: 280px;
+            }
+            @include xs {
+                max-height: 250px;
+            }
+            @include xxs {
+                max-height: 220px;
+            }
+        }
+
+        @include sm {
+            margin-bottom: 8px;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+    &__tag-line {
+        display: flex;
+        align-items: center;
+        @include column-gap(32px);
+
+        margin-bottom: 16px;
+
+        @include lg {
+            flex-wrap: wrap;
+            @include remove-gap;
+        }
+    }
+    &__tag {
+        @include descriptionFont();
+        color: $orange;
+        text-transform: uppercase;
+
+        .description {
+            padding-left: 8px;
+        }
+
+        @include lg {
+            margin-right: 8px !important;
+            margin-bottom: 8px !important;
+        }
+
+        &_author {
+            color: $grey;
+
+            .description {
+                border-color: $grey100;
+            }
+        }
+    }
+    &__title {
+        @include mediumBoldAltFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        width: 50%;
+        margin-bottom: 8px;
+
+        @include lg {
+            width: 100%;
+        }
+        @include sm {
+            @include descriptionBoldFont();
+        }
+    }
+    &__description {
+        @include averageFont();
+        color: $grey;
+
+        width: 75%;
+        margin-bottom: 56px;
+
+        @include lg {
+            width: 100%;
+        }
+        @include md {
+            @include descriptionFont();
+            margin-bottom: 40px;
+        }
+        @include sm {
+            @include smallFont();
+            margin-bottom: 16px;
+        }
+    }
+    &__button {
+        margin-top: auto;
+
+        .button {
+            &__wrapper {
+                padding: 8px 48px;
+            }
+        }
+    }
+}
+
+// -> container with hoverable press material cards to download
+.m-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+        row-gap: 40px;
+
+        @include md {
+            column-gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        @include h2TitleFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 24px;
+        }
+    }
+    &__set {
+        grid-column: 1 / -1;
+
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 32px;
+
+        @include md {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(16px);
+            gap: 0;
+        }
+    }
+}
+.m-item {
+    background-color: $greyVip;
+    height: 240px;
+    padding: 24px;
+    position: relative;
+
+    transition: all 0.4s $easeOut-1;
+
+    @include lg {
+        height: 300px;
+    }
+    @include md {
+        height: auto;
+        padding: 24px 16px;
+        box-shadow: 0px 4px 40px rgba(112, 117, 132, 0.3);
+    }
+    @include sm {
+        padding: 40px 24px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include row-gap(32px);
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.4s $easeOut-1;
+
+        @include lg {
+            @include row-gap(24px);
+        }
+        @include md {
+            @include row-gap(16px);
+            justify-content: space-between;
+            position: relative;
+            top: initial;
+            left: initial;
+            transform: translate(0, 0);
+        }
+    }
+    &__icon {
+        img,
+        svg {
+            display: block;
+            width: 64px;
+            height: 32px;
+        }
+    }
+    &__title {
+        @include h5TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+        text-align: center;
+        
+        transition: all 0.4s $easeOut-1;
+
+        @include lg {
+            @include mdm {
+                @include mediumBoldAltFont();
+            }
+        }
+        @include md {
+            margin-bottom: 64px;
+        }
+    }
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include column-gap(8px);
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        pointer-events: none;
+        opacity: 0;
+        transition: all 0.4s $easeOut-1;
+
+        @include md {
+            position: relative;
+            top: initial;
+            left: initial;
+            transform: translate(0, 0);
+
+            pointer-events: all;
+            opacity: 1;
+        }
+    }
+    &__button-name {
+        @include mediumAltFont();
+        color: $grey;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+    &__button-icon {
+        img,
+        svg {
+            display: block;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    // @include hover {
+    @include mdm {
+        &:hover {
+            box-shadow: 0px 4px 40px rgba(112, 117, 132, 0.3);
+
+            .m-item__content {
+                transform: translate(-50%, -100%);
+            }
+            .m-item__title {
+                color: $grey100;
+            }
+            .m-item__button {
+                pointer-events: all;
+                opacity: 1;
+                transform: translate(-50%, 200%);
+            }
+        }
+    }
+    // }
+}
+
+// -> container with list of doctor's programs
+.doc-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+
+        @include md {
+            column-gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        grid-column: 1 / 2;
+
+        @include h2TitleFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            line-height: 120%;
+            margin-bottom: 32px;
+        }
+    }
+    &__list {
+        grid-column: 2 / 3;
+    }
+    &__item {
+        padding: 24px 0;
+        
+        @include md {
+            padding: 16px 0;
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $grey20;
+        }
+        &:first-child {
+            padding-top: 0;
+        }
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+    &__item-name {
+        @include descriptionFont();
+        color: $orange;
+        text-transform: uppercase;
+
+        margin-bottom: 16px;
+
+        .description {
+            border-color: $orange40;
+            padding-left: 8px;
+        }
+    }
+    &__item-value {
+        @include mediumBoldAltFont();
+        color: $grey;
+        text-transform: uppercase;
+    }
+    //
+    &__slider-box {
+        grid-column: 2 / 3;
+    }
+    &__slider {
+        margin-bottom: 48px;
+
+        @include sm {
+            margin-bottom: 32px;
+        }
+    }
+    &__arrow-box {
+        display: flex;
+        justify-content: flex-end;
+
+        @include sm {
+            justify-content: center;
+        }
+    }
+}
+.doc-profile-slide {
+    &__item {
+        padding: 40px 0;
+        display: flex;
+        align-items: center;
+        @include column-gap(24px);
+
+        @include md {
+            padding: 24px 0;
+        }
+        @include sm {
+            padding: 32px 0 8px;
+            @include column-gap(8px);
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $grey20;
+        }
+        &:first-child {
+            padding-top: 0;
+        }
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+    &__icon {
+        img,
+        svg {
+            display: block;
+            width: 32px;
+            height: 16px;
+        }
+    }
+    &__name {
+        @include h4TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        @include md {
+            @include h5TitleAltFont();
+        }
+        @include sm {
+            @include mediumBoldAltFont();
+        }
+    }
+}
+
+// -> container with article
+.article-container {
+    //
+}
+// -> equipment.html
+.article {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 32px;
+
+    @include md {
+        column-gap: 24px;
+    }
+    @include sm {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    h2 {
+        @include h2TitleFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        @include sm {
+            @include h5TitleAltFont();
+        }
+    }
+    h3 {
+        @include h3TitleAltFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        @include sm {
+            @include mediumBoldAltFont();
+        }
+    }
+    h4 {
+        @include h4TitleAltFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        @include sm {
+            @include averageBoldFont();
+        }
+    }
+    h5 {
+        @include h5TitleAltFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        @include sm {
+            @include descriptionBoldFont();
+        }
+    }
+    h2, h3, h4, h5 {
+        padding-left: 16px;
+
+        @include sm {
+            padding-left: 0;
+        }
+
+        & + h2,
+        & + h3,
+        & + h4,
+        & + h5 {
+            margin-top: 24px;
+
+            @include sm {
+                margin-top: 16px;
+            }
+        }
+        & + div {
+            margin-top: 8px;
+        }
+        & + img {
+            margin-top: 32px;
+
+            @include sm {
+                margin-top: 24px;
+            }
+        }
+    }
+    p {
+        @include averageFont();
+        color: $grey;
+        line-height: 160%;
+
+        @include sm {
+            @include descriptionFont();
+        }
+    }
+    div {
+        border-left: 1px solid $orange40;
+        padding-left: 16px;
+
+        @include row-gap(16px);
+
+        @include sm {
+            padding-left: 8px;
+            @include row-gap(8px);
+        }
+
+        & + h2,
+        & + h3,
+        & + h4,
+        & + h5 {
+            margin-top: 32px;
+
+            @include sm {
+                margin-top: 24px;
+            }
+        }
+        & + div {
+            margin-top: 16px;
+
+            @include sm {
+                margin-top: 8px;
+            }
+        }
+        & + img {
+            margin-top: 80px;
+
+            @include sm {
+                margin-top: 40px;
+            }
+        }
+    }
+    img {
+        display: block;
+        width: 100%;
+        max-height: 100vh;
+        object-fit: cover;
+
+        & + h2,
+        & + h3,
+        & + h4,
+        & + h5 {
+            margin-top: 24px;
+
+            @include sm {
+                margin-top: 16px;
+            }
+        }
+        & + div {
+            margin-top: 24px;
+
+            @include sm {
+                margin-top: 16px;
+            }
+        }
+        & + img {
+            margin-top: 24px;
+
+            @include sm {
+                margin-top: 16px;
+            }
+        }
+    }
+    //
+    ul {
+        li {
+            @include averageFont();
+            color: $grey;
+    
+            position: relative;
+            margin-left: 16px;
+    
+            &:not(:last-child) {
+                margin-bottom: 8px;
+            }
+    
+            &:before {
+                content: "";
+                
+                background-color: $black;
+                border-radius: 50%;
+                width: 4px;
+                height: 4px;
+    
+                position: absolute;
+                top: 12px;
+                left: -16px;
+            }
+        }
+    }
+    //
+    section {
+        & + section {
+            @include sm {
+                margin-top: 40px;
+            }
+        }
+
+        &:first-child {
+            @include smm {
+                img {
+                    max-height: 360px;
+                }
+            }
+            @include mdm {
+                img {
+                    max-height: 60vh;
+                }
+            }
+        }
+    }
+}
+// -> sub-blog.html
+.blog-article {
+    // display: grid;
+    // grid-template-columns: repeat(2, minmax(0, 1fr));
+    // // grid-template-rows: 720px;
+    // column-gap: 32px;
+    // row-gap: 80px;
+
+    // // & > * {
+    // //     align-self: center;
+    // // }
+
+    // @include sm {
+        display: flex;
+        flex-direction: column;
+        @include row-gap(40px);
+        gap: 0;
+    // }
+
+    section {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-flow: dense;
+        column-gap: 32px;
+        row-gap: 80px;
+
+        & > * {
+            align-self: center;
+        }
+
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            // @include row-gap(40px);
+            gap: 0;
+            
+            // & > * {
+            //     order: 1;
+            // }
+            // & > img {
+            //     order: 2;
+            //     margin-top: 40px;
+            // }
+        }
+    }
+    main {
+        grid-column: 1 / -1;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-flow: dense;
+        column-gap: 32px;
+        row-gap: 24px;
+        
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        & > h1,
+        & > h2, 
+        & > h3, 
+        & > h4, 
+        & > h5, 
+        & > h6 {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+
+            margin-top: 120px;
+
+            @include md {
+                margin-top: 0;
+            }
+            @include sm {
+                order: 1;
+            }
+
+            & + div,
+            & + p {
+                @include smm {
+                    margin-top: 0;
+                }
+            }
+        }
+        & > div,
+        & > p {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+
+            margin-bottom: 120px;
+
+            @include md {
+                margin-bottom: 0;
+            }
+            @include sm {
+                order: 3;
+            }
+        }
+        & > img {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+
+            height: 100%;
+
+            @include sm {
+                height: 100vw;
+
+                order: 2;
+            }
+        }
+    }
+    // main {
+    //     padding: 120px 0;
+
+    //     @include sm {
+    //         padding: 0;
+
+    //         & + img,
+    //         & + div,
+    //         & + main {
+    //             margin-top: 40px;
+    //         }
+    //     }
+    // }
+
+    h2 {
+        @include h2TitleFont();
+        color: $white;
+        text-transform: uppercase;
+
+        @include sm {
+            @include h3TitleFont();
+        }
+    }
+    h3 {
+        @include h3TitleFont();
+        color: $white;
+        text-transform: uppercase;
+
+        @include sm {
+            @include h4TitleFont();
+        }
+    }
+    h4 {
+        @include h4TitleFont();
+        color: $white;
+        text-transform: uppercase;
+
+        @include sm {
+            @include h5TitleFont();
+        }
+    }
+    h5 {
+        @include h5TitleAltFont();
+        color: $white;
+        text-transform: uppercase;
+
+        @include sm {
+            @include descriptionBoldFont();
+        }
+    }
+
+    h2, h3, h4, h5 {
+        span {
+            display: inline;
+            color: $orange;
+        }
+    }
+    h2, h3, h4, h5 {
+        & + div {
+            margin-top: 24px;
+
+            @include sm {
+                margin-top: 16px;
+            }
+        }
+    }
+
+    p {
+        @include averageFont();
+        color: $white;
+
+        @include sm {
+            @include descriptionFont();
+        }
+    }
+
+    div {
+        direction: rtl;
+        height: 480px; // = 720px [img's height] - 120px * 2 [margin-top/bottom]
+
+        // overflow: auto;
+        overflow-y: scroll;
+        padding-left: 16px;
+
+        @include row-gap(16px);
+
+        @include sm {
+            height: auto;
+            overflow-y: auto;
+
+            border-left: 1px solid $orange40;
+            padding-left: 8px;
+            @include row-gap(8px);
+
+            & + img,
+            & + div,
+            & + main {
+                margin-top: 40px;
+            }
+        }
+
+        * {
+            direction: ltr;
+        }
+
+        &::-webkit-scrollbar {
+            display: block;
+            width: 3px; // 1px;
+        }
+        &::-webkit-scrollbar-thumb {
+            // width: 3px;
+            background-color: $orange;
+            border-radius: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            // width: 1px;
+            background-color: $grey100;
+            border-radius: 8px;
+
+            border: 1px solid transparent;
+            background-clip: content-box;
+        }
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: 720px;
+        object-fit: cover;
+        
+        @include sm {
+            height: 100vw;
+
+            & + div,
+            & + p {
+                margin-top: 16px;
+            }
+        }
+    }
+}
+
+// -> container with other articles
+.other-container {
+    overflow: hidden;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+        row-gap: 80px;
+        
+        @include md {
+            column-gap: 24px;
+            row-gap: 40px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        @include h2TitleFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        @include lg {
+            font-size: 64px;
+        }
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h4TitleFont();
+            margin-bottom: 24px;
+        }
+    }
+    &__description {
+        @include h5TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        .description {
+            border-color: $orange60;
+        }
+
+        @include md {
+            @include mediumBoldAltFont();
+        }
+        @include sm {
+            @include descriptionFont();
+            margin-bottom: 24px;
+        }
+    }
+    &__slider-box {
+        grid-column: 1 / -1;
+    }
+    &__slider {
+        margin-bottom: 24px;
+    }
+    &__arrow-box {
+        display: flex;
+        justify-content: flex-end;
+
+        @include md {
+            justify-content: center;
+        }
+        @include sm {
+            display: none;
+        }
+    }
+    &__expand-btn {
+        @include smm {
+            display: none;
+        }
+    }
+}
+.other-slider {
+    overflow: visible;
+
+    .swiper-wrapper {
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(24px);
+
+            transform: translate3d(0, 0, 0) !important; // so that on 'resize' from small to big enabled slider doesn't get transformed to the left
+        }
+    }
+
+    .swiper-slide {
+        height: auto;
+
+        & > * {
+            height: 100%;
+        }
+
+        @include sm {
+            width: 100% !important;
+            
+            &:nth-child(n + 6) {
+                display: none;
+            }
+        }
+    }
+}
+
+// -> container with privacy policy
+.info-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 6fr));
+
+        @include lg {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &__content {
+        grid-column: 1 / 2;
+
+        h2 {
+            @include h5TitleAltFont();
+            color: $grey;
+            text-transform: uppercase;
+
+            @include sm {
+                @include mediumBoldAltFont();
+            }
+        }
+        h3 {
+            @include mediumBoldAltFont();
+            color: $grey;
+            text-transform: uppercase;
+
+            @include sm {
+                @include descriptionBoldFont();
+            }
+        }
+        h2, h3 {
+            & + h2,
+            & + h3 {
+                margin-top: 24px;
+
+                @include sm {
+                    margin-top: 16px;
+                }
+            }
+            & + p {
+                margin-top: 16px;
+
+                @include sm {
+                    margin-top: 8px;
+                }
+            }
+        }
+        p {
+            @include averageFont();
+            color: $grey;
+
+            @include sm {
+                @include descriptionFont();
+            }
+            
+            & + h2,
+            & + h3 {
+                margin-top: 80px;
+
+                @include sm {
+                    margin-top: 40px;
+                }
+            }
+            & + p {
+                margin-top: 8px;
+            }
+        }
+    }
+}
+
+// -> container with constructor
+.constructor-container {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: minmax(0, 6fr) minmax(0, 1fr) minmax(0, 5fr);
+        column-gap: 32px;
+
+        @include lg {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        @include md {
+            column-gap: 24px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    &__title {
+        grid-column: 1 / 2;
+
+        @include h2TitleFont();
+        font-size: 56px;
+        line-height: 110%;
+        color: $grey;
+        text-transform: uppercase;
+
+        margin-bottom: 64px;
+
+        @include md {
+            @include h3TitleFont();
+        }
+        @include sm {
+            @include h5TitleFont();
+            margin-bottom: 16px;
+        }
+    }
+    &__description {
+        grid-column: 2 / 4;
+
+        @include h5TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+        
+        margin-bottom: 64px;
+
+        @include lg {
+            grid-column: 2 / 3;
+        }
+        @include md {
+            @include mediumBoldAltFont();
+        }
+        @include sm {
+            @include descriptionBoldFont();
+            margin-bottom: 40px;
+        }
+    }
+    &__tabs-box {
+        grid-column: 1 / 2;
+
+        display: flex;
+        flex-wrap: wrap;
+        
+        margin-bottom: 16px;
+
+        @include md {
+            grid-column: 1 / -1;
+        }
+    }
+    &__tab {
+        margin-right: 16px;
+        margin-bottom: 16px;
+
+        @include sm {
+            margin-right: 8px;
+            margin-bottom: 8px;
+
+            flex: auto;
+        }
+    }
+    &__storage {
+        grid-column: 1 / 2;
+
+        @include md {
+            grid-column: 1 / -1;
+            margin-bottom: 40px;
+        }
+        @include sm {
+            margin-bottom: 32px;
+        }
+    }
+    &__block {
+        display: none;//--switch
+    }
+    &__set {
+        @include row-gap(16px);
+    }
+    &__cart {
+        grid-column: 3 / 4;
+
+        @include lg {
+            grid-column: 2 / 3;
+        }
+        @include md {
+            grid-column: 1 / -1;
+        }
+    }
+}
+.constructor-item {
+    background-color: $greyVip;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    @include column-gap(16px);
+
+    @include sm {
+        padding: 16px;
+    
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__title {
+        @include averageBoldFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        @include sm {
+            @include smallFont();
+            font-weight: 700;
+            text-align: center;
+
+            flex-basis: 100%;
+            margin-bottom: 16px !important;
+        }
+    }
+    &__price {
+        @include h5TitleAltFont();
+        color: $orange;
+
+        flex-shrink: 0;
+        margin-left: auto !important;
+
+        @include sm {
+            font-size: 20px;
+            margin-left: 0 !important;
+        }
+    }
+    &__button {
+        .button {
+            height: 40px;
+
+            @include hover {
+                &:hover {
+                    background-color: rgba($orange20, 0.5);
+
+                    .button__icon {
+                        svg {
+                            path {
+                                fill: $orange;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.constructor-group {
+    background-color: $grey20;
+    padding: 24px;
+
+    &__title {
+        @include mediumBoldAltFont();
+        color: $grey;
+        text-transform: uppercase;
+
+        margin-bottom: 16px;
+    }
+    &__set {
+        @include row-gap(8px);
+    }
+}
+.cart {
+    background-color: rgba(254, 245, 239, 0.8);
+    border: 1px solid $grey20;
+
+    // when cart is not empty
+    &.active {
+        .cart__button {
+            display: block !important;
+            animation: showBlock 0.6s $easeOut-1;
+        }
+    }
+
+    &__body {
+        padding: 32px;
+
+        @include sm {
+            padding: 16px;
+        }
+    }
+    &__title {
+        @include h5TitleAltFont();
+        color: $grey;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+
+        @include sm {
+            @include averageBoldFont();
+        }
+    }
+    &__subtitle {
+        @include averageFont();
+        color: $grey;
+        margin-bottom: 24px;
+
+        @include sm {
+            @include smallFont();
+        }
+    }
+    &__content {
+        min-height: 120px;
+        @include row-gap(24px);
+
+        @include sm {
+            @include row-gap(12px);
+        }
+    }
+    //
+    &__footer {
+        border-top: 1px solid $grey20;
+        padding: 32px;
+
+        @include sm {
+            padding: 16px;
+        }
+    }
+    &__sum {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include column-gap(32px);
+
+        @include sm {
+            @include column-gap(16px);
+        }
+    }
+    &__sum-name {
+        @include averageFont();
+        color: $grey100;
+        text-transform: uppercase;
+
+        @include sm {
+            @include smallFont();
+        }
+    }
+    &__sum-value {
+        @include h4TitleAltFont();
+        color: $orange;
+
+        @include sm {
+            @include mediumBoldAltFont();
+        }
+    }
+    &__button {
+        display: none;//--switch
+
+        width: 100%;
+        margin-top: 24px;
+
+        .button {
+            width: 100%;
+        }
+
+        @include sm {
+            margin-top: 16px;
+        }
+    }
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+
+    &__title {
+        @include averageBoldFont();
+        color: $grey100;
+        text-transform: uppercase;
+
+        padding-left: 8px;
+        border-left: 1px solid $orange40;
+        margin-right: 32px;
+
+        @include sm {
+            @include smallFont();
+            font-weight: 700;
+
+            padding-left: 4px;
+            margin-right: 12px;
+        }
+    }
+    &__price {
+        @include h5TitleAltFont();
+        color: $orange;
+
+        flex-shrink: 0;
+        margin-right: 16px;
+        margin-left: auto !important;
+
+        @include sm {
+            @include descriptionBoldFont();
+            margin-right: 8px;
+        }
+    }
+    &__button {
+        cursor: pointer;
+
+        img, 
+        svg {
+            display: block;
+            width: 24px;
+            height: 24px;
+
+            @include sm {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}

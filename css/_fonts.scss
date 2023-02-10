@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Cormorant';
+    src: 
+        url('../fonts/Cormorant/Cormorant-Regular.woff2') format('woff2'),
+        url('../fonts/Cormorant/Cormorant-Regular.woff') format('woff'), 
+        url('../fonts/Cormorant/Cormorant-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Cormorant';
+    src: 
+        url('../fonts/Cormorant/Cormorant-Bold.woff2') format('woff2'),
+        url('../fonts/Cormorant/Cormorant-Bold.woff') format('woff'), 
+        url('../fonts/Cormorant/Cormorant-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Cormorant';
+    src: 
+        url('../fonts/Cormorant/Cormorant-Italic.woff2') format('woff2'),
+        url('../fonts/Cormorant/Cormorant-Italic.woff') format('woff'), 
+        url('../fonts/Cormorant/Cormorant-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Cormorant';
+    src: 
+        url('../fonts/Cormorant/Cormorant-BoldItalic.woff2') format('woff2'),
+        url('../fonts/Cormorant/Cormorant-BoldItalic.woff') format('woff'), 
+        url('../fonts/Cormorant/Cormorant-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans Hebrew';
+    src: 
+        url('../fonts/OpenSansHebrew/OpenSansHebrew-Regular.woff2') format('woff2'),
+        url('../fonts/OpenSansHebrew/OpenSansHebrew-Regular.woff') format('woff'), 
+        url('../fonts/OpenSansHebrew/OpenSansHebrew-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Open Sans Hebrew';
+    src: 
+        url('../fonts/OpenSansHebrew/OpenSansHebrew-Bold.woff2') format('woff2'),
+        url('../fonts/OpenSansHebrew/OpenSansHebrew-Bold.woff') format('woff'), 
+        url('../fonts/OpenSansHebrew/OpenSansHebrew-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Open Sans Hebrew';
+    src: 
+        url('../fonts/OpenSansHebrew/OpenSansHebrew-Italic.woff2') format('woff2'),
+        url('../fonts/OpenSansHebrew/OpenSansHebrew-Italic.woff') format('woff'), 
+        url('../fonts/OpenSansHebrew/OpenSansHebrew-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Open Sans Hebrew';
+    src: 
+        url('../fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic.woff2') format('woff2'),
+        url('../fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic.woff') format('woff'), 
+        url('../fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
