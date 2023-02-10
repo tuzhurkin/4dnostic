@@ -3236,6 +3236,23 @@
             @include descriptionFont();
             margin-bottom: 32px;
         }
+
+        //--edit-1
+        position: relative;
+        &:after {
+            content: "";
+            border-bottom: 1px solid $grey100;
+            width: calc(100% - 6px);
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+            left: 3px;
+
+            @include smm {
+                display: none;
+            }
+        }
+        //--/edit-1
     }
     //
     &__image {

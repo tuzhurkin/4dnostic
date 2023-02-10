@@ -8661,6 +8661,7 @@ body.show-body [data-reveal=img] {
   letter-spacing: 0.02em;
   color: #252525;
   margin-bottom: 40px;
+  position: relative;
 }
 @media (max-width: 767.5px) {
   .t-d-container__description {
@@ -8670,6 +8671,20 @@ body.show-body [data-reveal=img] {
     font-weight: 400;
     letter-spacing: 0.01em;
     margin-bottom: 32px;
+  }
+}
+.t-d-container__description:after {
+  content: "";
+  border-bottom: 1px solid #848484;
+  width: calc(100% - 6px);
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 3px;
+}
+@media (min-width: 768px) {
+  .t-d-container__description:after {
+    display: none;
   }
 }
 @media (max-width: 767.5px) {
