@@ -191,37 +191,47 @@
             grid-row: 4 / 5;
         }
         @include sm {
+            grid-column: 1 / -1;
             grid-row: auto;
-            align-self: end;
+            // align-self: end;
         }
     }
-    &__tel {
+    &__widget {
         @include smm {
             display: none;
         }
 
-        @include paddingSide();
-        margin-bottom: 32px;
-
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        z-index: 2;
-
-        .button {
-            min-width: 72px;
-            width: 72px;
-            height: 48px;
-
-            &__icon {
-                img,
-                svg {
-                    width: 24px;
-                    height: 24px;
-                }
-            }
-        }
+        grid-column: 1 / -1;
+        position: relative;
+        z-index: 1;
     }
+    // &__tel {
+    //     @include smm {
+    //         display: none;
+    //     }
+
+    //     @include paddingSide();
+    //     margin-bottom: 32px;
+
+    //     position: absolute;
+    //     bottom: 0;
+    //     right: 0;
+    //     z-index: 2;
+
+    //     .button {
+    //         min-width: 72px;
+    //         width: 72px;
+    //         height: 48px;
+
+    //         &__icon {
+    //             img,
+    //             svg {
+    //                 width: 24px;
+    //                 height: 24px;
+    //             }
+    //         }
+    //     }
+    // }
     //
 }
 
@@ -308,6 +318,12 @@
     // justify-content: center;
     // align-items: center;
     @include row-gap(16px);
+
+    @include sm {
+        flex-direction: row;
+        justify-content: center;
+        @include column-gap(16px);
+    }
 
     // svg line animation
     &__bullet {
@@ -855,5 +871,124 @@
         @include md {
             text-align: center;
         }
+    }
+}
+
+// widget for adaptive
+.widget {
+    background-color: rgba(0, 0, 0, 0.7);
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 15;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: all 1s $easeOut;//--show-body
+    
+    &.widget-active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+
+        // .widget__wrapper {
+        //     opacity: 1;
+        //     transform: scale(1);
+        // }
+        .widget__content {
+            transform: translate(0, 0);
+        }
+    }
+
+    &__wrapper {
+        background-color: transparent;
+        min-height: 100%;
+
+        display: flex;
+        align-items: flex-end;
+
+        // opacity: 0;
+        // transform: translate(0, 100%);
+        // transition: all 1s $easeOut;//--show-body
+    }
+    &__content {
+        background-color: $white;
+
+        width: 100%;
+        padding: 8px 12px 16px;
+        position: relative;
+
+        transform: translate(0, 100%);
+        transition: all 1s $easeOut;//--show-body
+    }
+    &__main {
+        @include row-gap(32px);
+    }
+    &__contact-box {
+        @include row-gap(16px);
+    }
+    &__descr {
+        @include smallFont();
+        color: $blackMain;
+    }
+    &__button-box {
+        @include row-gap(16px);
+    }
+    //
+    &__cross-box {
+        padding: 8px 8px 24px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__cross {
+        cursor: pointer;
+
+        img,
+        svg {
+            display: block;
+            width: 40px;
+            height: 4px;
+        }
+    }
+}
+.w-contact {
+    border-bottom: 1px solid $grey20;
+    padding-bottom: 16px;
+
+    display: flex;
+    align-items: center;
+    @include column-gap(8px);
+
+    &__icon {
+        img,
+        svg {
+            display: block;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &__info {
+        @include row-gap(4px);
+    }
+    &__title {
+        @include smallFont();
+        color: $grey60;
+    }
+    &__value {
+        @include descriptionBoldFont();
+        color: $orange;
+        letter-spacing: 0.02em;
+        text-decoration: underline;
     }
 }

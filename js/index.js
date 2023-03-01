@@ -429,6 +429,49 @@ function headerActive() {
 
 
 // <====================================================== ROTATING CARD ACTIVE ON EVENTS (INSTEAD OF CSS HOVER)
+const pCards = document.querySelectorAll('.p-card');
+
+if( pCards.length ) {
+    cardRotateActive(pCards);
+}
+window.addEventListener('resize', () => {
+    if( pCards.length ) {
+        cardRotateActive(pCards);
+    }
+})
+
+function cardRotateActive(cards) {
+    // if( window.matchMedia('(hover: hover) and (pointer: fine)').matches ) {
+    //     cards.forEach( card => {
+    //         card.addEventListener('mouseenter', () => {
+    //             card.classList.add('active');
+    //         })
+    //         card.addEventListener('mouseleave', () => {
+    //             card.classList.remove('active');
+    //         })
+    //     })
+    // }
+    // else {
+    if( ! window.matchMedia('(hover: hover) and (pointer: fine)').matches ) {
+        cards.forEach( card => {
+            const forwardRotateBtn = card.querySelector('[data-card-rotate="forward"]');
+            const backRotateBtn = card.querySelector('[data-card-rotate="back"]');
+
+            if( forwardRotateBtn ) {
+                forwardRotateBtn.addEventListener('click', () => {
+                    card.classList.add('active');
+                })
+            }
+            if( backRotateBtn ) {
+                backRotateBtn.addEventListener('click', () => {
+                    card.classList.remove('active');
+                })
+            }
+        })
+    }
+}
+
+
 // const pCards = document.querySelectorAll('.p-card');
 // const cCards = document.querySelectorAll('.c-card');
 
@@ -448,32 +491,33 @@ function headerActive() {
 //     }
 // })
 
-function rotatingCardActive(cards) {
-    if( window.matchMedia('(hover: hover) and (pointer: fine)').matches ) {
-        cards.forEach( card => {
-            card.addEventListener('mouseenter', () => {
-                card.classList.add('active');
-            })
-            card.addEventListener('mouseleave', () => {
-                card.classList.remove('active');
-            })
-        })
-    }
-    else {
-        cards.forEach( card => {
-            card.addEventListener('touchstart', () => {
-                // card.classList.toggle('active');
+// function rotatingCardActive(cards) {
+//     if( window.matchMedia('(hover: hover) and (pointer: fine)').matches ) {
+//         cards.forEach( card => {
+//             card.addEventListener('mouseenter', () => {
+//                 card.classList.add('active');
+//             })
+//             card.addEventListener('mouseleave', () => {
+//                 card.classList.remove('active');
+//             })
+//         })
+//     }
+//     else {
+//         cards.forEach( card => {
+//             card.addEventListener('touchstart', () => {
+//                 // card.classList.toggle('active');
 
-                if( card.classList.contains('active') ) {
-                    card.classList.remove('active');
-                }
-                else {
-                    card.classList.add('active');
-                }
-            })
-        })
-    }
-}
+//                 if( card.classList.contains('active') ) {
+//                     card.classList.remove('active');
+//                 }
+//                 else {
+//                     card.classList.add('active');
+//                 }
+//             })
+//         })
+//     }
+// }
+
 
 // <====================================================== REVEAL ON SCROLL [GSAP SCROLLTRIGGER]
 setTimeout(() => {
@@ -660,9 +704,13 @@ function expandShowMore() {
 
 
 // <====================================================== SELECT
+const selectCheckup = document.querySelector('.checkup-select');
 const selectDate = document.querySelector('.date-select');
 const selectTime = document.querySelector('.time-select');
 
+if(selectCheckup) {
+    selectActive(selectCheckup);
+}
 if(selectDate) {
     selectActive(selectDate);
 }
@@ -1244,20 +1292,38 @@ const headBgSlider = new Swiper('.head-bg-slider', {
     },
 })
 
-// const scrollSlider = new Swiper('.scroll-slider', {
+
+// const scrubSlider = new Swiper('.scrub-slider', {
 //     direction: 'vertical',
 //     spaceBetween: 0,
-//     slidesPerView: 1, // 4,
+//     slidesPerView: 1, // 4
     
 //     simulateTouch: true,
 //     touchRatio: 1,
 //     speed: 1000,
 
-//     // mousewheel: true,
+//     observer: true,
+//     observeParents: true,
+
+//     mousewheel: true,
+//     // mousewheel: {
+//     //     forceToAxis: true,
+//     //     sensitivity: 1,
+//     //     releaseOnEdges: true,
+//     // },
 //     // grabCursor: true,
     
 //     // centeredSlides: true,
 //     // centeredSlidesBounds: true,
+    
+//     // on: {
+//     //     scroll: function () {
+//     //         console.log('scrolled')
+//     //         console.log(this.el.swiper.$wrapperEl[0])
+
+//     //         // this.el.swiper.$wrapperEl[0].style.transform = 'translate3d(0, 0, 0)'
+//     //     },
+//     // },
 
 //     breakpoints: {
 //         320: {
@@ -1269,24 +1335,36 @@ const headBgSlider = new Swiper('.head-bg-slider', {
 //     },
 
 //     pagination: {
-//         el: '.scroll-slider-progressbar',
+//         el: '.scrub-slider-progressbar',
 //         type: 'progressbar',
 //     }
 // })
-// const altScrollSlider = new Swiper('.alt-scroll-slider', {
+// const decoySlider = new Swiper('.decoy-slider', {
 //     direction: 'vertical',
 //     spaceBetween: 0,
-//     slidesPerView: 1, // 4,
+//     slidesPerView: 1,
     
 //     simulateTouch: true,
 //     touchRatio: 1,
 //     speed: 1000,
 
+//     observer: true,
+//     observeParents: true,
+
 //     // mousewheel: true,
+//     mousewheel: {
+//         eventsTarget: '.scrub-container:not(.scrub-container--alt)',   // fixes slider-container while it's being scrolled
+//         releaseOnEdges: false,
+//         sensitivity: 1,
+//         thresholdTime: 1000,
+//     },
 //     // grabCursor: true,
     
-//     // centeredSlides: true,
-//     // centeredSlidesBounds: true,
+//     on: {
+//         slideChange: function () {
+//             scrubSlider.slideTo(decoySlider.activeIndex);
+//         },
+//     },
 
 //     breakpoints: {
 //         320: {
@@ -1297,116 +1375,28 @@ const headBgSlider = new Swiper('.head-bg-slider', {
 //         }
 //     },
 
-//     pagination: {
-//         el: '.alt-scroll-slider-progressbar',
-//         type: 'progressbar',
-//     }
+//     // pagination: {
+//     //     el: '.scrub-slider-progressbar',
+//     //     type: 'progressbar',
+//     // }
 // })
-
-const scrubSlider = new Swiper('.scrub-slider', {
-    direction: 'vertical',
-    spaceBetween: 0,
-    slidesPerView: 1, // 4
-    
-    simulateTouch: true,
-    touchRatio: 1,
-    speed: 1000,
-
-    observer: true,
-    observeParents: true,
-
-    mousewheel: true,
-    // mousewheel: {
-    //     forceToAxis: true,
-    //     sensitivity: 1,
-    //     releaseOnEdges: true,
-    // },
-    // grabCursor: true,
-    
-    // centeredSlides: true,
-    // centeredSlidesBounds: true,
-    
-    // on: {
-    //     scroll: function () {
-    //         console.log('scrolled')
-    //         console.log(this.el.swiper.$wrapperEl[0])
-
-    //         // this.el.swiper.$wrapperEl[0].style.transform = 'translate3d(0, 0, 0)'
-    //     },
-    // },
-
-    breakpoints: {
-        320: {
-            direction: 'horizontal',
-        },
-        1024: {
-            direction: 'vertical',
-        }
-    },
-
-    pagination: {
-        el: '.scrub-slider-progressbar',
-        type: 'progressbar',
-    }
-})
-const decoySlider = new Swiper('.decoy-slider', {
-    direction: 'vertical',
-    spaceBetween: 0,
-    slidesPerView: 1,
-    
-    simulateTouch: true,
-    touchRatio: 1,
-    speed: 1000,
-
-    observer: true,
-    observeParents: true,
-
-    // mousewheel: true,
-    mousewheel: {
-        eventsTarget: '.scrub-container:not(.scrub-container--alt)',   // fixes slider-container while it's being scrolled
-        releaseOnEdges: false,
-        sensitivity: 1,
-        thresholdTime: 1000,
-    },
-    // grabCursor: true,
-    
-    on: {
-        slideChange: function () {
-            scrubSlider.slideTo(decoySlider.activeIndex);
-        },
-    },
-
-    breakpoints: {
-        320: {
-            direction: 'horizontal',
-        },
-        1024: {
-            direction: 'vertical',
-        }
-    },
-
-    // pagination: {
-    //     el: '.scrub-slider-progressbar',
-    //     type: 'progressbar',
-    // }
-})
 //
 // <====================================================== FIX SLIDER ON SCROLL
-document.addEventListener('DOMContentLoaded', () => {
-    if( window.innerWidth > 1023.5 ) {
-        setTimeout(() => {
-            sliderFix();
-        }, 500);
-    }
+// document.addEventListener('DOMContentLoaded', () => {
+//     if( window.innerWidth > 1023.5 ) {
+//         setTimeout(() => {
+//             sliderFix();
+//         }, 500);
+//     }
 
-    window.addEventListener('resize', () => {
-        if( window.innerWidth > 1023.5 ) {
-            // setTimeout(() => {
-                sliderFix();
-            // }, 500);
-        }
-    })
-})
+//     window.addEventListener('resize', () => {
+//         if( window.innerWidth > 1023.5 ) {
+//             // setTimeout(() => {
+//                 sliderFix();
+//             // }, 500);
+//         }
+//     })
+// })
 
 function sliderFix() {
     let sliderContainer = document.querySelector('.scrub-container:not(.scrub-container--alt)');
@@ -1495,110 +1485,110 @@ function sliderFix() {
 //
 
 //
-const altScrubSlider = new Swiper('.alt-scrub-slider', {
-    direction: 'vertical',
-    spaceBetween: 0,
-    slidesPerView: 1, // 4
+// const altScrubSlider = new Swiper('.alt-scrub-slider', {
+//     direction: 'vertical',
+//     spaceBetween: 0,
+//     slidesPerView: 1, // 4
     
-    simulateTouch: true,
-    touchRatio: 1,
-    speed: 1000,
+//     simulateTouch: true,
+//     touchRatio: 1,
+//     speed: 1000,
 
-    observer: true,
-    observeParents: true,
+//     observer: true,
+//     observeParents: true,
 
-    mousewheel: true,
-    // mousewheel: {
-    //     forceToAxis: true,
-    //     sensitivity: 1,
-    //     releaseOnEdges: true,
-    // },
-    // grabCursor: true,
+//     mousewheel: true,
+//     // mousewheel: {
+//     //     forceToAxis: true,
+//     //     sensitivity: 1,
+//     //     releaseOnEdges: true,
+//     // },
+//     // grabCursor: true,
     
-    // centeredSlides: true,
-    // centeredSlidesBounds: true,
+//     // centeredSlides: true,
+//     // centeredSlidesBounds: true,
     
-    // on: {
-    //     scroll: function () {
-    //         console.log('scrolled')
-    //         console.log(this.el.swiper.$wrapperEl[0])
+//     // on: {
+//     //     scroll: function () {
+//     //         console.log('scrolled')
+//     //         console.log(this.el.swiper.$wrapperEl[0])
 
-    //         // this.el.swiper.$wrapperEl[0].style.transform = 'translate3d(0, 0, 0)'
-    //     },
-    // },
+//     //         // this.el.swiper.$wrapperEl[0].style.transform = 'translate3d(0, 0, 0)'
+//     //     },
+//     // },
 
-    breakpoints: {
-        320: {
-            direction: 'horizontal',
-        },
-        1024: {
-            direction: 'vertical',
-        }
-    },
+//     breakpoints: {
+//         320: {
+//             direction: 'horizontal',
+//         },
+//         1024: {
+//             direction: 'vertical',
+//         }
+//     },
 
-    pagination: {
-        el: '.alt-scrub-slider-progressbar',
-        type: 'progressbar',
-    }
-})
-const altDecoySlider = new Swiper('.alt-decoy-slider', {
-    direction: 'vertical',
-    spaceBetween: 0,
-    slidesPerView: 1,
+//     pagination: {
+//         el: '.alt-scrub-slider-progressbar',
+//         type: 'progressbar',
+//     }
+// })
+// const altDecoySlider = new Swiper('.alt-decoy-slider', {
+//     direction: 'vertical',
+//     spaceBetween: 0,
+//     slidesPerView: 1,
     
-    simulateTouch: true,
-    touchRatio: 1,
-    speed: 1000,
+//     simulateTouch: true,
+//     touchRatio: 1,
+//     speed: 1000,
 
-    observer: true,
-    observeParents: true,
+//     observer: true,
+//     observeParents: true,
 
-    // mousewheel: true,
-    mousewheel: {
-        eventsTarget: '.scrub-container.scrub-container--alt',   // fixes slider-container while it's being scrolled
-        releaseOnEdges: false,
-        sensitivity: 1,
-        thresholdTime: 1000,
-    },
-    // grabCursor: true,
+//     // mousewheel: true,
+//     mousewheel: {
+//         eventsTarget: '.scrub-container.scrub-container--alt',   // fixes slider-container while it's being scrolled
+//         releaseOnEdges: false,
+//         sensitivity: 1,
+//         thresholdTime: 1000,
+//     },
+//     // grabCursor: true,
     
-    on: {
-        slideChange: function () {
-            altScrubSlider.slideTo(altDecoySlider.activeIndex);
-        },
-    },
+//     on: {
+//         slideChange: function () {
+//             altScrubSlider.slideTo(altDecoySlider.activeIndex);
+//         },
+//     },
 
-    breakpoints: {
-        320: {
-            direction: 'horizontal',
-        },
-        1024: {
-            direction: 'vertical',
-        }
-    },
+//     breakpoints: {
+//         320: {
+//             direction: 'horizontal',
+//         },
+//         1024: {
+//             direction: 'vertical',
+//         }
+//     },
 
-    // pagination: {
-    //     el: '.scrub-slider-progressbar',
-    //     type: 'progressbar',
-    // }
-})
+//     // pagination: {
+//     //     el: '.scrub-slider-progressbar',
+//     //     type: 'progressbar',
+//     // }
+// })
 //
 // <====================================================== FIX ALT SLIDER ON SCROLL
-document.addEventListener('DOMContentLoaded', () => {
-    if( window.innerWidth > 1023.5 ) {
-        setTimeout(() => {
-            altSliderFix();
-        }, 500);
-    }
+// document.addEventListener('DOMContentLoaded', () => {
+//     if( window.innerWidth > 1023.5 ) {
+//         setTimeout(() => {
+//             altSliderFix();
+//         }, 500);
+//     }
 
-    window.addEventListener('resize', () => {
-        if( window.innerWidth > 1023.5 ) {
-            // setTimeout(() => {
-                altSliderFix();
-            // }, 500);
-        }
-    })
-})
+//     window.addEventListener('resize', () => {
+//         if( window.innerWidth > 1023.5 ) {
+//             // setTimeout(() => {
+//                 altSliderFix();
+//             // }, 500);
+//         }
+//     })
+// })
 
 function altSliderFix() {
     let sliderContainer = document.querySelector('.scrub-container.scrub-container--alt');
@@ -1670,15 +1660,15 @@ function altSliderFix() {
 //
 
 // <====================================================== SCRUB SLIDER FRACTION
-const scrubSliderFraction = document.querySelector('.scrub-slider-fraction');
-const altScrubSliderFraction = document.querySelector('.alt-scrub-slider-fraction');
+// const scrubSliderFraction = document.querySelector('.scrub-slider-fraction');
+// const altScrubSliderFraction = document.querySelector('.alt-scrub-slider-fraction');
 
-if( scrubSliderFraction ) {
-    setScrubSliderFraction(scrubSlider, scrubSliderFraction);
-}
-if( altScrubSliderFraction ) {
-    setScrubSliderFraction(altScrubSlider, altScrubSliderFraction);
-}
+// if( scrubSliderFraction ) {
+//     setScrubSliderFraction(scrubSlider, scrubSliderFraction);
+// }
+// if( altScrubSliderFraction ) {
+//     setScrubSliderFraction(altScrubSlider, altScrubSliderFraction);
+// }
 
 function setScrubSliderFraction(slider, sliderFraction) {
     sliderFraction.innerHTML = '01.';
@@ -1693,24 +1683,24 @@ function setScrubSliderFraction(slider, sliderFraction) {
 
 
 // <====================================================== REMOVE FLOATING HEADER ON SCRUB CONTAINERS
-const scrollContainers = document.querySelectorAll('.scrub-container');
+// const scrollContainers = document.querySelectorAll('.scrub-container');
 
-if( window.innerWidth > 1023.5 ) {
-    if( scrollContainers.length ) {
-        scrollContainers.forEach( container => {
-            removeHeaderOnScrollContainer(container);
-        })
-    }
-}
-window.addEventListener('resize', () => {
-    if( window.innerWidth > 1023.5 ) {
-        if( scrollContainers.length ) {
-            scrollContainers.forEach( container => {
-                removeHeaderOnScrollContainer(container);
-            })
-        }
-    }
-})
+// if( window.innerWidth > 1023.5 ) {
+//     if( scrollContainers.length ) {
+//         scrollContainers.forEach( container => {
+//             removeHeaderOnScrollContainer(container);
+//         })
+//     }
+// }
+// window.addEventListener('resize', () => {
+//     if( window.innerWidth > 1023.5 ) {
+//         if( scrollContainers.length ) {
+//             scrollContainers.forEach( container => {
+//                 removeHeaderOnScrollContainer(container);
+//             })
+//         }
+//     }
+// })
 
 function removeHeaderOnScrollContainer(container) {
     let prevPos, curPos = 0;
@@ -1994,47 +1984,143 @@ const otherSlider = new Swiper('.other-slider', {
     }
 })
 
+const featSlider = new Swiper('.feat-slider', {
+    direction: 'horizontal',
+    slidesPerView: 1,
+    spaceBetween: 32,
+    
+    simulateTouch: true,
+    touchRatio: 1,
+    speed: 1000,
+
+    updateOnWindowResize: true,//
+
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 16,
+        },
+        768: {
+            slidesPerView: 'auto',
+            spaceBetween: 24,
+        },
+        1024: {
+            slidesPerView: 'auto',
+            spaceBetween: 32,
+        }
+    },
+    
+    navigation: {
+        nextEl: '.feat-slider-arrow-next',
+        prevEl: '.feat-slider-arrow-prev'
+    }
+})
+
+const pCardSlider = new Swiper('.p-card-slider', {
+    direction: 'horizontal',
+    slidesPerView: 1,
+    spaceBetween: 32,
+    
+    simulateTouch: true,
+    touchRatio: 1,
+    speed: 1000,
+
+    updateOnWindowResize: true,//
+
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 16,
+        },
+        768: {
+            slidesPerView: 'auto',
+            spaceBetween: 24,
+        },
+        1024: {
+            slidesPerView: 'auto',
+            spaceBetween: 32,
+        }
+    },
+    
+    navigation: {
+        nextEl: '.p-card-slider-arrow-next',
+        prevEl: '.p-card-slider-arrow-prev'
+    }
+})
+
 // disable on mob - enable on pc
-if( window.innerWidth < 1023.5 ) {
-    scrubSlider.disable();
-    decoySlider.disable();
-    altScrubSlider.disable();
-    altDecoySlider.disable();
-}
-else {
-    scrubSlider.enable();
-    decoySlider.enable();
-    altScrubSlider.enable();
-    altDecoySlider.enable();
-}
+// if( window.innerWidth < 1023.5 ) {
+//     scrubSlider.disable();
+//     decoySlider.disable();
+//     altScrubSlider.disable();
+//     altDecoySlider.disable();
+// }
+// else {
+//     scrubSlider.enable();
+//     decoySlider.enable();
+//     altScrubSlider.enable();
+//     altDecoySlider.enable();
+// }
 if( window.innerWidth < 767.5 ) {
     allDoctorSlider.disable();
     otherSlider.disable();
+
+    if( featSlider ) {
+        featSlider.enable();
+        // featSlider.update();
+    }
+    if( pCardSlider ) {
+        pCardSlider.enable();
+        // pCardSlider.update();
+    }
 }
 else {
     allDoctorSlider.enable();
     otherSlider.enable();
+
+    if( featSlider ) {
+        featSlider.disable();
+    }
+    if( pCardSlider ) {
+        pCardSlider.disable();
+    }
 }
 window.addEventListener('resize', () => {
-    if( window.innerWidth < 1023.5 ) {
-        scrubSlider.disable();
-        decoySlider.disable();
-        altScrubSlider.disable();
-        altDecoySlider.disable();
-    }
-    else {
-        scrubSlider.enable();
-        decoySlider.enable();
-        altScrubSlider.enable();
-        altDecoySlider.enable();
-    }
+    // if( window.innerWidth < 1023.5 ) {
+    //     scrubSlider.disable();
+    //     decoySlider.disable();
+    //     altScrubSlider.disable();
+    //     altDecoySlider.disable();
+    // }
+    // else {
+    //     scrubSlider.enable();
+    //     decoySlider.enable();
+    //     altScrubSlider.enable();
+    //     altDecoySlider.enable();
+    // }
     if( window.innerWidth < 767.5 ) {
         allDoctorSlider.disable();
         otherSlider.disable();
+
+        if( featSlider ) {
+            featSlider.enable();
+            // featSlider.update();
+        }
+        if( pCardSlider ) {
+            pCardSlider.enable();
+            // pCardSlider.update();
+        }
     }
     else {
         allDoctorSlider.enable();
         otherSlider.enable();
+
+        if( featSlider ) {
+            featSlider.disable();
+        }
+        if( pCardSlider ) {
+            pCardSlider.disable();
+        }
     }
 })
 
@@ -2059,6 +2145,12 @@ const locationSliderArrowNext = document.querySelector('.location-slider-arrow-n
 
 const otherSliderArrowPrev = document.querySelector('.other-slider-arrow-prev');
 const otherSliderArrowNext = document.querySelector('.other-slider-arrow-next');
+
+const featSliderArrowPrev = document.querySelector('.feat-slider-arrow-prev');
+const featSliderArrowNext = document.querySelector('.feat-slider-arrow-next');
+
+const pCardSliderArrowPrev = document.querySelector('.p-card-slider-arrow-prev');
+const pCardSliderArrowNext = document.querySelector('.p-card-slider-arrow-next');
 
 if( allDoctorSliderArrowPrev && allDoctorSliderArrowNext ) {
     sliderArrows(allDoctorSlider, allDoctorSliderArrowPrev, allDoctorSliderArrowNext);
@@ -2086,6 +2178,14 @@ if( locationSliderArrowPrev && locationSliderArrowNext ) {
 
 if( otherSliderArrowPrev && otherSliderArrowNext ) {
     sliderArrows(otherSlider, otherSliderArrowPrev, otherSliderArrowNext);
+}
+
+if( featSliderArrowPrev && featSliderArrowNext ) {
+    sliderArrows(featSlider, featSliderArrowPrev, featSliderArrowNext);
+}
+
+if( pCardSliderArrowPrev && pCardSliderArrowNext ) {
+    sliderArrows(pCardSlider, pCardSliderArrowPrev, pCardSliderArrowNext);
 }
 
 function sliderArrows(sliderSwiper, sliderArrowPrev, sliderArrowNext) {
@@ -2137,6 +2237,12 @@ const locationSliderNumberTotal = document.querySelector('.location-slider-fract
 const otherSliderNumberCurrent = document.querySelector('.other-slider-fraction__current');
 const otherSliderNumberTotal = document.querySelector('.other-slider-fraction__total');
 
+const featSliderNumberCurrent = document.querySelector('.feat-slider-fraction__current');
+const featSliderNumberTotal = document.querySelector('.feat-slider-fraction__total');
+
+const pCardSliderNumberCurrent = document.querySelector('.p-card-slider-fraction__current');
+const pCardSliderNumberTotal = document.querySelector('.p-card-slider-fraction__total');
+
 if( allDoctorSliderNumberCurrent && allDoctorSliderNumberTotal ) {
     sliderFraction(allDoctorSlider, allDoctorSliderNumberCurrent, allDoctorSliderNumberTotal);
 }
@@ -2161,6 +2267,14 @@ if( otherSliderNumberCurrent && otherSliderNumberTotal ) {
     sliderFraction(otherSlider, otherSliderNumberCurrent, otherSliderNumberTotal);
 }
 
+if( featSliderNumberCurrent && featSliderNumberTotal ) {
+    sliderFraction(featSlider, featSliderNumberCurrent, featSliderNumberTotal);
+}
+
+if( pCardSliderNumberCurrent && pCardSliderNumberTotal ) {
+    sliderFraction(pCardSlider, pCardSliderNumberCurrent, pCardSliderNumberTotal);
+}
+
 if( reviewSliderNumberCurrent && reviewSliderNumberTotal ) {
     if( window.innerWidth < 767.5 ) {
         sliderRowsFraction(reviewSlider, 2, 1, reviewSliderNumberCurrent, reviewSliderNumberTotal);
@@ -2173,6 +2287,38 @@ if( reviewSliderNumberCurrent && reviewSliderNumberTotal ) {
     }
 }
 window.addEventListener('resize', () => {
+    if( allDoctorSliderNumberCurrent && allDoctorSliderNumberTotal ) {
+        sliderFraction(allDoctorSlider, allDoctorSliderNumberCurrent, allDoctorSliderNumberTotal);
+    }
+    
+    if( aboutSliderNumberCurrent && aboutSliderNumberTotal ) {
+        sliderFraction(aboutTextSlider, aboutSliderNumberCurrent, aboutSliderNumberTotal);
+    }
+    
+    if( docProfileSliderNumberCurrent && docProfileSliderNumberTotal ) {
+        sliderFraction(docProfileSlider, docProfileSliderNumberCurrent, docProfileSliderNumberTotal);
+    }
+    
+    if( imageSliderNumberCurrent && imageSliderNumberTotal ) {
+        sliderFraction(imageSlider, imageSliderNumberCurrent, imageSliderNumberTotal);
+    }
+    
+    if( locationSliderNumberCurrent && locationSliderNumberTotal ) {
+        sliderFraction(locationSlider, locationSliderNumberCurrent, locationSliderNumberTotal);
+    }
+    
+    if( otherSliderNumberCurrent && otherSliderNumberTotal ) {
+        sliderFraction(otherSlider, otherSliderNumberCurrent, otherSliderNumberTotal);
+    }
+    
+    if( featSliderNumberCurrent && featSliderNumberTotal ) {
+        sliderFraction(featSlider, featSliderNumberCurrent, featSliderNumberTotal);
+    }
+
+    if( pCardSliderNumberCurrent && pCardSliderNumberTotal ) {
+        sliderFraction(pCardSlider, pCardSliderNumberCurrent, pCardSliderNumberTotal);
+    }
+
     if( reviewSliderNumberCurrent && reviewSliderNumberTotal ) {
         if( window.innerWidth < 767.5 ) {
             sliderRowsFraction(reviewSlider, 2, 1, reviewSliderNumberCurrent, reviewSliderNumberTotal);
@@ -2529,6 +2675,126 @@ function sliderRowsFraction(slider, rows, cols, sliderNumberCurrent, sliderNumbe
 // }
 
 
+// <====================================================== MULTISTEP FORM
+multiStepFormActive();
+
+function multiStepFormActive() {
+    const multiStepForm = document.querySelector('[data-multistep-form]');
+    if( !multiStepForm ) return;
+
+    const formSteps = [...multiStepForm.querySelectorAll('[data-form-step]')];
+    let currentStep = formSteps.findIndex( step => {
+        return step.classList.contains('active');
+    })
+
+    // if there is no active step, then assign 'active' to the first one
+    if( currentStep < 0 ) {
+        currentStep = 0;
+        formSteps[currentStep].classList.add('active');
+    }
+    // assign 'hide-block' to the rest of the steps
+    formSteps.forEach( step => {
+        if( !step.classList.contains('active') ) {
+            step.classList.add('hide-block');
+        }
+    })
+
+    multiStepForm.addEventListener('click', (e) => {
+        let incrementor = null;
+
+        if( e.target.closest('[data-next]') ) {
+            incrementor = 1;
+        }
+        else if( e.target.closest('[data-previous]') ) {
+            incrementor = -1;
+        }
+
+        if( incrementor == null ) return;
+
+        // validate form before going to the next step
+        let error = formValidate(formSteps[currentStep]);
+        if( error === 0 ) {
+            currentStep += incrementor;
+            showCurrentStep(formSteps, currentStep);
+        }
+    })
+
+    formSteps.forEach( step => {
+        step.addEventListener('animationend', (e) => {
+            formSteps[currentStep].classList.remove('hide-block');
+            
+            step.classList.toggle('hide-block', !step.classList.contains('active'));
+            // e.target.classList.toggle('hide-block', !e.target.classList.contains('active'));
+        })
+    })
+}
+
+function showCurrentStep(formSteps, currentStep) {
+    formSteps.forEach( (step, index) => {
+        step.classList.toggle('active', index === currentStep)
+    })
+}
+
+
+
+// <====================================================== WIDGET
+
+const openWidgetBtns = document.querySelectorAll('[data-widget-button]');
+const closeWidgetBtns = document.querySelectorAll('[data-widget-close]');
+
+widgetActive();
+
+function widgetActive() {
+    if( openWidgetBtns.length > 0 ) {
+        openWidgetBtns.forEach( btn => {
+            btn.addEventListener('click', () => {
+                const widgetName = btn.dataset.widgetButton;
+                const widgetTarget = document.querySelector(`[data-widget-target=${widgetName}]`);
+
+                widgetOpen(widgetTarget);
+            })
+        })
+    }
+
+    if( closeWidgetBtns.length > 0 ) {
+        closeWidgetBtns.forEach( btn => {
+            btn.addEventListener('touchstart', () => {
+                widgetClose(btn.closest('.widget'));
+            })
+        })
+    }
+}
+function widgetOpen(widget) {
+    if( widget && unlock ) {
+        // close all active widgets if they exist
+        const widgetActive = document.querySelector('.widget.widget-active');
+        if( widgetActive ) {
+            widgetClose(widgetActive, false);
+        }
+        else {
+            bodyLock();
+        }
+        // 
+        widget.classList.add('widget-active');
+
+        // close popup if the user clicked outside of it
+        widget.addEventListener('click', (e) => {
+            if( !e.target.closest('.widget__content') && e.target.closest('.widget') ) {
+                widgetClose(e.target.closest('.widget'));
+            }
+        })
+    }
+}
+function widgetClose(widget, doUnlock = true) {
+    if( unlock ) {
+        widget.classList.remove('widget-active');
+        if( doUnlock ) {
+            bodyUnlock();
+        }
+    }
+}
+
+
 // <====================================================== POPUP
 
 const openPopupBtns = document.querySelectorAll('[data-popup-button]');
@@ -2675,121 +2941,121 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     })
-    
-    function formValidate(form) {
-        let error = 0;
-        let formReq = form.querySelectorAll('._required');
-
-        for(let i = 0; i < formReq.length; i++) {
-            const input = formReq[i];
-            formRemoveError(input);
-            
-            if( input.classList.contains('_email') ) {
-                if(input.value === '') {
-                    formAddError(input, 'empty');
-                    error++;    
-                }    
-                else if( !emailCheck(input) ) {
-                    formAddError(input, 'incorrect');
-                    error++;
-                }
-            }
-            else if( input.classList.contains('_tel') ) {
-                if(input.value === '') {
-                    formAddError(input, 'empty');
-                    error++;    
-                }    
-                else if( !telCheck(input) ) {
-                    formAddError(input, 'incorrect');
-                    error++;
-                }
-            }
-            else if( input.classList.contains('_checkbox') ) {
-                if( ! input.checked ) {
-                    formAddError(input, 'notChecked');
-                    error++;
-                }
-            }
-            else if( input.classList.contains('_file') ) {
-                let filename = input.value; // input.dataset.filename;
-
-                if (filename === '') {
-                    formAddError(input, 'emptyFile');
-                    error++;
-                }
-                else if( !fileCheck(filename) ) {
-                    formAddError(input, 'incorrectFile');
-                    error++;
-                }
-            }
-            else {
-                if(input.value === '') {
-                    formAddError(input, 'empty');
-                    error++;    
-                }        
-            }
-        }
-
-        return error;
-    }
-    function formAddError(input, errorType) {
-        // checkbox error add
-        if(errorType === 'notChecked') {
-            input.closest('.checkbox').classList.add('_error');
-            return;
-        }
-        //
-
-        let formInput = input.closest('[data-input]');
-        let errorMessage = formInput.querySelector('.failure__text');
-        
-        if(errorType === 'emptyFile') {
-            errorMessage.innerHTML = messageEmpty;
-            input.previousElementSibling.classList.add('_error');
-        }
-        if(errorType === 'incorrectFile') {
-            errorMessage.innerHTML = messageIncorrectFile;
-            input.previousElementSibling.classList.add('_error');
-        }
-        if(errorType === 'incorrect') {
-            errorMessage.innerHTML = messageIncorrect;
-        }
-        if(errorType === 'empty') {
-            errorMessage.innerHTML = messageEmpty;
-        }
-
-        input.closest('[data-input]').querySelector('.failure').classList.add('_error');   // _error для "заповніть поле" / "некоректні дані"
-        formInput.classList.add('_error');                                                // _error для инпута
-    }
-    function formRemoveError(input) {
-        // checkbox error remove
-        if(input.classList.contains('_checkbox')) {
-            input.closest('.checkbox').classList.remove('_error');
-            return;
-        }
-        //
-        // common input field error remove
-        input.closest('[data-input]').querySelector('.failure').classList.remove('_error');    
-        input.closest('[data-input]').classList.remove('_error');
-        //
-        // file field error remove
-        if (input.previousElementSibling !== null && input.previousElementSibling.classList.contains('_error')) {
-            input.previousElementSibling.classList.remove('_error');
-        }
-    }
-    // регулярное выражение для проверки корректности email
-    function emailCheck(input) {
-        return /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(input.value);  
-    }
-    // регулярное выражение для проверки корректности telephone
-    function telCheck(input) {
-        // return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){9,11}(\s*)?$/.test(input.value);
-        return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11,13}(\s*)?$/.test(input.value);
-    }
-    // проверки корректности файла
-    function fileCheck(input) {
-        let fileType = input.substr(input.lastIndexOf('.') + 1);    // get the type of the file
-
-        return (fileType == 'pdf' || fileType == 'doc' || fileType == 'docx' || fileType == input) ? true : false; 
-    }
 })
+    
+function formValidate(form) {
+    let error = 0;
+    let formReq = form.querySelectorAll('._required');
+
+    for(let i = 0; i < formReq.length; i++) {
+        const input = formReq[i];
+        formRemoveError(input);
+        
+        if( input.classList.contains('_email') ) {
+            if(input.value === '') {
+                formAddError(input, 'empty');
+                error++;    
+            }    
+            else if( !emailCheck(input) ) {
+                formAddError(input, 'incorrect');
+                error++;
+            }
+        }
+        else if( input.classList.contains('_tel') ) {
+            if(input.value === '') {
+                formAddError(input, 'empty');
+                error++;    
+            }    
+            else if( !telCheck(input) ) {
+                formAddError(input, 'incorrect');
+                error++;
+            }
+        }
+        else if( input.classList.contains('_checkbox') ) {
+            if( ! input.checked ) {
+                formAddError(input, 'notChecked');
+                error++;
+            }
+        }
+        else if( input.classList.contains('_file') ) {
+            let filename = input.value; // input.dataset.filename;
+
+            if (filename === '') {
+                formAddError(input, 'emptyFile');
+                error++;
+            }
+            else if( !fileCheck(filename) ) {
+                formAddError(input, 'incorrectFile');
+                error++;
+            }
+        }
+        else {
+            if(input.value === '') {
+                formAddError(input, 'empty');
+                error++;    
+            }        
+        }
+    }
+
+    return error;
+}
+function formAddError(input, errorType) {
+    // checkbox error add
+    if(errorType === 'notChecked') {
+        input.closest('.checkbox').classList.add('_error');
+        return;
+    }
+    //
+
+    let formInput = input.closest('[data-input]');
+    let errorMessage = formInput.querySelector('.failure__text');
+    
+    if(errorType === 'emptyFile') {
+        errorMessage.innerHTML = messageEmpty;
+        input.previousElementSibling.classList.add('_error');
+    }
+    if(errorType === 'incorrectFile') {
+        errorMessage.innerHTML = messageIncorrectFile;
+        input.previousElementSibling.classList.add('_error');
+    }
+    if(errorType === 'incorrect') {
+        errorMessage.innerHTML = messageIncorrect;
+    }
+    if(errorType === 'empty') {
+        errorMessage.innerHTML = messageEmpty;
+    }
+
+    input.closest('[data-input]').querySelector('.failure').classList.add('_error');   // _error для "заповніть поле" / "некоректні дані"
+    formInput.classList.add('_error');                                                // _error для инпута
+}
+function formRemoveError(input) {
+    // checkbox error remove
+    if(input.classList.contains('_checkbox')) {
+        input.closest('.checkbox').classList.remove('_error');
+        return;
+    }
+    //
+    // common input field error remove
+    input.closest('[data-input]').querySelector('.failure').classList.remove('_error');    
+    input.closest('[data-input]').classList.remove('_error');
+    //
+    // file field error remove
+    if (input.previousElementSibling !== null && input.previousElementSibling.classList.contains('_error')) {
+        input.previousElementSibling.classList.remove('_error');
+    }
+}
+// регулярное выражение для проверки корректности email
+function emailCheck(input) {
+    return /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(input.value);  
+}
+// регулярное выражение для проверки корректности telephone
+function telCheck(input) {
+    // return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){9,11}(\s*)?$/.test(input.value);
+    return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11,13}(\s*)?$/.test(input.value);
+}
+// проверки корректности файла
+function fileCheck(input) {
+    let fileType = input.substr(input.lastIndexOf('.') + 1);    // get the type of the file
+
+    return (fileType == 'pdf' || fileType == 'doc' || fileType == 'docx' || fileType == input) ? true : false; 
+}

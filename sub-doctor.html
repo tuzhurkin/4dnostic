@@ -1138,7 +1138,217 @@
             </div>
         </div>
 
-        <div class="popup popup--appointment" data-popup-target="appointment">
+        <div class="popup popup--multistep" data-popup-target="appointment">
+            <div class="popup__wrapper block-wrapper">
+                <div class="popup__content">
+                    <div class="popup__cross-box">
+                        <div class="popup__cross" data-popup-close>
+                            <img src="./img/svg/icon-popup-cross.svg" alt="">
+                        </div>
+                    </div>
+                    <h2 class="popup__title">Make an appointment</h2>
+                    <div class="popup__main">
+                        <div class="popup__appointment appointment-popup">
+                            <div class="appointment-popup__form">
+                                <form action="#" class="form form--multistep" novalidate data-multistep-form>
+                                    <div class="form__step form__step_input" data-form-step>
+                                        <div class="form__block form__block_input">
+                                            <div class="form__select">
+                                                <label>Check-up</label>
+                                                <div class="select checkup-select">
+                                                    <div class="select__select-box">
+                                                        <div class="select__options-container">
+                                                            <div class="select__options-wrapper">
+                    
+                                                                <div class="select__option">
+                                                                    <span class="select__name">General Check-up</span>
+                                                                </div>
+                                                                
+                                                                <div class="select__option">
+                                                                    <span class="select__name">Check-up vip diagnostic</span>
+                                                                </div>
+                                                                
+                                                                <div class="select__option">
+                                                                    <span class="select__name">Check-up oncology diagnostic</span>
+                                                                </div>
+                    
+                                                                <div class="select__option">
+                                                                    <span class="select__name">General Check-up</span>
+                                                                </div>
+                                                                
+                                                                <div class="select__option">
+                                                                    <span class="select__name">Check-up vip diagnostic</span>
+                                                                </div>
+                                                                
+                                                                <div class="select__option">
+                                                                    <span class="select__name">Check-up oncology diagnostic</span>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="select__selected">
+                                                            <span class="select__name">Choose a check-up</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form__input">
+                                                <div class="form-input" data-input="name">
+                                                    <label>Name</label>
+                                                    <input class="_required" type="text">
+                                                    <div class="failure">
+                                                        <span class="failure__text">*Required field</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form__input">
+                                                <div class="form-input" data-input="name">
+                                                    <label>Surname</label>
+                                                    <input class="_required" type="text">
+                                                    <div class="failure">
+                                                        <span class="failure__text">*Required field</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form__input">
+                                                <div class="form-input" data-input="tel">
+                                                    <label>Phone number</label>
+                                                    <input class="_tel _required" type="tel">
+                                                    <div class="failure">
+                                                        <span class="failure__text">*Required field</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form__input">
+                                                <div class="form-input" data-input="email">
+                                                    <label>E-mail</label>
+                                                    <input class="_email _required" type="email">
+                                                    <div class="failure">
+                                                        <span class="failure__text">*Required field</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form__checkbox">
+                                            <label class="checkbox">
+                                                <span class="checkbox__name">
+                                                    By submitting data, I agree to the processing of personal data, to send newsletters and calls  
+                                                </span>
+                                                <input class="checkbox__box _checkbox _required" type="checkbox" checked>
+                                                <span class="checkbox__mark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="form__button">
+                                            <div class="button button--alt" data-next>
+                                                <div class="button__wrapper">
+                                                    <span class="button__name">Next step</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__step form__step_time" data-form-step>
+                                        <div class="form__block form__block_select">
+                                            <div class="form__select form__select_date">
+                                                <label>Date</label>
+                                                <div class="select date-select">
+                                                    <div class="select__select-box">
+                                                        <div class="select__options-container">
+                                                            <div class="select__options-wrapper">
+                    
+                                                                <div class="select__option">
+                                                                    <span class="select__name">07 / 06 / 23</span>
+                                                                </div>
+                                                                
+                                                                <div class="select__option">
+                                                                    <span class="select__name">08 / 06 / 23</span>
+                                                                </div>
+                                                                
+                                                                <div class="select__option">
+                                                                    <span class="select__name">09 / 06 / 23</span>
+                                                                </div>
+                                                                
+                                                                <div class="select__option">
+                                                                    <span class="select__name">10 / 06 / 23</span>
+                                                                </div>
+                                                                
+                                                                <div class="select__option">
+                                                                    <span class="select__name">11 / 06 / 23</span>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="select__selected">
+                                                            <span class="select__name">01 / 10 / 23</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form__select form__select_time">
+                                                <label>Time</label>
+                                                <div class="select time-select">
+                                                    <div class="select__select-box">
+                                                        <div class="select__options-container">
+                                                            <div class="select__options-wrapper">
+                    
+                                                                <div class="select__option">
+                                                                    <span class="select__name">11 : 00</span>
+                                                                </div>
+                                                                
+                                                                <div class="select__option">
+                                                                    <span class="select__name">12 : 00</span>
+                                                                </div>
+                                                                
+                                                                <div class="select__option">
+                                                                    <span class="select__name">13 : 00</span>
+                                                                </div>
+                                                                
+                                                                <div class="select__option">
+                                                                    <span class="select__name">14 : 00</span>
+                                                                </div>
+                                                                
+                                                                <div class="select__option">
+                                                                    <span class="select__name">15 : 00</span>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="select__selected">
+                                                            <span class="select__name">00 : 00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form__picker">
+                                            <div id="color-calendar"></div>
+                                        </div>
+                                        <div class="form__button-box">
+                                            <div class="form__button">
+                                                <div class="inline-btn" data-previous>
+                                                    <span class="inline-btn__icon">
+                                                        <img src="/img/svg/icon-arrow-inline-btn-back.svg" alt="">
+                                                    </span>
+                                                    <span class="inline-btn__name">Previous step</span>
+                                                </div>
+                                            </div>
+                                            <div class="form__button">
+                                                <button class="button button--alt" type="submit">
+                                                    <div class="button__wrapper">
+                                                        <span class="button__name">Submit</span>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="popup popup--appointment" data-popup-target="appointment">
             <div class="popup__wrapper block-wrapper">
                 <div class="popup__content">
                     <div class="popup__cross-box">
@@ -1288,7 +1498,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <!-- scripts -->

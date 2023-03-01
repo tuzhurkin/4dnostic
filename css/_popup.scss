@@ -221,6 +221,16 @@
             }
         }
     }
+    //
+    &--multistep {
+        .popup__content {
+            width: 82%;
+
+            @include sm {
+                width: 100%;
+            }
+        }
+    }
 }
 
 .review-popup {

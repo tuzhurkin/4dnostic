@@ -290,6 +290,91 @@
             grid-row: 2 / 3;
         }
     }
+    //
+    &--multistep {
+        overflow: hidden;
+
+        .form__block {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 32px;
+
+            @include md {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+
+            &_input {
+                .form__select + .form__input {
+                    grid-column-start: 1;
+                }
+            }
+            &_select {
+                .form__select {
+                    .select {
+                        min-width: 0;
+                    }
+
+                    @include md {
+                        position: relative;
+    
+                        &:nth-child(1) {
+                            z-index: 302;
+                        }
+                        &:nth-child(2) {
+                            z-index: 301;
+                        }
+                    }
+                }
+            }
+        }
+
+        .form__step {
+            &_time {
+                display: grid;
+                grid-template-columns: minmax(0, 4fr) minmax(0, 1fr) minmax(0, 4fr) minmax(0, 1fr);
+        
+                @include lg {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    column-gap: 32px;
+                }
+                @include md {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0;
+                }
+
+                .form__block {
+                    grid-column: 1 / 2;
+                }
+                .form__picker {
+                    grid-column: 3 / 4;
+
+                    @include lg {
+                        grid-column: 2 / 3;
+                    }
+                }
+                .form__button-box {
+                    grid-column: 1 / 2;
+                }
+            }
+            .form__button {
+                display: flex;
+                align-items: center;
+
+                .inline-btn {
+                    padding: 16px 0;
+                }
+            }
+
+            animation: stepFadeOut 0.4s $easeOut-1 forwards;
+
+            &.active {
+                animation: stepSlideIn 0.4s $easeOut-1 0.2s both;
+            }
+        }
+    }
 }
 .form-input {
     width: 100%;
@@ -488,5 +573,33 @@
     &__text {
         @include smallFont();
         color: $redError;
+    }
+}
+
+// multistep form animations
+@keyframes stepSlideIn {
+    0% {
+        // transform: translateX(200%);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        // transform: translateX(0);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes stepFadeOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.75);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
     }
 }
