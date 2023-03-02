@@ -936,13 +936,14 @@
     }
     &__button-box {
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
-        @include column-gap(16px);
+        // @include column-gap(16px);
 
-        @include md {
-            @include column-gap(8px);
-        }
+        // @include md {
+        //     @include column-gap(8px);
+        // }
     }
     &__price-box {
         display: flex;
@@ -961,6 +962,38 @@
             @include averageFont();
             color: $grey100;
             text-decoration: line-through;
+        }
+    }
+    //
+    &__footer {
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include column-gap(56px);
+    }
+    &__footer-name {
+        @include descriptionFont();
+        color: $grey80;
+
+        @include sm {
+            @include smallFont();
+        }
+    }
+    &__footer-btn {
+        .button {
+            min-width: 80px;
+
+            &__icon {
+                svg {
+                    width: 20px;
+                    height: 20px;
+
+                    path {
+                        fill: $orange;
+                    }
+                }
+            }
         }
     }
     //

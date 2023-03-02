@@ -6110,16 +6110,8 @@ body.show-body [data-reveal=img] {
 }
 .p-card__button-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-}
-.p-card__button-box > *:not(:last-child) {
-  margin: 0 16px 0 0;
-}
-@media (max-width: 1023.5px) {
-  .p-card__button-box > *:not(:last-child) {
-    margin: 0 8px 0 0;
-  }
 }
 .p-card__price-box {
   display: flex;
@@ -6155,6 +6147,41 @@ body.show-body [data-reveal=img] {
   letter-spacing: 0.02em;
   color: #848484;
   text-decoration: line-through;
+}
+.p-card__footer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.p-card__footer > *:not(:last-child) {
+  margin: 0 56px 0 0;
+}
+.p-card__footer-name {
+  font-family: "Open Sans Hebrew", sans-serif;
+  font-size: 14px;
+  line-height: 160%;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #9d9d9d;
+}
+@media (max-width: 767.5px) {
+  .p-card__footer-name {
+    font-family: "Open Sans Hebrew", sans-serif;
+    font-size: 12px;
+    line-height: 140%;
+    font-weight: 400;
+  }
+}
+.p-card__footer-btn .button {
+  min-width: 80px;
+}
+.p-card__footer-btn .button__icon svg {
+  width: 20px;
+  height: 20px;
+}
+.p-card__footer-btn .button__icon svg path {
+  fill: #ff6600;
 }
 .p-card__btn-box {
   margin-top: auto;
