@@ -67,8 +67,11 @@
         .form__input {
             margin-bottom: 16px;
         }
-        .form__button {
+        .form__checkbox {
             margin-top: auto;
+        }
+        .form__button {
+            margin-top: 0; // auto;
     
             .button {
                 width: 75%;

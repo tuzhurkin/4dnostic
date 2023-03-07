@@ -206,7 +206,7 @@
                     </div>
 
                     <div class="navbar__button-box">
-                        <div class="navbar__button">
+                        <div class="navbar__button navbar__button_login">
                             <a href="#" class="button button--white" target="_blank">
                                 <div class="button__wrapper">
                                     <span class="button__icon">
@@ -531,6 +531,14 @@
                 </div>
             </nav>
         </header>
+        
+        <div class="widget-btn">
+            <button class="button button--alt" data-widget-button="contact">
+                <div class="button__wrapper">
+                    <span class="button__name">contact us</span>
+                </div>
+            </button>
+        </div>
 
         <section class="head">
             <div class="head__bg-slider" data-reveal="elem">
@@ -644,13 +652,6 @@
                 </div>
                 <div class="head__pagination" data-reveal="elem">
                     <div class="head-slider-pagination slider-pagination"></div>
-                </div>
-                <div class="head__widget" data-reveal="img">
-                    <button class="button button--glass" data-widget-button="contact">
-                        <div class="button__wrapper">
-                            <span class="button__name">make an appointment</span>
-                        </div>
-                    </button>
                 </div>
             </div>
         </section>
@@ -2612,7 +2613,9 @@
                         </div>
                     </div>
                     <div class="contact-container__unit block-wrapper" data-reveal="img">
-                        <h2 class="contact-container__title"><i>Location</i></h2>
+                        <h2 class="contact-container__title">
+                            <a href="https://goo.gl/maps/QEn4XqRgfccK6H9x6" target="_blank"><i>Location</i></a>
+                        </h2>
                         <div class="contact-container__block">
                             <div class="contact-container__description">
                                 <div class="description">
@@ -3063,27 +3066,9 @@
                                         </div>
                                     </div>
                                     <div class="form__input">
-                                        <div class="form-input" data-input="name">
-                                            <label>Surname</label>
-                                            <input class="_required" type="text">
-                                            <div class="failure">
-                                                <span class="failure__text">*Required field</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form__input">
                                         <div class="form-input" data-input="tel">
                                             <label>Phone number</label>
                                             <input class="_tel _required" type="tel">
-                                            <div class="failure">
-                                                <span class="failure__text">*Required field</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form__input">
-                                        <div class="form-input" data-input="email">
-                                            <label>E-mail</label>
-                                            <input class="_email _required" type="email">
                                             <div class="failure">
                                                 <span class="failure__text">*Required field</span>
                                             </div>

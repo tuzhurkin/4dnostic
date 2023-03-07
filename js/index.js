@@ -1,8 +1,4 @@
 // <====================================================== Add Transitions
-// window.addEventListener('beforeunload', () => {
-//     window.scrollTo(0, 0);
-// })
-
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout( () => { 
         document.body.classList.add('show-body');
@@ -89,64 +85,6 @@ function animate({duration, timing, draw}) {
 }
 
 
-// <====================================================== CUSTOM SCROLLBAR MINIBAR
-// new MiniBar('.scr', {
-//     barType: "default",
-//     minBarSize: 10,
-//     hideBars: false,  /* v0.4.0 and above */
-//     alwaysShowBars: false,
-//     horizontalMouseScroll: false,
-
-//     scrollX: true,
-//     scrollY: true,
-
-//     navButtons: false,
-//     scrollAmount: 10,
-
-//     mutationObserver: {
-//         attributes: false,
-//         childList: true,
-//         subtree: true
-//     },
-
-//      /* v0.4.0 and above */
-//     onInit: function() {
-//     /* do something on init */
-//     },
-
-//      /* v0.4.0 and above */
-//     onUpdate: function() {
-//     /* do something on update */
-//     },
-
-//      /* v0.4.0 and above */
-//     onScroll: function() {
-//     /* do something on init */
-//     },
-
-//     classes: {
-//         container: "mb-container",
-//         content: "mb-content",
-//         track: "mb-track",
-//         bar: "mb-bar",
-//         visible: "mb-visible",
-//         progress: "mb-progress",
-//         hover: "mb-hover",
-//         scrolling: "mb-scrolling",
-//         textarea: "mb-textarea",
-//         wrapper: "mb-wrapper",
-//         nav: "mb-nav",
-//         btn: "mb-button",
-//         btns: "mb-buttons",
-//         increase: "mb-increase",
-//         decrease: "mb-decrease",
-//         item: "mb-item", /* v0.4.0 and above */
-//         itemVisible: "mb-item-visible", /* v0.4.0 and above */
-//         itemPartial: "mb-item-partial", /* v0.4.0 and above */
-//         itemHidden: "mb-item-hidden" /* v0.4.0 and above */
-//     }
-// });
-
 // <====================================================== CUSTOM SCROLLBAR SCROLLBOT
 let customScrollArray = [];
 
@@ -171,19 +109,6 @@ if( article2ScrollBox.length ) {
     let customScroll_article2 = new Scrollbot('[data-scroll-box="article-2"]', 3); // 1
     customScrollArray.push(customScroll_article2);
 }
-
-// if( customScroll_seo ) {
-//     customScrollArray.push(customScroll_seo);
-// }
-// if( customScroll_descr ) {
-//     customScrollArray.push(customScroll_descr);
-// }
-// if( customScroll_article1 ) {
-//     customScrollArray.push(customScroll_article1);
-// }
-// if( customScroll_article2 ) {
-//     customScrollArray.push(customScroll_article2);
-// }
 
 customScrollArray.forEach( customScroll => {
     customScroll.setStyle({
@@ -380,18 +305,6 @@ function headerActive() {
     let prevPos, curPos = 0;
     if( !header ) return;
 
-    // const scrollContainers = document.querySelectorAll('.scroll-container');
-    // let scrollRange = [];
-    
-    // scrollContainers.forEach( container => {
-    //     let range = {
-    //         top: container.getBoundingClientRect().top,
-    //         bottom: container.getBoundingClientRect().bottom
-    //     };
-
-    //     scrollRange.push(range);
-    // })
-
     window.addEventListener('scroll', () => {
         prevPos = curPos;
         curPos = scrollY;
@@ -469,54 +382,12 @@ function cardRotateActive(cards) {
             }
         })
     }
+    else {
+        cards.forEach( card => {
+            card.classList.remove('active');
+        })
+    }
 }
-
-
-// const pCards = document.querySelectorAll('.p-card');
-// const cCards = document.querySelectorAll('.c-card');
-
-// if( pCards.length ) {
-//     rotatingCardActive(pCards);
-// }
-// if( cCards.length ) {
-//     rotatingCardActive(cCards);
-// }
-
-// window.addEventListener('resize', () => {
-//     if( pCards.length ) {
-//         rotatingCardActive(pCards);
-//     }
-//     if( cCards.length ) {
-//         rotatingCardActive(cCards);
-//     }
-// })
-
-// function rotatingCardActive(cards) {
-//     if( window.matchMedia('(hover: hover) and (pointer: fine)').matches ) {
-//         cards.forEach( card => {
-//             card.addEventListener('mouseenter', () => {
-//                 card.classList.add('active');
-//             })
-//             card.addEventListener('mouseleave', () => {
-//                 card.classList.remove('active');
-//             })
-//         })
-//     }
-//     else {
-//         cards.forEach( card => {
-//             card.addEventListener('touchstart', () => {
-//                 // card.classList.toggle('active');
-
-//                 if( card.classList.contains('active') ) {
-//                     card.classList.remove('active');
-//                 }
-//                 else {
-//                     card.classList.add('active');
-//                 }
-//             })
-//         })
-//     }
-// }
 
 
 // <====================================================== REVEAL ON SCROLL [GSAP SCROLLTRIGGER]
@@ -1292,438 +1163,6 @@ const headBgSlider = new Swiper('.head-bg-slider', {
     },
 })
 
-
-// const scrubSlider = new Swiper('.scrub-slider', {
-//     direction: 'vertical',
-//     spaceBetween: 0,
-//     slidesPerView: 1, // 4
-    
-//     simulateTouch: true,
-//     touchRatio: 1,
-//     speed: 1000,
-
-//     observer: true,
-//     observeParents: true,
-
-//     mousewheel: true,
-//     // mousewheel: {
-//     //     forceToAxis: true,
-//     //     sensitivity: 1,
-//     //     releaseOnEdges: true,
-//     // },
-//     // grabCursor: true,
-    
-//     // centeredSlides: true,
-//     // centeredSlidesBounds: true,
-    
-//     // on: {
-//     //     scroll: function () {
-//     //         console.log('scrolled')
-//     //         console.log(this.el.swiper.$wrapperEl[0])
-
-//     //         // this.el.swiper.$wrapperEl[0].style.transform = 'translate3d(0, 0, 0)'
-//     //     },
-//     // },
-
-//     breakpoints: {
-//         320: {
-//             direction: 'horizontal',
-//         },
-//         1024: {
-//             direction: 'vertical',
-//         }
-//     },
-
-//     pagination: {
-//         el: '.scrub-slider-progressbar',
-//         type: 'progressbar',
-//     }
-// })
-// const decoySlider = new Swiper('.decoy-slider', {
-//     direction: 'vertical',
-//     spaceBetween: 0,
-//     slidesPerView: 1,
-    
-//     simulateTouch: true,
-//     touchRatio: 1,
-//     speed: 1000,
-
-//     observer: true,
-//     observeParents: true,
-
-//     // mousewheel: true,
-//     mousewheel: {
-//         eventsTarget: '.scrub-container:not(.scrub-container--alt)',   // fixes slider-container while it's being scrolled
-//         releaseOnEdges: false,
-//         sensitivity: 1,
-//         thresholdTime: 1000,
-//     },
-//     // grabCursor: true,
-    
-//     on: {
-//         slideChange: function () {
-//             scrubSlider.slideTo(decoySlider.activeIndex);
-//         },
-//     },
-
-//     breakpoints: {
-//         320: {
-//             direction: 'horizontal',
-//         },
-//         1024: {
-//             direction: 'vertical',
-//         }
-//     },
-
-//     // pagination: {
-//     //     el: '.scrub-slider-progressbar',
-//     //     type: 'progressbar',
-//     // }
-// })
-//
-// <====================================================== FIX SLIDER ON SCROLL
-// document.addEventListener('DOMContentLoaded', () => {
-//     if( window.innerWidth > 1023.5 ) {
-//         setTimeout(() => {
-//             sliderFix();
-//         }, 500);
-//     }
-
-//     window.addEventListener('resize', () => {
-//         if( window.innerWidth > 1023.5 ) {
-//             // setTimeout(() => {
-//                 sliderFix();
-//             // }, 500);
-//         }
-//     })
-// })
-
-function sliderFix() {
-    let sliderContainer = document.querySelector('.scrub-container:not(.scrub-container--alt)');
-    if( !sliderContainer ) return;
-
-    let sliderTop = scrollY + sliderContainer.getBoundingClientRect().top; // + 50;
-    let sliderBottom = scrollY + sliderContainer.getBoundingClientRect().bottom - window.innerHeight - 25;
-
-    let flow = sliderContainer.querySelector('.scrub-container__flow');
-    let defaultHeight = flow.getBoundingClientRect().height;
-    let prevPos = 0, curPos = 0;
-    // let fired = false;
-
-    window.addEventListener('scroll', () => {
-        prevPos = curPos;
-        curPos = scrollY;
-
-        // if slider-container is in the viewport
-        if( sliderContainer.getBoundingClientRect().top <= 0 && sliderContainer.getBoundingClientRect().bottom >= window.innerHeight ) {
-            decoySlider.enable();
-            
-            // if we scroll down
-            if ( curPos > prevPos ) {
-                decoySlider.on('slideChange', () => {
-                    // if we are at first slide
-                    if( decoySlider.activeIndex === 0 ) {
-                        decoySlider.params.mousewheel.releaseOnEdges = false;
-                        decoySlider.enable();
-
-                        // console.log('down enabled');
-                    }
-                    // else if we are at last slide
-                    else if( decoySlider.activeIndex == decoySlider.slides.length - 1 ) {
-                        // window.scrollTo(0, sliderBottom);
-
-                        setTimeout( () => {
-                            decoySlider.params.mousewheel.releaseOnEdges = true;
-                            decoySlider.disable();
-                            
-                            window.scrollTo(0, sliderBottom);
-
-                            // console.log('down disabled');
-                        }, 1000);
-                    }
-                })
-            }
-            // if we scroll up
-            else {
-                decoySlider.on('slideChange', () => {
-                    // if we are at first slide
-                    if( decoySlider.activeIndex === 0 ) {
-                        // window.scrollTo(0, sliderTop);
-
-                        setTimeout( () => {
-                            decoySlider.params.mousewheel.releaseOnEdges = true;
-                            decoySlider.disable();
-
-                            window.scrollTo(0, sliderTop);
-
-                            // console.log('up disabled');
-
-                            // console.log('MULTIPLE');
-
-                            // if( !fired ) {
-                            //     window.scrollTo(0, sliderTop);
-                            //     fired = true;
-                            //     console.log('ONCE');
-                            // }
-                        }, 1000);
-                    }
-                    // else if we are at last slide
-                    else if( decoySlider.activeIndex == decoySlider.slides.length - 1 ) {
-                        decoySlider.params.mousewheel.releaseOnEdges = false;
-                        decoySlider.enable();
-
-                        // console.log('up enabled');
-                    }
-                })
-            }
-        }
-        else {
-            decoySlider.disable();
-        }
-    })
-}
-//
-
-//
-// const altScrubSlider = new Swiper('.alt-scrub-slider', {
-//     direction: 'vertical',
-//     spaceBetween: 0,
-//     slidesPerView: 1, // 4
-    
-//     simulateTouch: true,
-//     touchRatio: 1,
-//     speed: 1000,
-
-//     observer: true,
-//     observeParents: true,
-
-//     mousewheel: true,
-//     // mousewheel: {
-//     //     forceToAxis: true,
-//     //     sensitivity: 1,
-//     //     releaseOnEdges: true,
-//     // },
-//     // grabCursor: true,
-    
-//     // centeredSlides: true,
-//     // centeredSlidesBounds: true,
-    
-//     // on: {
-//     //     scroll: function () {
-//     //         console.log('scrolled')
-//     //         console.log(this.el.swiper.$wrapperEl[0])
-
-//     //         // this.el.swiper.$wrapperEl[0].style.transform = 'translate3d(0, 0, 0)'
-//     //     },
-//     // },
-
-//     breakpoints: {
-//         320: {
-//             direction: 'horizontal',
-//         },
-//         1024: {
-//             direction: 'vertical',
-//         }
-//     },
-
-//     pagination: {
-//         el: '.alt-scrub-slider-progressbar',
-//         type: 'progressbar',
-//     }
-// })
-// const altDecoySlider = new Swiper('.alt-decoy-slider', {
-//     direction: 'vertical',
-//     spaceBetween: 0,
-//     slidesPerView: 1,
-    
-//     simulateTouch: true,
-//     touchRatio: 1,
-//     speed: 1000,
-
-//     observer: true,
-//     observeParents: true,
-
-//     // mousewheel: true,
-//     mousewheel: {
-//         eventsTarget: '.scrub-container.scrub-container--alt',   // fixes slider-container while it's being scrolled
-//         releaseOnEdges: false,
-//         sensitivity: 1,
-//         thresholdTime: 1000,
-//     },
-//     // grabCursor: true,
-    
-//     on: {
-//         slideChange: function () {
-//             altScrubSlider.slideTo(altDecoySlider.activeIndex);
-//         },
-//     },
-
-//     breakpoints: {
-//         320: {
-//             direction: 'horizontal',
-//         },
-//         1024: {
-//             direction: 'vertical',
-//         }
-//     },
-
-//     // pagination: {
-//     //     el: '.scrub-slider-progressbar',
-//     //     type: 'progressbar',
-//     // }
-// })
-//
-// <====================================================== FIX ALT SLIDER ON SCROLL
-// document.addEventListener('DOMContentLoaded', () => {
-//     if( window.innerWidth > 1023.5 ) {
-//         setTimeout(() => {
-//             altSliderFix();
-//         }, 500);
-//     }
-
-//     window.addEventListener('resize', () => {
-//         if( window.innerWidth > 1023.5 ) {
-//             // setTimeout(() => {
-//                 altSliderFix();
-//             // }, 500);
-//         }
-//     })
-// })
-
-function altSliderFix() {
-    let sliderContainer = document.querySelector('.scrub-container.scrub-container--alt');
-    if( !sliderContainer ) return;
-
-    let sliderTop = scrollY + sliderContainer.getBoundingClientRect().top; // + 50;
-    let sliderBottom = scrollY + sliderContainer.getBoundingClientRect().bottom - window.innerHeight - 25;
-
-    let flow = sliderContainer.querySelector('.scrub-container__flow');
-    let defaultHeight = flow.getBoundingClientRect().height;
-    let prevPos = 0, curPos = 0;
-
-    window.addEventListener('scroll', () => {
-        prevPos = curPos;
-        curPos = scrollY;
-
-        // if slider-container is in the viewport
-        if( sliderContainer.getBoundingClientRect().top <= 0 && sliderContainer.getBoundingClientRect().bottom >= window.innerHeight ) {
-            altDecoySlider.enable();
-            
-            // if we scroll down
-            if ( curPos > prevPos ) {
-                altDecoySlider.on('slideChange', () => {
-                    // if we are at first slide
-                    if( altDecoySlider.activeIndex === 0 ) {
-                        altDecoySlider.params.mousewheel.releaseOnEdges = false;
-                        altDecoySlider.enable();
-                    }
-                    // else if we are at last slide
-                    else if( altDecoySlider.activeIndex == altDecoySlider.slides.length - 1 ) {
-                        // window.scrollTo(0, sliderBottom);
-
-                        setTimeout( () => {
-                            altDecoySlider.params.mousewheel.releaseOnEdges = true;
-                            altDecoySlider.disable();
-
-                            window.scrollTo(0, sliderBottom);
-                        }, 1000);
-                    }
-                })
-            }
-            // if we scroll up
-            else {
-                altDecoySlider.on('slideChange', () => {
-                    // if we are at first slide
-                    if( altDecoySlider.activeIndex === 0 ) {
-                        // window.scrollTo(0, sliderTop);
-
-                        setTimeout( () => {
-                            altDecoySlider.params.mousewheel.releaseOnEdges = true;
-                            altDecoySlider.disable();
-
-                            window.scrollTo(0, sliderTop);
-                        }, 1000);
-                    }
-                    // else if we are at last slide
-                    else if( altDecoySlider.activeIndex == altDecoySlider.slides.length - 1 ) {
-                        altDecoySlider.params.mousewheel.releaseOnEdges = false;
-                        altDecoySlider.enable();
-                    }
-                })
-            }
-        }
-        else {
-            altDecoySlider.disable();
-        }
-    })
-}
-//
-
-// <====================================================== SCRUB SLIDER FRACTION
-// const scrubSliderFraction = document.querySelector('.scrub-slider-fraction');
-// const altScrubSliderFraction = document.querySelector('.alt-scrub-slider-fraction');
-
-// if( scrubSliderFraction ) {
-//     setScrubSliderFraction(scrubSlider, scrubSliderFraction);
-// }
-// if( altScrubSliderFraction ) {
-//     setScrubSliderFraction(altScrubSlider, altScrubSliderFraction);
-// }
-
-function setScrubSliderFraction(slider, sliderFraction) {
-    sliderFraction.innerHTML = '01.';
-    // sliderNumberTotal.innerHTML = slider.slides.length;
-
-    slider.on('slideChange', () => {
-        let currentSlide = ++slider.realIndex;
-        currentSlide = currentSlide < 10 ? '0' + currentSlide + '.' : currentSlide + '.';
-        sliderFraction.innerHTML = currentSlide;
-    });
-}
-
-
-// <====================================================== REMOVE FLOATING HEADER ON SCRUB CONTAINERS
-// const scrollContainers = document.querySelectorAll('.scrub-container');
-
-// if( window.innerWidth > 1023.5 ) {
-//     if( scrollContainers.length ) {
-//         scrollContainers.forEach( container => {
-//             removeHeaderOnScrollContainer(container);
-//         })
-//     }
-// }
-// window.addEventListener('resize', () => {
-//     if( window.innerWidth > 1023.5 ) {
-//         if( scrollContainers.length ) {
-//             scrollContainers.forEach( container => {
-//                 removeHeaderOnScrollContainer(container);
-//             })
-//         }
-//     }
-// })
-
-function removeHeaderOnScrollContainer(container) {
-    let prevPos, curPos = 0;
-    const header = document.querySelector('.header');
-    const top = scrollY + container.getBoundingClientRect().top;
-    const bottom = scrollY + container.getBoundingClientRect().bottom;
-
-    window.addEventListener('scroll', () => {
-        prevPos = curPos;
-        curPos = scrollY;
-        
-        if ( curPos <= prevPos ) {
-            // if bottom of slider-container is in the field of view
-            if( scrollY > top && scrollY < bottom + window.innerHeight ) {
-                header.classList.add('header-hide');
-            }
-        }
-    })
-}
-//
-
-
-
 const allDoctorSlider = new Swiper('.all-doctor-slider', {
     direction: 'horizontal',
     slidesPerView: 2.5,
@@ -1757,6 +1196,20 @@ const allDoctorSlider = new Swiper('.all-doctor-slider', {
     navigation: {
         nextEl: '.all-doctor-slider-arrow-next',
         prevEl: '.all-doctor-slider-arrow-prev'
+    },
+
+    pagination: {
+        el: '.all-doctor-slider-fraction',
+        type: 'fraction',
+        currentClass: 'slider-fraction__current',
+        totalClass: 'slider-fraction__total',
+
+        formatFractionCurrent: function (number) {
+            return number;
+        },
+        formatFractionTotal: function (number) {
+            return number;
+        }
     }
 })
 
@@ -1808,6 +1261,20 @@ const reviewSlider = new Swiper('.review-slider', {
     navigation: {
         nextEl: '.review-slider-arrow-next',
         prevEl: '.review-slider-arrow-prev'
+    },
+
+    pagination: {
+        el: '.review-slider-fraction',
+        type: 'fraction',
+        currentClass: 'slider-fraction__current',
+        totalClass: 'slider-fraction__total',
+
+        formatFractionCurrent: function (number) {
+            return number;
+        },
+        formatFractionTotal: function (number) {
+            return number;
+        }
     }
 })
 
@@ -1846,6 +1313,20 @@ const aboutTextSlider = new Swiper('.about-text-slider', {
     navigation: {
         nextEl: '.about-slider-arrow-next',
         prevEl: '.about-slider-arrow-prev'
+    },
+
+    pagination: {
+        el: '.about-slider-fraction',
+        type: 'fraction',
+        currentClass: 'slider-fraction__current',
+        totalClass: 'slider-fraction__total',
+
+        formatFractionCurrent: function (number) {
+            return number;
+        },
+        formatFractionTotal: function (number) {
+            return number;
+        }
     }
 })
 const aboutImageSlider = new Swiper('.about-image-slider', {
@@ -1877,6 +1358,20 @@ const docProfileSlider = new Swiper('.doc-profile-slider', {
     navigation: {
         nextEl: '.doc-profile-slider-arrow-next',
         prevEl: '.doc-profile-slider-arrow-prev'
+    },
+
+    pagination: {
+        el: '.doc-profile-slider-fraction',
+        type: 'fraction',
+        currentClass: 'slider-fraction__current',
+        totalClass: 'slider-fraction__total',
+
+        formatFractionCurrent: function (number) {
+            return number;
+        },
+        formatFractionTotal: function (number) {
+            return number;
+        }
     }
 })
 
@@ -1915,6 +1410,20 @@ const imageSlider = new Swiper('.image-slider', {
     navigation: {
         nextEl: '.image-slider-arrow-next',
         prevEl: '.image-slider-arrow-prev'
+    },
+
+    pagination: {
+        el: '.image-slider-fraction',
+        type: 'fraction',
+        currentClass: 'slider-fraction__current',
+        totalClass: 'slider-fraction__total',
+
+        formatFractionCurrent: function (number) {
+            return number;
+        },
+        formatFractionTotal: function (number) {
+            return number;
+        }
     }
 })
 const locationSlider = new Swiper('.location-slider', {
@@ -1951,6 +1460,20 @@ const locationSlider = new Swiper('.location-slider', {
     navigation: {
         nextEl: '.location-slider-arrow-next',
         prevEl: '.location-slider-arrow-prev'
+    },
+
+    pagination: {
+        el: '.location-slider-fraction',
+        type: 'fraction',
+        currentClass: 'slider-fraction__current',
+        totalClass: 'slider-fraction__total',
+
+        formatFractionCurrent: function (number) {
+            return number;
+        },
+        formatFractionTotal: function (number) {
+            return number;
+        }
     }
 })
 
@@ -1981,6 +1504,20 @@ const otherSlider = new Swiper('.other-slider', {
     navigation: {
         nextEl: '.other-slider-arrow-next',
         prevEl: '.other-slider-arrow-prev'
+    },
+
+    pagination: {
+        el: '.other-slider-fraction',
+        type: 'fraction',
+        currentClass: 'slider-fraction__current',
+        totalClass: 'slider-fraction__total',
+
+        formatFractionCurrent: function (number) {
+            return number;
+        },
+        formatFractionTotal: function (number) {
+            return number;
+        }
     }
 })
 
@@ -2013,6 +1550,20 @@ const featSlider = new Swiper('.feat-slider', {
     navigation: {
         nextEl: '.feat-slider-arrow-next',
         prevEl: '.feat-slider-arrow-prev'
+    },
+
+    pagination: {
+        el: '.feat-slider-fraction',
+        type: 'fraction',
+        currentClass: 'slider-fraction__current',
+        totalClass: 'slider-fraction__total',
+
+        formatFractionCurrent: function (number) {
+            return number;
+        },
+        formatFractionTotal: function (number) {
+            return number;
+        }
     }
 })
 
@@ -2045,22 +1596,24 @@ const pCardSlider = new Swiper('.p-card-slider', {
     navigation: {
         nextEl: '.p-card-slider-arrow-next',
         prevEl: '.p-card-slider-arrow-prev'
+    },
+
+    pagination: {
+        el: '.p-card-slider-fraction',
+        type: 'fraction',
+        currentClass: 'slider-fraction__current',
+        totalClass: 'slider-fraction__total',
+
+        formatFractionCurrent: function (number) {
+            return number;
+        },
+        formatFractionTotal: function (number) {
+            return number;
+        }
     }
 })
 
 // disable on mob - enable on pc
-// if( window.innerWidth < 1023.5 ) {
-//     scrubSlider.disable();
-//     decoySlider.disable();
-//     altScrubSlider.disable();
-//     altDecoySlider.disable();
-// }
-// else {
-//     scrubSlider.enable();
-//     decoySlider.enable();
-//     altScrubSlider.enable();
-//     altDecoySlider.enable();
-// }
 if( window.innerWidth < 767.5 ) {
     allDoctorSlider.disable();
     otherSlider.disable();
@@ -2086,18 +1639,6 @@ else {
     }
 }
 window.addEventListener('resize', () => {
-    // if( window.innerWidth < 1023.5 ) {
-    //     scrubSlider.disable();
-    //     decoySlider.disable();
-    //     altScrubSlider.disable();
-    //     altDecoySlider.disable();
-    // }
-    // else {
-    //     scrubSlider.enable();
-    //     decoySlider.enable();
-    //     altScrubSlider.enable();
-    //     altDecoySlider.enable();
-    // }
     if( window.innerWidth < 767.5 ) {
         allDoctorSlider.disable();
         otherSlider.disable();
@@ -2215,466 +1756,6 @@ function sliderArrows(sliderSwiper, sliderArrowPrev, sliderArrowNext) {
 }
 
 
-// <====================================================== SLIDER FRACTION
-const allDoctorSliderNumberCurrent = document.querySelector('.all-doctor-slider-fraction__current');
-const allDoctorSliderNumberTotal = document.querySelector('.all-doctor-slider-fraction__total');
-
-const reviewSliderNumberCurrent = document.querySelector('.review-slider-fraction__current');
-const reviewSliderNumberTotal = document.querySelector('.review-slider-fraction__total');
-
-const aboutSliderNumberCurrent = document.querySelector('.about-slider-fraction__current');
-const aboutSliderNumberTotal = document.querySelector('.about-slider-fraction__total');
-
-const docProfileSliderNumberCurrent = document.querySelector('.doc-profile-slider-fraction__current');
-const docProfileSliderNumberTotal = document.querySelector('.doc-profile-slider-fraction__total');
-
-const imageSliderNumberCurrent = document.querySelector('.image-slider-fraction__current');
-const imageSliderNumberTotal = document.querySelector('.image-slider-fraction__total');
-
-const locationSliderNumberCurrent = document.querySelector('.location-slider-fraction__current');
-const locationSliderNumberTotal = document.querySelector('.location-slider-fraction__total');
-
-const otherSliderNumberCurrent = document.querySelector('.other-slider-fraction__current');
-const otherSliderNumberTotal = document.querySelector('.other-slider-fraction__total');
-
-const featSliderNumberCurrent = document.querySelector('.feat-slider-fraction__current');
-const featSliderNumberTotal = document.querySelector('.feat-slider-fraction__total');
-
-const pCardSliderNumberCurrent = document.querySelector('.p-card-slider-fraction__current');
-const pCardSliderNumberTotal = document.querySelector('.p-card-slider-fraction__total');
-
-if( allDoctorSliderNumberCurrent && allDoctorSliderNumberTotal ) {
-    sliderFraction(allDoctorSlider, allDoctorSliderNumberCurrent, allDoctorSliderNumberTotal);
-}
-
-if( aboutSliderNumberCurrent && aboutSliderNumberTotal ) {
-    sliderFraction(aboutTextSlider, aboutSliderNumberCurrent, aboutSliderNumberTotal);
-}
-
-if( docProfileSliderNumberCurrent && docProfileSliderNumberTotal ) {
-    sliderFraction(docProfileSlider, docProfileSliderNumberCurrent, docProfileSliderNumberTotal);
-}
-
-if( imageSliderNumberCurrent && imageSliderNumberTotal ) {
-    sliderFraction(imageSlider, imageSliderNumberCurrent, imageSliderNumberTotal);
-}
-
-if( locationSliderNumberCurrent && locationSliderNumberTotal ) {
-    sliderFraction(locationSlider, locationSliderNumberCurrent, locationSliderNumberTotal);
-}
-
-if( otherSliderNumberCurrent && otherSliderNumberTotal ) {
-    sliderFraction(otherSlider, otherSliderNumberCurrent, otherSliderNumberTotal);
-}
-
-if( featSliderNumberCurrent && featSliderNumberTotal ) {
-    sliderFraction(featSlider, featSliderNumberCurrent, featSliderNumberTotal);
-}
-
-if( pCardSliderNumberCurrent && pCardSliderNumberTotal ) {
-    sliderFraction(pCardSlider, pCardSliderNumberCurrent, pCardSliderNumberTotal);
-}
-
-if( reviewSliderNumberCurrent && reviewSliderNumberTotal ) {
-    if( window.innerWidth < 767.5 ) {
-        sliderRowsFraction(reviewSlider, 2, 1, reviewSliderNumberCurrent, reviewSliderNumberTotal);
-    }
-    else if( window.innerWidth >= 767.5 && window.innerWidth < 1023.5 ) {
-        sliderRowsFraction(reviewSlider, 3, 2, reviewSliderNumberCurrent, reviewSliderNumberTotal);
-    }
-    else {
-        sliderRowsFraction(reviewSlider, 2, 3, reviewSliderNumberCurrent, reviewSliderNumberTotal);
-    }
-}
-window.addEventListener('resize', () => {
-    if( allDoctorSliderNumberCurrent && allDoctorSliderNumberTotal ) {
-        sliderFraction(allDoctorSlider, allDoctorSliderNumberCurrent, allDoctorSliderNumberTotal);
-    }
-    
-    if( aboutSliderNumberCurrent && aboutSliderNumberTotal ) {
-        sliderFraction(aboutTextSlider, aboutSliderNumberCurrent, aboutSliderNumberTotal);
-    }
-    
-    if( docProfileSliderNumberCurrent && docProfileSliderNumberTotal ) {
-        sliderFraction(docProfileSlider, docProfileSliderNumberCurrent, docProfileSliderNumberTotal);
-    }
-    
-    if( imageSliderNumberCurrent && imageSliderNumberTotal ) {
-        sliderFraction(imageSlider, imageSliderNumberCurrent, imageSliderNumberTotal);
-    }
-    
-    if( locationSliderNumberCurrent && locationSliderNumberTotal ) {
-        sliderFraction(locationSlider, locationSliderNumberCurrent, locationSliderNumberTotal);
-    }
-    
-    if( otherSliderNumberCurrent && otherSliderNumberTotal ) {
-        sliderFraction(otherSlider, otherSliderNumberCurrent, otherSliderNumberTotal);
-    }
-    
-    if( featSliderNumberCurrent && featSliderNumberTotal ) {
-        sliderFraction(featSlider, featSliderNumberCurrent, featSliderNumberTotal);
-    }
-
-    if( pCardSliderNumberCurrent && pCardSliderNumberTotal ) {
-        sliderFraction(pCardSlider, pCardSliderNumberCurrent, pCardSliderNumberTotal);
-    }
-
-    if( reviewSliderNumberCurrent && reviewSliderNumberTotal ) {
-        if( window.innerWidth < 767.5 ) {
-            sliderRowsFraction(reviewSlider, 2, 1, reviewSliderNumberCurrent, reviewSliderNumberTotal);
-        }
-        else if( window.innerWidth >= 767.5 && window.innerWidth < 1023.5 ) {
-            sliderRowsFraction(reviewSlider, 3, 2, reviewSliderNumberCurrent, reviewSliderNumberTotal);
-        }
-        else {
-            sliderRowsFraction(reviewSlider, 2, 3, reviewSliderNumberCurrent, reviewSliderNumberTotal);
-        }
-    }
-})
-
-function sliderFraction(slider, sliderNumberCurrent, sliderNumberTotal) {
-    let slidesPerView = slider.params.slidesPerView;
-
-    if( typeof slider.params.slidesPerView === 'number' ) {
-        sliderNumberCurrent.innerHTML = Math.floor(slidesPerView);
-    }
-    else {
-        sliderNumberCurrent.innerHTML = '1';
-    }
-    // sliderNumberCurrent.innerHTML = '1';
-    sliderNumberTotal.innerHTML = slider.el.querySelectorAll('.swiper-slide').length; // slider.slides.length;
-
-    slider.on('slideChange', () => {
-        let currentSlide = ++slider.realIndex + Math.floor(slidesPerView) - 1;
-        sliderNumberCurrent.innerHTML = currentSlide;
-    });
-}
-
-function sliderRowsFraction(slider, rows, cols, sliderNumberCurrent, sliderNumberTotal) {
-    // set initial fraction values
-    let total = slider.slides.length; // total number of slides
-    let grouped = rows * cols; // number of slides user can see at the screen
-
-    if( total < grouped ) {
-        sliderNumberCurrent.innerHTML = total;
-        sliderNumberTotal.innerHTML = total;
-    }
-    else {
-        sliderNumberCurrent.innerHTML = grouped;
-        sliderNumberTotal.innerHTML = total;
-    }
-
-    // set fraction values every
-    slider.on('slideChange', () => {
-        let index = slider.realIndex;
-        let current = index * 2 + grouped;
-
-        if( current > total ) {
-            sliderNumberCurrent.innerHTML = total;
-        }
-        else {
-            sliderNumberCurrent.innerHTML = current;
-        }
-    });
-}
-
-
-// <====================================================== SCROLL SLIDER ACTIVE
-// if( window.innerWidth > 1023.5 ) {
-//     scrollSliderActive();
-//     altScrollSliderActive();
-// }
-// window.addEventListener('resize', () => {
-//     if( window.innerWidth > 1023.5 ) {
-//         scrollSliderActive();
-//         altScrollSliderActive();
-//     }
-// })
-
-// function scrollSliderActive() {
-//     const scrollContainer = document.querySelector('.scroll-container:not(.scroll-container--alt)');
-//     if( !scrollContainer ) return;
-    
-//     const slider = scrollContainer.querySelector('.scroll-slider');
-//     const swiperSlides = slider.querySelectorAll('.swiper-slide');
-//     const slidesAmount = swiperSlides.length;
-//     const slidesArray = [...swiperSlides];
-//     const progressbar = scrollContainer.querySelector('.swiper-pagination-progressbar-fill');
-
-//     const space = scrollContainer.querySelector('.scroll-container__space');
-//     const spaceHeight = space.getBoundingClientRect().height;
-//     let prevPos, curPos = 0;
-//     let dir = 'down'; // 'down' / 'up'
-
-//     // console.log(spaceHeight);
-
-//     let slideStops = [];
-//     for( let i = 0; i < slidesAmount; i++ ) {
-//         slideStops.push(- i * parseFloat(spaceHeight / slidesAmount));
-//     }
-//     let tempStop = slideStops[0];
-
-//     // console.log(slideStops);
-
-//     window.addEventListener('scroll', () => {
-//         const spaceTop = space.getBoundingClientRect().top;
-//         prevPos = curPos;
-//         curPos = scrollY; // pageYOffset;
-
-//         // console.log(spaceTop)
-//         // console.log('tempStop: ' + tempStop);
-        
-//         // if we scroll down
-//         if ( curPos >= prevPos ) {
-//             if( spaceTop < tempStop ) {
-//                 if( slideStops[slideStops.indexOf(tempStop) + 1] !== undefined ) {
-//                     tempStop = slideStops[slideStops.indexOf(tempStop) + 1];
-//                 }
-//                 else {
-//                     return;
-//                 }
-
-//                 if( dir === 'down' ) {
-//                     const activeSlide = slider.querySelector('.swiper-slide-active');
-//                     const prevSlide = slider.querySelector('.swiper-slide-prev');
-//                     const nextSlide = slider.querySelector('.swiper-slide-next');
-
-//                     if( prevSlide ) {
-//                         prevSlide.classList.remove('swiper-slide-prev');
-//                     }
-//                     if( activeSlide ) {
-//                         activeSlide.classList.remove('swiper-slide-active');
-//                         activeSlide.classList.add('swiper-slide-prev');
-//                     }
-//                     if( nextSlide ) {
-//                         nextSlide.classList.remove('swiper-slide-next');
-//                         nextSlide.classList.add('swiper-slide-active');
-                        
-//                         if( slidesArray[slidesArray.indexOf(nextSlide)].nextElementSibling ) {
-//                             slidesArray[slidesArray.indexOf(nextSlide)].nextElementSibling.classList.add('swiper-slide-next');
-//                         }
-//                     }
-
-//                     const activeSlideIndex = slidesArray.indexOf(slider.querySelector('.swiper-slide-active'));
-//                     progressbar.style.transform = `translate3d(0px, 0px, 0px) scaleX(1) scaleY(${(activeSlideIndex + 1) / slidesAmount})`;
-//                 }
-
-//                 dir = 'down';
-//             }
-//         }
-//         // if we scroll up
-//         else {
-//             if( spaceTop > tempStop ) {
-//                 if( slideStops[slideStops.indexOf(tempStop) - 1] !== undefined ) {
-//                     tempStop = slideStops[slideStops.indexOf(tempStop) - 1];
-//                 }
-//                 //---EDIT-IT-!!!---
-//                 else if( tempStop === 0 ) {
-//                     if( dir === 'up' ) {
-//                         const activeSlide = slider.querySelector('.swiper-slide-active');
-//                         const prevSlide = slider.querySelector('.swiper-slide-prev');
-//                         const nextSlide = slider.querySelector('.swiper-slide-next');
-    
-//                         if( prevSlide ) {
-//                             prevSlide.classList.remove('swiper-slide-prev');
-//                             prevSlide.classList.add('swiper-slide-active');
-                            
-//                             if( slidesArray[slidesArray.indexOf(prevSlide)].previousElementSibling ) {
-//                                 slidesArray[slidesArray.indexOf(prevSlide)].previousElementSibling.classList.add('swiper-slide-prev');
-//                             }
-//                         }
-//                         if( activeSlide ) {
-//                             activeSlide.classList.remove('swiper-slide-active');
-//                             activeSlide.classList.add('swiper-slide-next');
-//                         }
-//                         if( nextSlide ) {
-//                             nextSlide.classList.remove('swiper-slide-next');
-//                         }
-    
-//                         const activeSlideIndex = slidesArray.indexOf(slider.querySelector('.swiper-slide-active'));
-//                         progressbar.style.transform = `translate3d(0px, 0px, 0px) scaleX(1) scaleY(${(activeSlideIndex + 1) / slidesAmount})`;
-//                     }
-//                     tempStop = -1;
-//                     return;
-//                 }
-//                 //---EDIT-IT-!!!---
-//                 else {
-//                     return;
-//                 }
-
-//                 if( dir === 'up' ) {
-//                     const activeSlide = slider.querySelector('.swiper-slide-active');
-//                     const prevSlide = slider.querySelector('.swiper-slide-prev');
-//                     const nextSlide = slider.querySelector('.swiper-slide-next');
-
-//                     if( prevSlide ) {
-//                         prevSlide.classList.remove('swiper-slide-prev');
-//                         prevSlide.classList.add('swiper-slide-active');
-                        
-//                         if( slidesArray[slidesArray.indexOf(prevSlide)].previousElementSibling ) {
-//                             slidesArray[slidesArray.indexOf(prevSlide)].previousElementSibling.classList.add('swiper-slide-prev');
-//                         }
-//                     }
-//                     if( activeSlide ) {
-//                         activeSlide.classList.remove('swiper-slide-active');
-//                         activeSlide.classList.add('swiper-slide-next');
-//                     }
-//                     if( nextSlide ) {
-//                         nextSlide.classList.remove('swiper-slide-next');
-//                     }
-
-//                     const activeSlideIndex = slidesArray.indexOf(slider.querySelector('.swiper-slide-active'));
-//                     progressbar.style.transform = `translate3d(0px, 0px, 0px) scaleX(1) scaleY(${(activeSlideIndex + 1) / slidesAmount})`;
-//                 }
-
-//                 dir = 'up';
-//             }
-//         }
-//     })
-// }
-// function altScrollSliderActive() {
-//     const scrollContainer = document.querySelector('.scroll-container.scroll-container--alt');
-//     if( !scrollContainer ) return;
-    
-//     const slider = scrollContainer.querySelector('.alt-scroll-slider');
-//     const swiperSlides = slider.querySelectorAll('.swiper-slide');
-//     const slidesAmount = swiperSlides.length;
-//     const slidesArray = [...swiperSlides];
-//     const progressbar = scrollContainer.querySelector('.swiper-pagination-progressbar-fill');
-
-//     const space = scrollContainer.querySelector('.scroll-container__space');
-//     const spaceHeight = space.getBoundingClientRect().height;
-//     let prevPos, curPos = 0;
-//     let dir = 'down'; // 'down' / 'up'
-
-//     // console.log(spaceHeight);
-
-//     let slideStops = [];
-//     for( let i = 0; i < slidesAmount; i++ ) {
-//         slideStops.push(- i * parseFloat(spaceHeight / slidesAmount));
-//     }
-//     let tempStop = slideStops[0];
-
-//     // console.log(slideStops);
-
-//     window.addEventListener('scroll', () => {
-//         const spaceTop = space.getBoundingClientRect().top;
-//         prevPos = curPos;
-//         curPos = scrollY; // pageYOffset;
-
-//         // console.log(spaceTop)
-//         // console.log('tempStop: ' + tempStop);
-        
-//         // if we scroll down
-//         if ( curPos >= prevPos ) {
-//             if( spaceTop < tempStop ) {
-//                 if( slideStops[slideStops.indexOf(tempStop) + 1] !== undefined ) {
-//                     tempStop = slideStops[slideStops.indexOf(tempStop) + 1];
-//                 }
-//                 else {
-//                     return;
-//                 }
-
-//                 if( dir === 'down' ) {
-//                     const activeSlide = slider.querySelector('.swiper-slide-active');
-//                     const prevSlide = slider.querySelector('.swiper-slide-prev');
-//                     const nextSlide = slider.querySelector('.swiper-slide-next');
-
-//                     if( prevSlide ) {
-//                         prevSlide.classList.remove('swiper-slide-prev');
-//                     }
-//                     if( activeSlide ) {
-//                         activeSlide.classList.remove('swiper-slide-active');
-//                         activeSlide.classList.add('swiper-slide-prev');
-//                     }
-//                     if( nextSlide ) {
-//                         nextSlide.classList.remove('swiper-slide-next');
-//                         nextSlide.classList.add('swiper-slide-active');
-                        
-//                         if( slidesArray[slidesArray.indexOf(nextSlide)].nextElementSibling ) {
-//                             slidesArray[slidesArray.indexOf(nextSlide)].nextElementSibling.classList.add('swiper-slide-next');
-//                         }
-//                     }
-
-//                     const activeSlideIndex = slidesArray.indexOf(slider.querySelector('.swiper-slide-active'));
-//                     progressbar.style.transform = `translate3d(0px, 0px, 0px) scaleX(1) scaleY(${(activeSlideIndex + 1) / slidesAmount})`;
-//                 }
-
-//                 dir = 'down';
-//             }
-//         }
-//         // if we scroll up
-//         else {
-//             if( spaceTop > tempStop ) {
-//                 if( slideStops[slideStops.indexOf(tempStop) - 1] !== undefined ) {
-//                     tempStop = slideStops[slideStops.indexOf(tempStop) - 1];
-//                 }
-//                 //---EDIT-IT-!!!---
-//                 else if( tempStop === 0 ) {
-//                     if( dir === 'up' ) {
-//                         const activeSlide = slider.querySelector('.swiper-slide-active');
-//                         const prevSlide = slider.querySelector('.swiper-slide-prev');
-//                         const nextSlide = slider.querySelector('.swiper-slide-next');
-    
-//                         if( prevSlide ) {
-//                             prevSlide.classList.remove('swiper-slide-prev');
-//                             prevSlide.classList.add('swiper-slide-active');
-                            
-//                             if( slidesArray[slidesArray.indexOf(prevSlide)].previousElementSibling ) {
-//                                 slidesArray[slidesArray.indexOf(prevSlide)].previousElementSibling.classList.add('swiper-slide-prev');
-//                             }
-//                         }
-//                         if( activeSlide ) {
-//                             activeSlide.classList.remove('swiper-slide-active');
-//                             activeSlide.classList.add('swiper-slide-next');
-//                         }
-//                         if( nextSlide ) {
-//                             nextSlide.classList.remove('swiper-slide-next');
-//                         }
-    
-//                         const activeSlideIndex = slidesArray.indexOf(slider.querySelector('.swiper-slide-active'));
-//                         progressbar.style.transform = `translate3d(0px, 0px, 0px) scaleX(1) scaleY(${(activeSlideIndex + 1) / slidesAmount})`;
-//                     }
-//                     tempStop = -1;
-//                     return;
-//                 }
-//                 //---EDIT-IT-!!!---
-//                 else {
-//                     return;
-//                 }
-
-//                 if( dir === 'up' ) {
-//                     const activeSlide = slider.querySelector('.swiper-slide-active');
-//                     const prevSlide = slider.querySelector('.swiper-slide-prev');
-//                     const nextSlide = slider.querySelector('.swiper-slide-next');
-
-//                     if( prevSlide ) {
-//                         prevSlide.classList.remove('swiper-slide-prev');
-//                         prevSlide.classList.add('swiper-slide-active');
-                        
-//                         if( slidesArray[slidesArray.indexOf(prevSlide)].previousElementSibling ) {
-//                             slidesArray[slidesArray.indexOf(prevSlide)].previousElementSibling.classList.add('swiper-slide-prev');
-//                         }
-//                     }
-//                     if( activeSlide ) {
-//                         activeSlide.classList.remove('swiper-slide-active');
-//                         activeSlide.classList.add('swiper-slide-next');
-//                     }
-//                     if( nextSlide ) {
-//                         nextSlide.classList.remove('swiper-slide-next');
-//                     }
-
-//                     const activeSlideIndex = slidesArray.indexOf(slider.querySelector('.swiper-slide-active'));
-//                     progressbar.style.transform = `translate3d(0px, 0px, 0px) scaleX(1) scaleY(${(activeSlideIndex + 1) / slidesAmount})`;
-//                 }
-
-//                 dir = 'up';
-//             }
-//         }
-//     })
-// }
-
-
 // <====================================================== MULTISTEP FORM
 multiStepFormActive();
 
@@ -2738,7 +1819,6 @@ function showCurrentStep(formSteps, currentStep) {
 
 
 // <====================================================== WIDGET
-
 const openWidgetBtns = document.querySelectorAll('[data-widget-button]');
 const closeWidgetBtns = document.querySelectorAll('[data-widget-close]');
 
@@ -2792,6 +1872,45 @@ function widgetClose(widget, doUnlock = true) {
             bodyUnlock();
         }
     }
+}
+
+
+// <====================================================== HIDE WIDGET ON FOOTER SCROLLING
+if( window.innerWidth < 767.5 ) {
+    widgetHideOnScroll();
+}
+window.addEventListener('resize', () => {
+    if( window.innerWidth < 767.5 ) {
+        widgetHideOnScroll();
+    }
+})
+
+function widgetHideOnScroll() {
+    let prevPos, curPos = 0;
+    const widgetBtn = document.querySelector('.widget-btn');
+    const footer = document.querySelector('.footer');
+    if( ! widgetBtn || ! footer ) return;
+
+    const top = scrollY + footer.getBoundingClientRect().top;
+    const bottom = scrollY + footer.getBoundingClientRect().bottom;
+    const height = footer.getBoundingClientRect().height;
+
+    // console.log(`top: ${top}`);
+    // console.log(`bottom: ${bottom}`);
+
+    window.addEventListener('scroll', () => {
+        prevPos = curPos;
+        curPos = scrollY;
+
+        // if bottom of footer is in the field of view
+        // if( scrollY > (scrollY + footer.getBoundingClientRect().top) && scrollY < (scrollY + footer.getBoundingClientRect().bottom + footer.getBoundingClientRect().height) ) {
+        if( scrollY > top && scrollY < bottom + height ) {
+            widgetBtn.classList.add('widget-btn-hide');
+        }
+        else {
+            widgetBtn.classList.remove('widget-btn-hide');
+        }
+    })
 }
 
 

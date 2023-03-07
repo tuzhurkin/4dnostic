@@ -149,9 +149,9 @@
     }
     //
     &__burger {
-        background-color: rgba(37, 37, 37, 0.6);
-        -webkit-backdrop-filter: blur(5px);
-        backdrop-filter: blur(5px);
+        // background-color: rgba(37, 37, 37, 0.6);
+        // -webkit-backdrop-filter: blur(5px);
+        // backdrop-filter: blur(5px);
 
         height: 100%;
         padding-top: 24px;
@@ -260,6 +260,35 @@
         @include column-gap(16px);
     }
     &__button {
+        &_login {
+            z-index: 9;
+            
+            @include sm {
+                .button {
+                    min-width: 0;
+                    width: 36px;
+                    height: 36px;
+
+                    &:before,
+                    &:after {
+                        display: none;
+                    }
+
+                    .button__wrapper {
+                        padding: 4px 4px;
+                        @include column-gap(0px);
+
+                        &:before,
+                        &:after {
+                            display: none;
+                        }
+                    }
+                    .button__name {
+                        display: none;
+                    }
+                }
+            }
+        }
         &_contact {
             z-index: 10;
             
@@ -276,12 +305,6 @@
                         font-weight: 700;
                     }
                 }
-            }
-        }
-
-        &:not(.navbar__button_contact) {
-            @include sm {
-                display: none;
             }
         }
     }

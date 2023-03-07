@@ -165,7 +165,7 @@
                     </div>
 
                     <div class="navbar__button-box">
-                        <div class="navbar__button">
+                        <div class="navbar__button navbar__button_login">
                             <a href="#" class="button button--white" target="_blank">
                                 <div class="button__wrapper">
                                     <span class="button__icon">
@@ -490,6 +490,14 @@
                 </div>
             </nav>
         </header>
+        
+        <div class="widget-btn">
+            <button class="button button--alt" data-widget-button="contact">
+                <div class="button__wrapper">
+                    <span class="button__name">contact us</span>
+                </div>
+            </button>
+        </div>
 
         <section class="sub-head">
             <div class="sub-head__bg" data-reveal="elem">
@@ -1178,7 +1186,68 @@
             </div>
         </footer>
 
-        
+
+        <div class="widget" data-widget-target="contact">
+            <div class="widget__wrapper">
+                <div class="widget__content block-wrapper">
+                    <div class="widget__cross-box" data-widget-close>
+                        <div class="widget__cross">
+                            <img src="./img/svg/icon-widget-close.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="widget__main">
+                        <div class="widget__contact-box">
+                            <div class="widget__contact">
+                                <div class="w-contact">
+                                    <div class="w-contact__icon">
+                                        <img src="./img/svg/icon-widget-tel.svg" alt="">
+                                    </div>
+                                    <div class="w-contact__info">
+                                        <div class="w-contact__title">Call us</div>
+                                        <div class="w-contact__value">
+                                            <a href="tel:+380000000000">+ 380 00 00 00 000</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget__contact">
+                                <div class="w-contact">
+                                    <div class="w-contact__icon">
+                                        <img src="./img/svg/icon-widget-chat.svg" alt="">
+                                    </div>
+                                    <div class="w-contact__info">
+                                        <div class="w-contact__title">Chat with us</div>
+                                        <div class="w-contact__value">
+                                            <a href="#">@info_4dnostics</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget__descr">
+                            <p>Make an appointment for a check-up or consultation</p>
+                        </div>
+                        <div class="widget__button-box">
+                            <div class="widget__button">
+                                <button class="button button--alt" data-popup-button="appointment">
+                                    <div class="button__wrapper">
+                                        <span class="button__name">Check-up</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="widget__button">
+                                <button class="button button--alt" data-popup-button="questions">
+                                    <div class="button__wrapper">
+                                        <span class="button__name">Consultation</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="popup popup--contact" data-popup-target="contact">
             <div class="popup__wrapper block-wrapper">
                 <div class="popup__content">
@@ -1202,27 +1271,9 @@
                                         </div>
                                     </div>
                                     <div class="form__input">
-                                        <div class="form-input" data-input="name">
-                                            <label>Surname</label>
-                                            <input class="_required" type="text">
-                                            <div class="failure">
-                                                <span class="failure__text">*Required field</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form__input">
                                         <div class="form-input" data-input="tel">
                                             <label>Phone number</label>
                                             <input class="_tel _required" type="tel">
-                                            <div class="failure">
-                                                <span class="failure__text">*Required field</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form__input">
-                                        <div class="form-input" data-input="email">
-                                            <label>E-mail</label>
-                                            <input class="_email _required" type="email">
                                             <div class="failure">
                                                 <span class="failure__text">*Required field</span>
                                             </div>
