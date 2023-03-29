@@ -1254,9 +1254,9 @@
             }
         }
         .p-card__footer-btn {
-            width: 100%;
-            
             @include md {
+                width: 100%;
+                
                 .button {
                     width: 100%;
                 }

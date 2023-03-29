@@ -6568,10 +6568,10 @@ body.show-body [data-reveal=img] {
     justify-content: center;
   }
 }
-.p-card--constructor .p-card__footer-btn {
-  width: 100%;
-}
 @media (max-width: 1023.5px) {
+  .p-card--constructor .p-card__footer-btn {
+    width: 100%;
+  }
   .p-card--constructor .p-card__footer-btn .button {
     width: 100%;
   }
