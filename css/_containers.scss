@@ -945,25 +945,6 @@
         //     @include column-gap(8px);
         // }
     }
-    &__price-box {
-        display: flex;
-        align-items: center;
-        @include column-gap(8px);
-    }
-    &__price {
-        @include h4TitleAltFont();
-        color: $orange;
-
-        @include lg {
-            @include h5TitleAltFont();
-        }
-
-        &_old {
-            @include averageFont();
-            color: $grey100;
-            text-decoration: line-through;
-        }
-    }
     //
     &__footer {
         margin-top: 24px;
@@ -971,6 +952,10 @@
         justify-content: space-between;
         align-items: center;
         @include column-gap(56px);
+
+        //--
+        display: none;
+        //--
     }
     &__footer-name {
         @include descriptionFont();
@@ -998,7 +983,7 @@
     }
     //
     &__btn-box {
-        margin-top: auto;
+        margin-top: 24px;
         
         display: flex;
         justify-content: space-between;
@@ -1011,6 +996,9 @@
             }
             & > *:last-child {
                 flex-basis: 33.333%;
+
+                display: flex;
+                justify-content: flex-end;
             }
         }
 
@@ -1022,6 +1010,11 @@
             flex-direction: column;
             align-items: stretch;
             @include row-gap(16px);
+            
+            & > *:last-child {
+                display: flex;
+                justify-content: center;
+            }
         }
     }
     &__button {
@@ -1107,6 +1100,45 @@
         }
     }
     //
+    &__price-box {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        margin-top: 24px;
+    }
+    &__price-name {
+        @include descriptionFont();
+        color: $blackMain;
+        text-transform: uppercase;
+
+        margin-right: 24px;
+
+        @include sm {
+            @include smallFont();
+        }
+    }
+    &__price {
+        @include h5TitleAltFont();
+        color: $orange;
+
+        @include sm {
+            @include mediumBoldAltFont();
+        }
+
+        &_old {
+            @include descriptionFont();
+            color: $grey100;
+            text-decoration: line-through;
+        
+            margin-right: 8px;
+            
+            @include sm {
+                @include smallFont();
+            }
+        }
+    }
+    //
     &__hover {
         background-color: $light;
 
@@ -1161,54 +1193,74 @@
         .p-card__button {
             margin-top: auto;
         }
+        .p-card__btn-box {
+            margin-top: auto;
+        } 
     }
-    //
-    // &__title,
-    // &__button {
-    //     transform: perspective(2000px) translateZ(1px);
-    // }
-    //
-    // &:not(.p-card--constructor) {
-        @include hover {
-            &:hover {
-                .p-card__content,
-                .p-card__hover {
-                    box-shadow: 0px 4px 40px rgba(112, 117, 132, 0.3);
-                }
-                .p-card__content {
-                    // transform: perspective(2000px) rotateY(180deg);
-                    transform: rotateY(180deg);
-                }
-                .p-card__hover {
-                    // z-index: 0;
-                    // transform: perspective(2000px) rotateY(360deg);
-                    transform: rotateY(360deg);
-                }
-            }
-        }
-    // }
-    //
-    // &:not(.p-card--constructor) {
-        &.active {
-            .p-card__content,
-            .p-card__hover {
-                box-shadow: 0px 4px 40px rgba(112, 117, 132, 0.3);
-            }
-            .p-card__content {
-                // transform: perspective(2000px) rotateY(180deg);
-                transform: rotateY(180deg);
-            }
-            .p-card__hover {
-                // z-index: 0;
-                // transform: perspective(2000px) rotateY(360deg);
-                transform: rotateY(360deg);
-            }
-        }
-    // }
 
+    //
+    //
+    //--disable-rotate-hover
+    // &:not(.p-card--constructor) {
+    //     @include hover {
+    //         &:hover {
+    //             .p-card__content,
+    //             .p-card__hover {
+    //                 box-shadow: 0px 4px 40px rgba(112, 117, 132, 0.3);
+    //             }
+    //             .p-card__content {
+    //                 // transform: perspective(2000px) rotateY(180deg);
+    //                 transform: rotateY(180deg);
+    //             }
+    //             .p-card__hover {
+    //                 // z-index: 0;
+    //                 // transform: perspective(2000px) rotateY(360deg);
+    //                 transform: rotateY(360deg);
+    //             }
+    //         }
+    //     }
+    // }
+    //
+    //--disable-rotate-hover
+    // &:not(.p-card--constructor) {
+    //     &.active {
+    //         .p-card__content,
+    //         .p-card__hover {
+    //             box-shadow: 0px 4px 40px rgba(112, 117, 132, 0.3);
+    //         }
+    //         .p-card__content {
+    //             // transform: perspective(2000px) rotateY(180deg);
+    //             transform: rotateY(180deg);
+    //         }
+    //         .p-card__hover {
+    //             // z-index: 0;
+    //             // transform: perspective(2000px) rotateY(360deg);
+    //             transform: rotateY(360deg);
+    //         }
+    //     }
+    // }
+    //
     &--constructor {
         .p-card__content {
-            background-color: $greyVip; // #efefef; //
+            background-color: #D9D9D9; // $greyVip;
+        }
+        .p-card__footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: flex-end;
+
+            @include md {
+                justify-content: center;
+            }
+        }
+        .p-card__footer-btn {
+            width: 100%;
+            
+            @include md {
+                .button {
+                    width: 100%;
+                }
+            }
         }
     }
 }
@@ -3272,7 +3324,6 @@
             margin-bottom: 32px;
         }
 
-        //--edit-1
         position: relative;
         &:after {
             content: "";
@@ -3287,7 +3338,6 @@
                 display: none;
             }
         }
-        //--/edit-1
     }
     //
     &__image {

@@ -2,13 +2,15 @@
     &__input {
         margin-bottom: 24px;
     }
-    &__textarea,
-    &__checkbox {
+    &__textarea {
         margin-bottom: 40px;
 
         @include sm {
             margin-bottom: 32px;
         }
+    }
+    &__checkbox {
+        margin-bottom: 16px;
     }
     &__button {
         margin-top: 48px;
@@ -497,6 +499,11 @@
     &__name {
         @include descriptionFont();
         color: $grey;
+
+        a {
+            color: $orange;
+            text-decoration: underline;
+        }
     }
     &__box {
         // hide the browser's default checkbox

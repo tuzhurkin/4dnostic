@@ -2285,7 +2285,7 @@ body.show-body [data-reveal=img] {
   position: relative;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: background-color 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .tel-select__options-container {
   width: 100%;
@@ -2537,6 +2537,7 @@ body.show-body [data-reveal=img] {
 
 .footer {
   background-color: #222222;
+  overflow: hidden;
 }
 .footer__wrapper {
   padding-top: 56px;
@@ -3462,6 +3463,22 @@ body.show-body [data-reveal=img] {
     margin-bottom: 64px;
   }
 }
+.sub-head__time-box {
+  grid-column: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1279.5px) {
+  .sub-head__time-box {
+    grid-column: 2/3;
+  }
+}
+@media (max-width: 1023.5px) {
+  .sub-head__time-box {
+    grid-column: 1/2;
+  }
+}
 .sub-head__feat-box {
   grid-column: 1/-1;
   display: grid;
@@ -3924,6 +3941,82 @@ body.show-body [data-reveal=img] {
   .head-404__button {
     text-align: center;
   }
+}
+
+.time-box {
+  display: flex;
+  align-items: center;
+}
+.time-box > *:not(:last-child) {
+  margin: 0 24px 0 0;
+}
+.time-box__title {
+  font-family: "Cormorant", serif;
+  font-size: 18px;
+  line-height: 140%;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  font-family: "Open Sans Hebrew", sans-serif;
+  line-height: 160%;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+@media (max-width: 767.5px) {
+  .time-box__title {
+    font-family: "Open Sans Hebrew", sans-serif;
+    font-size: 12px;
+    line-height: 140%;
+    font-weight: 400;
+  }
+}
+.time-box__clock {
+  position: relative;
+}
+.time-box__time {
+  font-family: "Cormorant", serif;
+  font-size: 32px;
+  line-height: 140%;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-family: "Open Sans Hebrew", sans-serif;
+  color: #FFFFFF;
+  font-weight: 400;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media (max-width: 767.5px) {
+  .time-box__time {
+    font-family: "Open Sans Hebrew", sans-serif;
+    font-size: 14px;
+    line-height: 160%;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+}
+.time-box__circle svg {
+  display: block;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+}
+@media (max-width: 767.5px) {
+  .circle {
+    transform: scale(0.5);
+  }
+}
+.circle__fill {
+  stroke-dasharray: 372;
+  stroke-dashoffset: 372;
+  transform: rotate(-90deg) translate(-120px, 0);
 }
 
 .widget-btn {
@@ -5060,6 +5153,15 @@ body.show-body [data-reveal=img] {
   color: #252525;
   text-decoration: underline;
 }
+.inline-btn--black .inline-btn__name {
+  color: #252525;
+  font-weight: 700;
+}
+@media (max-width: 1023.5px) {
+  .inline-btn--black .inline-btn__name {
+    font-weight: 400;
+  }
+}
 
 .socials-list {
   display: flex;
@@ -6180,46 +6282,12 @@ body.show-body [data-reveal=img] {
   justify-content: flex-end;
   align-items: center;
 }
-.p-card__price-box {
-  display: flex;
-  align-items: center;
-}
-.p-card__price-box > *:not(:last-child) {
-  margin: 0 8px 0 0;
-}
-.p-card__price {
-  font-family: "Cormorant", serif;
-  font-size: 32px;
-  line-height: 140%;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
-  color: #ff6600;
-}
-@media (max-width: 1279.5px) {
-  .p-card__price {
-    font-family: "Cormorant", serif;
-    font-size: 24px;
-    line-height: 140%;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    font-family: "Open Sans Hebrew", sans-serif;
-  }
-}
-.p-card__price_old {
-  font-family: "Open Sans Hebrew", sans-serif;
-  font-size: 16px;
-  line-height: 140%;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  color: #848484;
-  text-decoration: line-through;
-}
 .p-card__footer {
   margin-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  display: none;
 }
 .p-card__footer > *:not(:last-child) {
   margin: 0 56px 0 0;
@@ -6251,7 +6319,7 @@ body.show-body [data-reveal=img] {
   fill: #ff6600;
 }
 .p-card__btn-box {
-  margin-top: auto;
+  margin-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6265,6 +6333,8 @@ body.show-body [data-reveal=img] {
   }
   .p-card__btn-box > *:last-child {
     flex-basis: 33.333%;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 .p-card__btn-box .button {
@@ -6277,6 +6347,10 @@ body.show-body [data-reveal=img] {
   }
   .p-card__btn-box > *:not(:last-child) {
     margin: 0 0 16px 0;
+  }
+  .p-card__btn-box > *:last-child {
+    display: flex;
+    justify-content: center;
   }
 }
 @media (max-width: 1023.5px) {
@@ -6370,6 +6444,69 @@ body.show-body [data-reveal=img] {
 .p-card__item-icon svg path {
   fill: #ffe0cc;
 }
+.p-card__price-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+.p-card__price-name {
+  font-family: "Open Sans Hebrew", sans-serif;
+  font-size: 14px;
+  line-height: 160%;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #222222;
+  text-transform: uppercase;
+  margin-right: 24px;
+}
+@media (max-width: 767.5px) {
+  .p-card__price-name {
+    font-family: "Open Sans Hebrew", sans-serif;
+    font-size: 12px;
+    line-height: 140%;
+    font-weight: 400;
+  }
+}
+.p-card__price {
+  font-family: "Cormorant", serif;
+  font-size: 24px;
+  line-height: 140%;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-family: "Open Sans Hebrew", sans-serif;
+  color: #ff6600;
+}
+@media (max-width: 767.5px) {
+  .p-card__price {
+    font-family: "Cormorant", serif;
+    font-size: 18px;
+    line-height: 140%;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    font-family: "Open Sans Hebrew", sans-serif;
+    line-height: 160%;
+    letter-spacing: 0.02em;
+  }
+}
+.p-card__price_old {
+  font-family: "Open Sans Hebrew", sans-serif;
+  font-size: 14px;
+  line-height: 160%;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #848484;
+  text-decoration: line-through;
+  margin-right: 8px;
+}
+@media (max-width: 767.5px) {
+  .p-card__price_old {
+    font-family: "Open Sans Hebrew", sans-serif;
+    font-size: 12px;
+    line-height: 140%;
+    font-weight: 400;
+  }
+}
 .p-card__hover {
   background-color: #fef5ef;
   width: 100%;
@@ -6415,30 +6552,29 @@ body.show-body [data-reveal=img] {
 .p-card__hover .p-card__button {
   margin-top: auto;
 }
-@media (hover: hover) and (pointer: fine) {
-  .p-card:hover .p-card__content,
-  .p-card:hover .p-card__hover {
-    box-shadow: 0px 4px 40px rgba(112, 117, 132, 0.3);
-  }
-  .p-card:hover .p-card__content {
-    transform: rotateY(180deg);
-  }
-  .p-card:hover .p-card__hover {
-    transform: rotateY(360deg);
-  }
-}
-.p-card.active .p-card__content,
-.p-card.active .p-card__hover {
-  box-shadow: 0px 4px 40px rgba(112, 117, 132, 0.3);
-}
-.p-card.active .p-card__content {
-  transform: rotateY(180deg);
-}
-.p-card.active .p-card__hover {
-  transform: rotateY(360deg);
+.p-card__hover .p-card__btn-box {
+  margin-top: auto;
 }
 .p-card--constructor .p-card__content {
-  background-color: #f4f4f4;
+  background-color: #D9D9D9;
+}
+.p-card--constructor .p-card__footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 1023.5px) {
+  .p-card--constructor .p-card__footer {
+    justify-content: center;
+  }
+}
+.p-card--constructor .p-card__footer-btn {
+  width: 100%;
+}
+@media (max-width: 1023.5px) {
+  .p-card--constructor .p-card__footer-btn .button {
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -13235,13 +13371,16 @@ body.show-body [data-reveal=img] {
 .form__input {
   margin-bottom: 24px;
 }
-.form__textarea, .form__checkbox {
+.form__textarea {
   margin-bottom: 40px;
 }
 @media (max-width: 767.5px) {
-  .form__textarea, .form__checkbox {
+  .form__textarea {
     margin-bottom: 32px;
   }
+}
+.form__checkbox {
+  margin-bottom: 16px;
 }
 .form__button {
   margin-top: 48px;
@@ -13718,6 +13857,10 @@ body.show-body [data-reveal=img] {
   font-weight: 400;
   letter-spacing: 0.01em;
   color: #252525;
+}
+.checkbox__name a {
+  color: #ff6600;
+  text-decoration: underline;
 }
 .checkbox__box {
   cursor: pointer;

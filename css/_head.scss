@@ -466,6 +466,20 @@
             margin-bottom: 64px; // 24px;
         }
     }
+    &__time-box {
+        grid-column: 3 / 4;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include lg {
+            grid-column: 2 / 3;
+        }
+        @include md {
+            grid-column: 1 / 2;
+        }
+    }
     &__feat-box {
         grid-column: 1 / -1;
         // grid-row: 3 / 4;
@@ -871,6 +885,66 @@
         @include md {
             text-align: center;
         }
+    }
+}
+
+// time-box
+.time-box {
+    display: flex;
+    align-items: center;
+    @include column-gap(24px);
+
+    &__title {
+        @include mediumAltFont();
+        color: $white;
+        text-transform: uppercase;
+
+        @include sm {
+            @include smallFont();
+        }
+    }
+    &__clock {
+        position: relative;
+    }
+    &__time {
+        @include h4TitleAltFont();
+        color: $white;
+        font-weight: 400;
+        
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include sm {
+            @include descriptionFont();
+        }
+    }
+    &__circle {
+        svg {
+            display: block;
+        }
+    }
+}
+.circle {
+    width: 120px;
+    height: 120px;
+    
+    @include sm {
+        transform: scale(0.5);
+    }
+
+    &__fill {
+        stroke-dasharray: 372; // 372 = 31 * 12 // (365px) = 2 * PI * radius (= 58) = circle's length
+        stroke-dashoffset: 372;
+
+        transform: rotate(-90deg) translate(-120px, 0);
     }
 }
 

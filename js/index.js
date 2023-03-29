@@ -342,29 +342,18 @@ function headerActive() {
 
 
 // <====================================================== ROTATING CARD ACTIVE ON EVENTS (INSTEAD OF CSS HOVER)
-const pCards = document.querySelectorAll('.p-card');
+// const pCards = document.querySelectorAll('.p-card');
 
-if( pCards.length ) {
-    cardRotateActive(pCards);
-}
-window.addEventListener('resize', () => {
-    if( pCards.length ) {
-        cardRotateActive(pCards);
-    }
-})
+// if( pCards.length ) {
+//     cardRotateActive(pCards);
+// }
+// window.addEventListener('resize', () => {
+//     if( pCards.length ) {
+//         cardRotateActive(pCards);
+//     }
+// })
 
 function cardRotateActive(cards) {
-    // if( window.matchMedia('(hover: hover) and (pointer: fine)').matches ) {
-    //     cards.forEach( card => {
-    //         card.addEventListener('mouseenter', () => {
-    //             card.classList.add('active');
-    //         })
-    //         card.addEventListener('mouseleave', () => {
-    //             card.classList.remove('active');
-    //         })
-    //     })
-    // }
-    // else {
     if( ! window.matchMedia('(hover: hover) and (pointer: fine)').matches ) {
         cards.forEach( card => {
             const forwardRotateBtn = card.querySelector('[data-card-rotate="forward"]');
@@ -1752,6 +1741,30 @@ function sliderArrows(sliderSwiper, sliderArrowPrev, sliderArrowNext) {
             sliderArrowPrev.classList.remove('swap-to-next');
             sliderArrowNext.classList.remove('swap-to-prev');
         }
+    })
+}
+
+
+// <====================================================== TIME BOX
+timeBoxActive();
+
+function timeBoxActive() {
+    const timeBoxes = document.querySelectorAll('.time-box');
+    if( !timeBoxes.length ) return;
+
+    timeBoxes.forEach( box => {
+        const circle = box.querySelector('.circle');
+        if( !circle ) return;
+        const fill = circle.querySelector('.circle__fill');
+        const time = box.querySelector('.time-box__time');
+        if( !time ) return;
+
+        const timeValue = parseFloat(time.dataset.time);
+        const circleDasharray = parseFloat(window.getComputedStyle(fill, null).getPropertyValue('stroke-dasharray'), 10);
+        const circleValue = circleDasharray * (1 - timeValue / 12);
+
+        fill.style.strokeDashoffset = `${circleValue}`;
+        time.textContent = `${timeValue} h`;
     })
 }
 
