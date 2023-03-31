@@ -1288,29 +1288,29 @@ button.swiper-pagination-bullet {
   font-display: swap;
 }
 @font-face {
-  font-family: "Open Sans Hebrew";
-  src: url("../fonts/OpenSansHebrew/OpenSansHebrew-Regular.woff2") format("woff2"), url("../fonts/OpenSansHebrew/OpenSansHebrew-Regular.woff") format("woff"), url("../fonts/OpenSansHebrew/OpenSansHebrew-Regular.ttf") format("truetype");
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Open Sans Hebrew";
-  src: url("../fonts/OpenSansHebrew/OpenSansHebrew-Bold.woff2") format("woff2"), url("../fonts/OpenSansHebrew/OpenSansHebrew-Bold.woff") format("woff"), url("../fonts/OpenSansHebrew/OpenSansHebrew-Bold.ttf") format("truetype");
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans/OpenSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Open Sans Hebrew";
-  src: url("../fonts/OpenSansHebrew/OpenSansHebrew-Italic.woff2") format("woff2"), url("../fonts/OpenSansHebrew/OpenSansHebrew-Italic.woff") format("woff"), url("../fonts/OpenSansHebrew/OpenSansHebrew-Italic.ttf") format("truetype");
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans/OpenSans-Italic.woff2") format("woff2"), url("../fonts/OpenSans/OpenSans-Italic.woff") format("woff"), url("../fonts/OpenSans/OpenSans-Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: "Open Sans Hebrew";
-  src: url("../fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic.woff2") format("woff2"), url("../fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic.woff") format("woff"), url("../fonts/OpenSansHebrew/OpenSansHebrew-BoldItalic.ttf") format("truetype");
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans/OpenSans-BoldItalic.woff2") format("woff2"), url("../fonts/OpenSans/OpenSans-BoldItalic.woff") format("woff"), url("../fonts/OpenSans/OpenSans-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -1376,7 +1376,7 @@ svg {
 }
 
 body {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 156%;
   font-weight: 500;
@@ -1699,7 +1699,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .navbar__navitem {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 700;
@@ -1788,7 +1788,7 @@ body.show-body [data-reveal=img] {
     padding: 4px 24px;
   }
   .navbar__button_contact .button .button__name {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -2054,7 +2054,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   color: #ff6600;
 }
@@ -2065,14 +2065,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 400;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .menu__list-item span {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -2342,7 +2342,7 @@ body.show-body [data-reveal=img] {
 }
 .tel-select__selected {
   cursor: pointer;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -2390,7 +2390,7 @@ body.show-body [data-reveal=img] {
   height: 16px;
 }
 .tel__num {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -2488,7 +2488,7 @@ body.show-body [data-reveal=img] {
 }
 .lang-select__selected {
   cursor: pointer;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -2526,7 +2526,7 @@ body.show-body [data-reveal=img] {
 }
 
 .lang-item__name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -2689,7 +2689,7 @@ body.show-body [data-reveal=img] {
   object-position: left center;
 }
 .footer__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -2699,7 +2699,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .footer__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -2724,7 +2724,7 @@ body.show-body [data-reveal=img] {
   margin: 0 0 16px 0;
 }
 .footer__subitem {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -2762,7 +2762,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .footer__navitem {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 700;
@@ -2773,7 +2773,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .footer__navitem {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -2802,7 +2802,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .footer__subtitle {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -2813,14 +2813,14 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .footer__subtitle {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
   }
 }
 .footer__subheading {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -2832,7 +2832,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .footer__subheading {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -2847,7 +2847,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .footer__address-item {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -2858,7 +2858,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .footer__address-item {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -2877,7 +2877,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .footer__contact-item {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -2889,7 +2889,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .footer__contact-item {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -2932,7 +2932,7 @@ body.show-body [data-reveal=img] {
   margin: 0 16px 0 0;
 }
 .copyright__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -2945,7 +2945,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .copyright__link {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -2972,7 +2972,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .copyright__increate span {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -3255,7 +3255,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #FFFFFF;
   text-transform: uppercase;
 }
@@ -3266,7 +3266,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
@@ -3277,7 +3277,7 @@ body.show-body [data-reveal=img] {
   align-items: flex-end;
 }
 .head-description-slide__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -3286,7 +3286,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .head-description-slide__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -3434,7 +3434,7 @@ body.show-body [data-reveal=img] {
 }
 .sub-head__description {
   grid-column: 3/4;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -3455,7 +3455,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .sub-head__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -3535,7 +3535,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 400;
   letter-spacing: 0.01em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 160%;
   letter-spacing: 0.02em;
   color: #FFFFFF;
@@ -3544,7 +3544,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .sub-head__feat-name {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -3654,14 +3654,14 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #FFFFFF;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-right: 8px;
 }
 .sub-head--doc .sub-head__feat-name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -3753,7 +3753,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .sub-head--review .sub-head__caption {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -3913,7 +3913,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   color: #fef5ef;
   margin-bottom: 56px;
@@ -3929,7 +3929,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .head-404__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     line-height: 140%;
     font-weight: 400;
@@ -3956,7 +3956,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 400;
   letter-spacing: 0.01em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 160%;
   letter-spacing: 0.02em;
   color: #FFFFFF;
@@ -3964,7 +3964,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .time-box__title {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -3979,7 +3979,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #FFFFFF;
   font-weight: 400;
   width: 100%;
@@ -3993,7 +3993,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .time-box__time {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -4113,7 +4113,7 @@ body.show-body [data-reveal=img] {
   margin: 0 0 16px 0;
 }
 .widget__descr {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -4157,14 +4157,14 @@ body.show-body [data-reveal=img] {
   margin: 0 0 4px 0;
 }
 .w-contact__title {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
   color: #b5b5b5;
 }
 .w-contact__value {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 700;
@@ -4199,7 +4199,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .h3-title {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     line-height: 140%;
     font-weight: 700;
@@ -4286,7 +4286,7 @@ body.show-body [data-reveal=img] {
 }
 
 .list__item {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -4432,7 +4432,7 @@ body.show-body [data-reveal=img] {
 }
 .breadcrumb__item:after {
   content: "•";
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -4446,7 +4446,7 @@ body.show-body [data-reveal=img] {
 }
 .breadcrumb__name {
   display: block;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -4621,7 +4621,7 @@ body.show-body [data-reveal=img] {
 }
 
 .slider-fraction {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -4673,7 +4673,7 @@ body.show-body [data-reveal=img] {
   transition: fill 0.1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .rating__sum {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -4690,7 +4690,7 @@ body.show-body [data-reveal=img] {
   fill: #ff6600;
 }
 .rating--form .rating__sum {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 700;
@@ -4859,7 +4859,7 @@ body.show-body [data-reveal=img] {
   transition: fill 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .button__name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 700;
@@ -4972,7 +4972,7 @@ body.show-body [data-reveal=img] {
   padding: 8px 16px;
 }
 .button--tab .button__name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -5138,7 +5138,7 @@ body.show-body [data-reveal=img] {
   height: 16px;
 }
 .inline-btn__name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -5272,7 +5272,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .select__name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 700;
@@ -5284,7 +5284,7 @@ body.show-body [data-reveal=img] {
 .select__selected {
   cursor: pointer;
   border: 1px solid #cecece;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -5370,7 +5370,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   color: #ff6600;
   transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -5382,14 +5382,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 400;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .dropdown__number {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -5454,7 +5454,7 @@ body.show-body [data-reveal=img] {
   grid-column: 2/-2;
 }
 .dropdown__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -5472,7 +5472,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .dropdown__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -5518,7 +5518,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.01em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 160%;
   letter-spacing: 0.02em;
   color: #252525;
@@ -5527,7 +5527,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .c-dropdown__title {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -5950,7 +5950,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
   flex-basis: calc(75% - 16px);
@@ -5968,7 +5968,7 @@ body.show-body [data-reveal=img] {
 @media (max-width: 767.5px) {
   .step__title {
     flex-basis: auto;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -6090,7 +6090,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
 }
@@ -6104,14 +6104,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .p-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -6145,7 +6145,7 @@ body.show-body [data-reveal=img] {
 }
 .p-container__caption {
   grid-column: -2/-1;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -6163,7 +6163,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .p-container__caption {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -6245,7 +6245,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .p-card__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -6258,7 +6258,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 1023.5px) {
   .p-card__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -6267,7 +6267,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .p-card__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -6293,7 +6293,7 @@ body.show-body [data-reveal=img] {
   margin: 0 56px 0 0;
 }
 .p-card__footer-name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -6302,7 +6302,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .p-card__footer-name {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -6404,7 +6404,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #222222;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -6417,13 +6417,13 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 .p-card__item-name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -6451,7 +6451,7 @@ body.show-body [data-reveal=img] {
   margin-top: 24px;
 }
 .p-card__price-name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -6462,7 +6462,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .p-card__price-name {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -6474,7 +6474,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #ff6600;
 }
 @media (max-width: 767.5px) {
@@ -6484,13 +6484,13 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 .p-card__price_old {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -6501,7 +6501,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .p-card__price_old {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -6702,7 +6702,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #FFFFFF;
   text-transform: uppercase;
 }
@@ -6728,7 +6728,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .b-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -6757,13 +6757,13 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 400;
   letter-spacing: 0.01em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 160%;
   letter-spacing: 0.02em;
 }
 @media (max-width: 767.5px) {
   .b-container--review .b-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -6832,7 +6832,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #FFFFFF;
   text-transform: uppercase;
 }
@@ -6847,7 +6847,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
     margin-bottom: 40px;
@@ -6855,7 +6855,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .doctors-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -7058,7 +7058,7 @@ body.show-body [data-reveal=img] {
   margin-bottom: 8px;
 }
 .d-card__subtitle {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -7068,7 +7068,7 @@ body.show-body [data-reveal=img] {
   margin-bottom: 8px;
 }
 .d-card__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -7092,7 +7092,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .d-card__feat-num {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -7100,7 +7100,7 @@ body.show-body [data-reveal=img] {
   font-weight: 700;
 }
 .d-card__feat-name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -7396,7 +7396,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #FFFFFF;
   text-transform: uppercase;
 }
@@ -7410,14 +7410,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .c-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -7714,7 +7714,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .v-container__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -7726,7 +7726,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 1023.5px) {
   .v-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -7802,7 +7802,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
 }
@@ -7816,14 +7816,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .reviews-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -7922,7 +7922,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .review-card__title {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 700;
@@ -7932,7 +7932,7 @@ body.show-body [data-reveal=img] {
 }
 .review-card__date {
   flex-shrink: 0;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -7943,7 +7943,7 @@ body.show-body [data-reveal=img] {
   margin-bottom: 12px;
 }
 .review-card__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -7977,7 +7977,7 @@ body.show-body [data-reveal=img] {
 }
 .review-card__button {
   cursor: pointer;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -8077,7 +8077,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
   margin-bottom: 64px;
@@ -8092,7 +8092,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
     margin-bottom: 32px;
@@ -8100,7 +8100,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .contact-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -8259,7 +8259,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   letter-spacing: normal;
   text-transform: uppercase;
@@ -8272,7 +8272,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 }
 @media (max-width: 1023.5px) {
@@ -8282,7 +8282,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
     margin-bottom: 24px;
@@ -8366,7 +8366,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .contact-container__form-description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -8376,7 +8376,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .contact-container__form-description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -8450,7 +8450,7 @@ body.show-body [data-reveal=img] {
 .contact-item__title {
   border-left: 1px solid #252525;
   padding-left: 16px;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -8460,7 +8460,7 @@ body.show-body [data-reveal=img] {
 @media (max-width: 767.5px) {
   .contact-item__title {
     padding-left: 8px;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -8472,7 +8472,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -8485,7 +8485,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 }
 @media (max-width: 1023.5px) {
@@ -8495,7 +8495,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 }
 @media (max-width: 767.5px) {
@@ -8593,7 +8593,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 20px;
 }
 @media (max-width: 1279.5px) and (min-width: 768px) {
@@ -8746,7 +8746,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.01em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 160%;
   letter-spacing: 0.02em;
   color: #252525;
@@ -8757,7 +8757,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 1023.5px) {
   .seo-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -8766,7 +8766,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .seo-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -8798,7 +8798,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #222222;
   text-transform: uppercase;
 }
@@ -8809,12 +8809,12 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 }
 @media (max-width: 767.5px) {
   .t-d-container__title {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -8823,7 +8823,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .t-d-container__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -8834,7 +8834,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .t-d-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -8873,7 +8873,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 400;
   letter-spacing: 0.01em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 160%;
   letter-spacing: 0.02em;
   color: #252525;
@@ -8882,7 +8882,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 1023.5px) {
   .t-d-container__caption {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     line-height: 140%;
     font-weight: 400;
@@ -8891,7 +8891,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .t-d-container__caption {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -8960,7 +8960,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .t-d-container__price-name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -8971,7 +8971,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .t-d-container__price-name {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     line-height: 140%;
     font-weight: 400;
@@ -9054,7 +9054,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
 }
@@ -9068,14 +9068,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .set-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -9089,7 +9089,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   color: #252525;
   text-transform: uppercase;
@@ -9103,14 +9103,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 400;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .set-container__subtitle {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     line-height: 140%;
     font-weight: 400;
@@ -9237,7 +9237,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 64px;
   line-height: 110%;
   color: #252525;
@@ -9256,7 +9256,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .feat-item__name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 700;
@@ -9512,7 +9512,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #848484;
   text-transform: uppercase;
   transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -9524,13 +9524,13 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     color: #FFFFFF;
   }
 }
 @media (max-width: 767.5px) {
   .r-item__title {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -9539,7 +9539,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .r-item__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -9557,7 +9557,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .r-item__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -9642,7 +9642,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
 }
@@ -9653,14 +9653,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .slider-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -9878,7 +9878,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #FFFFFF;
   text-transform: uppercase;
 }
@@ -9892,14 +9892,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .t-i-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -10078,7 +10078,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
 }
@@ -10089,14 +10089,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .b-w-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -10182,7 +10182,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
   margin-bottom: 40px;
@@ -10197,14 +10197,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .checkup-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -10256,7 +10256,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .checkup-container__price-name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -10275,7 +10275,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #ff6600;
 }
 @media (max-width: 1023.5px) {
@@ -10285,7 +10285,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 }
 .checkup-container__price_old {
@@ -10294,7 +10294,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 400;
   letter-spacing: 0.01em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 160%;
   letter-spacing: 0.02em;
   color: #848484;
@@ -10302,7 +10302,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .checkup-container__price_old {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     line-height: 140%;
     font-weight: 400;
@@ -10421,7 +10421,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .checkup-item__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -10438,7 +10438,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 1023.5px) {
   .checkup-item__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -10504,7 +10504,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .checkup-item__vip .checkup-item__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -10516,7 +10516,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 1023.5px) {
   .checkup-item__vip .checkup-item__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -10593,7 +10593,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .service-item__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -10633,7 +10633,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .service-item__item-name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -10648,7 +10648,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 1023.5px) {
   .service-item__item-name {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -10656,7 +10656,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .service-item__item-price {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 700;
@@ -10734,7 +10734,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 400;
   letter-spacing: 0.01em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 160%;
   letter-spacing: 0.02em;
   color: #cecece;
@@ -10756,7 +10756,7 @@ body.show-body [data-reveal=img] {
 @media (max-width: 1023.5px) {
   .tdi-container__caption {
     grid-column: 2/3;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     line-height: 140%;
     font-weight: 400;
@@ -10765,7 +10765,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .tdi-container__caption {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -10821,7 +10821,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .tdi-container__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -10843,7 +10843,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .tdi-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -11015,14 +11015,14 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #e5e5e5;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 @media (max-width: 767.5px) {
   .about-text-slide__title {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     line-height: 140%;
     font-weight: 400;
@@ -11030,7 +11030,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .about-text-slide__subtitle {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -11045,7 +11045,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .about-text-slide__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -11054,7 +11054,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .about-text-slide__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -11191,7 +11191,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
   margin-bottom: 24px;
@@ -11203,14 +11203,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .storage-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -11219,7 +11219,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .storage-container__caption {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -11229,7 +11229,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .storage-container__caption {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -11264,7 +11264,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .storage-container__tab .button__name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -11439,7 +11439,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .doctor-card__subtitle {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 700;
@@ -11450,7 +11450,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 1023.5px) {
   .doctor-card__subtitle {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -11460,7 +11460,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .doctor-card__subtitle {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -11492,7 +11492,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #ff6600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -11504,14 +11504,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .doctor-card__feat-num {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -11519,7 +11519,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .doctor-card__feat-name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 700;
@@ -11529,7 +11529,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 1023.5px) {
   .doctor-card__feat-name {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -11538,7 +11538,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .doctor-card__feat-name {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -11546,7 +11546,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .doctor-card__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -11555,7 +11555,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 1023.5px) {
   .doctor-card__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -11564,7 +11564,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .doctor-card__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -11686,7 +11686,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .blog-item__tag {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -11715,7 +11715,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.01em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 160%;
   letter-spacing: 0.02em;
   color: #222222;
@@ -11730,7 +11730,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .blog-item__title {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -11738,7 +11738,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .blog-item__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -11754,7 +11754,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 1023.5px) {
   .blog-item__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -11764,7 +11764,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .blog-item__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -11919,7 +11919,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
   text-align: center;
@@ -11932,7 +11932,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
@@ -11973,7 +11973,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 400;
   letter-spacing: 0.01em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 160%;
   letter-spacing: 0.02em;
   color: #252525;
@@ -12076,7 +12076,7 @@ body.show-body [data-reveal=img] {
   padding-bottom: 0;
 }
 .doc-container__item-name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -12095,7 +12095,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.01em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 160%;
   letter-spacing: 0.02em;
   color: #252525;
@@ -12164,7 +12164,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
 }
@@ -12175,7 +12175,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 }
 @media (max-width: 767.5px) {
@@ -12185,7 +12185,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
@@ -12224,7 +12224,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 }
 .article h3 {
@@ -12233,7 +12233,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #222222;
   text-transform: uppercase;
 }
@@ -12244,7 +12244,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
@@ -12255,13 +12255,13 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #222222;
   text-transform: uppercase;
 }
 @media (max-width: 767.5px) {
   .article h4 {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     line-height: 140%;
     font-weight: 700;
@@ -12274,13 +12274,13 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #222222;
   text-transform: uppercase;
 }
 @media (max-width: 767.5px) {
   .article h5 {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -12315,7 +12315,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .article p {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -12325,7 +12325,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .article p {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -12402,7 +12402,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .article ul li {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -12586,13 +12586,13 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #FFFFFF;
   text-transform: uppercase;
 }
 @media (max-width: 767.5px) {
   .blog-article h5 {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -12612,7 +12612,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .blog-article p {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -12621,7 +12621,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .blog-article p {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -12744,7 +12744,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
 }
@@ -12758,14 +12758,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .other-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -12846,7 +12846,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
 }
@@ -12857,7 +12857,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
@@ -12868,7 +12868,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.01em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 160%;
   letter-spacing: 0.02em;
   color: #252525;
@@ -12876,7 +12876,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .info-container__content h3 {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -12900,7 +12900,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .info-container__content p {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -12909,7 +12909,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .info-container__content p {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -12989,7 +12989,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
   margin-bottom: 64px;
@@ -13006,14 +13006,14 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
 }
 @media (max-width: 767.5px) {
   .constructor-container__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -13094,7 +13094,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .constructor-item__title {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 700;
@@ -13104,7 +13104,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .constructor-item__title {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -13120,7 +13120,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #ff6600;
   flex-shrink: 0;
   margin-left: auto !important;
@@ -13153,7 +13153,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.01em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 160%;
   letter-spacing: 0.02em;
   color: #252525;
@@ -13186,14 +13186,14 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
   margin-bottom: 16px;
 }
 @media (max-width: 767.5px) {
   .cart__title {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     line-height: 140%;
     font-weight: 700;
@@ -13201,7 +13201,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .cart__subtitle {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -13211,7 +13211,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .cart__subtitle {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -13251,7 +13251,7 @@ body.show-body [data-reveal=img] {
   }
 }
 .cart__sum-name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -13261,7 +13261,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .cart__sum-name {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -13273,7 +13273,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #ff6600;
 }
 @media (max-width: 767.5px) {
@@ -13283,7 +13283,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
@@ -13307,7 +13307,7 @@ body.show-body [data-reveal=img] {
   align-items: center;
 }
 .cart-item__title {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 700;
@@ -13320,7 +13320,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .cart-item__title {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
     line-height: 140%;
     font-weight: 400;
@@ -13335,7 +13335,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #ff6600;
   flex-shrink: 0;
   margin-right: 16px;
@@ -13343,7 +13343,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .cart-item__price {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 700;
@@ -13426,7 +13426,7 @@ body.show-body [data-reveal=img] {
   margin-bottom: 24px;
 }
 .form__select label {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -13751,7 +13751,7 @@ body.show-body [data-reveal=img] {
   flex-direction: column;
 }
 .form-input label {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -13766,7 +13766,7 @@ body.show-body [data-reveal=img] {
   background-color: transparent;
   background-color: #FFFFFF;
   border: 1px solid #cecece;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -13798,7 +13798,7 @@ body.show-body [data-reveal=img] {
   flex-direction: column;
 }
 .textarea label {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -13815,7 +13815,7 @@ body.show-body [data-reveal=img] {
   background-color: transparent;
   background-color: #FFFFFF;
   border: 1px solid #cecece;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -13851,7 +13851,7 @@ body.show-body [data-reveal=img] {
   cursor: pointer;
 }
 .checkbox__name {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 160%;
   font-weight: 400;
@@ -13917,7 +13917,7 @@ body.show-body [data-reveal=img] {
   opacity: 1;
 }
 .failure__text {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 140%;
   font-weight: 400;
@@ -14000,7 +14000,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #252525;
   text-transform: uppercase;
   margin-bottom: 32px;
@@ -14012,7 +14012,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
@@ -14063,7 +14063,7 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 @media (max-width: 1279.5px) {
   .popup--contact .popup__title {
@@ -14072,7 +14072,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 }
 @media (max-width: 1023.5px) {
@@ -14082,7 +14082,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.02em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 }
 @media (max-width: 767.5px) {
@@ -14092,7 +14092,7 @@ body.show-body [data-reveal=img] {
     line-height: 140%;
     font-weight: 700;
     letter-spacing: 0.01em;
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     line-height: 160%;
     letter-spacing: 0.02em;
   }
@@ -14252,13 +14252,13 @@ body.show-body [data-reveal=img] {
   line-height: 140%;
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #222222;
   text-transform: uppercase;
 }
 @media (max-width: 767.5px) {
   .review-popup__title {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     line-height: 140%;
     font-weight: 700;
@@ -14267,7 +14267,7 @@ body.show-body [data-reveal=img] {
 }
 .review-popup__date {
   flex-shrink: 0;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -14279,7 +14279,7 @@ body.show-body [data-reveal=img] {
   margin-bottom: 16px;
 }
 .review-popup__description {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
@@ -14291,7 +14291,7 @@ body.show-body [data-reveal=img] {
 }
 @media (max-width: 767.5px) {
   .review-popup__description {
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     line-height: 160%;
     font-weight: 400;
@@ -14349,7 +14349,7 @@ body.show-body [data-reveal=img] {
 .contact-popup__description {
   border-left: 1px solid #ff8533;
   padding-left: 16px;
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
