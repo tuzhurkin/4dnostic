@@ -5906,6 +5906,7 @@ body.show-body [data-reveal=img] {
   .step {
     width: 100%;
     align-items: flex-start;
+    justify-content: flex-start;
   }
   .step > *:not(:last-child) {
     margin: 0 8px 0 0;
